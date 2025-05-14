@@ -1,0 +1,688 @@
+{
+  "Romania": {
+    "continent": "Europa",
+    "capitala": "Bucuresti",
+    "emisfera": "Nordica",
+    "suprafata": 238397,
+    "latitudine": 45.9432,
+    "longitudine": 24.9668,
+    "vecini": {
+      "Nord": ["Ucraina"],
+      "Sud": ["Bulgaria"],
+      "Est": ["Moldova"],
+      "Vest": ["Ungaria", "Serbia"]
+    }
+  },
+  "Franta": {
+    "continent": "Europa",
+    "capitala": "Paris",
+    "emisfera": "Nordica",
+    "suprafata": 551695,
+    "latitudine": 46.6034,
+    "longitudine": 1.8883,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Spania"],
+      "Est": ["Germania", "Elvetia"],
+      "Vest": []
+    }
+  },
+  "Germania": {
+    "continent": "Europa",
+    "capitala": "Berlin",
+    "emisfera": "Nordica",
+    "suprafata": 357022,
+    "latitudine": 51.1657,
+    "longitudine": 10.4515,
+    "vecini": {
+      "Nord": ["Danemarca"],
+      "Sud": ["Austria", "Elvetia"],
+      "Est": ["Polonia", "Cehia"],
+      "Vest": ["Franta", "Luxemburg", "Olanda", "Belgia"]
+    }
+  },
+  "Italia": {
+    "continent": "Europa",
+    "capitala": "Roma",
+    "emisfera": "Nordica",
+    "suprafata": 301340,
+    "latitudine": 41.9028,
+    "longitudine": 12.4964,
+    "vecini": {
+      "Nord": ["Franta", "Elvetia", "Austria", "Slovenia"],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Spania": {
+    "continent": "Europa",
+    "capitala": "Madrid",
+    "emisfera": "Nordica",
+    "suprafata": 505992,
+    "latitudine": 40.4637,
+    "longitudine": -3.7492,
+    "vecini": {
+      "Nord": ["Franta"],
+      "Sud": ["Gibraltar"],
+      "Est": [],
+      "Vest": ["Portugalia"]
+    }
+  },
+  "Polonia": {
+    "continent": "Europa",
+    "capitala": "Varșovia",
+    "emisfera": "Nordica",
+    "suprafata": 312696,
+    "latitudine": 51.9194,
+    "longitudine": 19.1451,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Cehia", "Slovacia"],
+      "Est": ["Ucraina", "Belarus"],
+      "Vest": ["Germania"]
+    }
+  },
+  "Olanda": {
+    "continent": "Europa",
+    "capitala": "Amsterdam",
+    "emisfera": "Nordica",
+    "suprafata": 41543,
+    "latitudine": 52.3676,
+    "longitudine": 4.9041,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Belgia"],
+      "Est": ["Germania"],
+      "Vest": []
+    }
+  },
+  "Belgia": {
+    "continent": "Europa",
+    "capitala": "Bruxelles",
+    "emisfera": "Nordica",
+    "suprafata": 30528,
+    "latitudine": 50.8503,
+    "longitudine": 4.3517,
+    "vecini": {
+      "Nord": ["Olanda"],
+      "Sud": ["Franta"],
+      "Est": ["Luxemburg"],
+      "Vest": []
+    }
+  },
+  "Elvetia": {
+    "continent": "Europa",
+    "capitala": "Berna",
+    "emisfera": "Nordica",
+    "suprafata": 41285,
+    "latitudine": 46.8182,
+    "longitudine": 8.2275,
+    "vecini": {
+      "Nord": ["Germania"],
+      "Sud": ["Italia"],
+      "Est": ["Austria"],
+      "Vest": ["Franta"]
+    }
+  },
+  "Suedia": {
+    "continent": "Europa",
+    "capitala": "Stockholm",
+    "emisfera": "Nordica",
+    "suprafata": 450295,
+    "latitudine": 60.1282,
+    "longitudine": 18.6435,
+    "vecini": {
+      "Nord": ["Norvegia"],
+      "Sud": ["Danemarca"],
+      "Est": ["Finlanda"],
+      "Vest": []
+    }
+  },
+  "Norvegia": {
+    "continent": "Europa",
+    "capitala": "Oslo",
+    "emisfera": "Nordica",
+    "suprafata": 148729,
+    "latitudine": 60.4720,
+    "longitudine": 8.4689,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Suedia"],
+      "Est": ["Finlanda"],
+      "Vest": []
+    }
+  },
+  "Finlanda": {
+    "continent": "Europa",
+    "capitala": "Helsinki",
+    "emisfera": "Nordica",
+    "suprafata": 338424,
+    "latitudine": 61.9241,
+    "longitudine": 25.7482,
+    "vecini": {
+      "Nord": ["Laponia"],
+      "Sud": [],
+      "Est": ["Rusia"],
+      "Vest": ["Suedia"]
+    }
+  },
+  "Danemarca": {
+    "continent": "Europa",
+    "capitala": "Copenhaga",
+    "emisfera": "Nordica",
+    "suprafata": 42933,
+    "latitudine": 56.2639,
+    "longitudine": 9.5018,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Germania"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Portugalia": {
+    "continent": "Europa",
+    "capitala": "Lisabona",
+    "emisfera": "Nordica",
+    "suprafata": 92212,
+    "latitudine": 39.3999,
+    "longitudine": -8.2245,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Spania"],
+      "Est": ["Spania"],
+      "Vest": []
+    }
+  },
+  "Ungaria": {
+    "continent": "Europa",
+    "capitala": "Budapesta",
+    "emisfera": "Nordica",
+    "suprafata": 93028,
+    "latitudine": 47.1625,
+    "longitudine": 19.5033,
+    "vecini": {
+      "Nord": ["Slovacia"],
+      "Sud": ["Serbia"],
+      "Est": ["Romania"],
+      "Vest": ["Austria"]
+    }
+  },
+  "Cehia": {
+    "continent": "Europa",
+    "capitala": "Praga",
+    "emisfera": "Nordica",
+    "suprafata": 78865,
+    "latitudine": 49.8175,
+    "longitudine": 15.4730,
+    "vecini": {
+      "Nord": ["Polonia"],
+      "Sud": ["Austria"],
+      "Est": ["Slovacia"],
+      "Vest": ["Germania"]
+    }
+  },
+  "Slovacia": {
+    "continent": "Europa",
+    "capitala": "Bratislava",
+    "emisfera": "Nordica",
+    "suprafata": 49037,
+    "latitudine": 48.6690,
+    "longitudine": 19.6990,
+    "vecini": {
+      "Nord": ["Polonia"],
+      "Sud": ["Austria"],
+      "Est": ["Ucraina"],
+      "Vest": ["Cehia", "Ungaria"]
+    }
+  },
+  "Slovenia": {
+    "continent": "Europa",
+    "capitala": "Ljubljana",
+    "emisfera": "Nordica",
+    "suprafata": 20273,
+    "latitudine": 46.1511,
+    "longitudine": 14.9955,
+    "vecini": {
+      "Nord": ["Austria"],
+      "Sud": ["Croatia"],
+      "Est": ["Ungaria"],
+      "Vest": ["Italia"]
+    }
+  },
+  "Croatia": {
+    "continent": "Europa",
+    "capitala": "Zagreb",
+    "emisfera": "Nordica",
+    "suprafata": 56594,
+    "latitudine": 45.1,
+    "longitudine": 15.2,
+    "vecini": {
+      "Nord": ["Slovenia"],
+      "Sud": ["Serbia"],
+      "Est": ["Ungaria"],
+      "Vest": []
+    }
+  },
+  "Serbia": {
+    "continent": "Europa",
+    "capitala": "Belgrad",
+    "emisfera": "Nordica",
+    "suprafata": 88361,
+    "latitudine": 44.8176,
+    "longitudine": 20.4633,
+    "vecini": {
+      "Nord": ["Ungaria"],
+      "Sud": ["Macedonia de Nord"],
+      "Est": ["România"],
+      "Vest": ["Croatia", "Bosnia si Hertegovina"]
+    }
+  },
+  "Albania": {
+    "continent": "Europa",
+    "capitala": "Tirana",
+    "emisfera": "Nordica",
+    "suprafata": 28748,
+    "latitudine": 41.1533,
+    "longitudine": 20.1683,
+    "vecini": {
+      "Nord": ["Muntenegru"],
+      "Sud": ["Grecia"],
+      "Est": ["Kosovo", "Macedonia de Nord"],
+      "Vest": []
+    }
+  },
+  "Bosnia si Hertegovina": {
+    "continent": "Europa",
+    "capitala": "Sarajevo",
+    "emisfera": "Nordica",
+    "suprafata": 51197,
+    "latitudine": 43.8486,
+    "longitudine": 18.3564,
+    "vecini": {
+      "Nord": ["Croatia"],
+      "Sud": ["Muntenegru"],
+      "Est": ["Serbia"],
+      "Vest": []
+    }
+  },
+  "Kosovo": {
+    "continent": "Europa",
+    "capitala": "Pristina",
+    "emisfera": "Nordica",
+    "suprafata": 10908,
+    "latitudine": 42.6026,
+    "longitudine": 20.9026,
+    "vecini": {
+      "Nord": ["Serbia"],
+      "Sud": ["Macedonia de Nord"],
+      "Est": ["Serbia"],
+      "Vest": ["Albania"]
+    }
+  },
+  "Macedonia de Nord": {
+    "continent": "Europa",
+    "capitala": "Skopje",
+    "emisfera": "Nordica",
+    "suprafata": 25713,
+    "latitudine": 41.6086,
+    "longitudine": 21.7453,
+    "vecini": {
+      "Nord": ["Kosovo"],
+      "Sud": ["Grecia"],
+      "Est": ["Bulgaria"],
+      "Vest": ["Albania"]
+    }
+  },
+  "Muntenegru": {
+    "continent": "Europa",
+    "capitala": "Podgorica",
+    "emisfera": "Nordica",
+    "suprafata": 13812,
+    "latitudine": 42.4411,
+    "longitudine": 19.2636,
+    "vecini": {
+      "Nord": ["Bosnia si Hertegovina"],
+      "Sud": ["Albania"],
+      "Est": ["Serbia"],
+      "Vest": ["Croatia"]
+    }
+  },
+  "Liechtenstein": {
+    "continent": "Europa",
+    "capitala": "Vaduz",
+    "emisfera": "Nordica",
+    "suprafata": 160,
+    "latitudine": 47.1415,
+    "longitudine": 9.5215,
+    "vecini": {
+      "Nord": ["Elvetia"],
+      "Sud": ["Austria"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Andorra": {
+    "continent": "Europa",
+    "capitala": "Andorra la Vella",
+    "emisfera": "Nordica",
+    "suprafata": 468,
+    "latitudine": 42.5078,
+    "longitudine": 1.5211,
+    "vecini": {
+      "Nord": ["Franta"],
+      "Sud": ["Spania"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "San Marino": {
+    "continent": "Europa",
+    "capitala": "San Marino",
+    "emisfera": "Nordica",
+    "suprafata": 61,
+    "latitudine": 43.9333,
+    "longitudine": 12.45,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": ["Italia"],
+      "Vest": ["Italia"]
+    }
+  },
+  "Monaco": {
+    "continent": "Europa",
+    "capitala": "Monaco",
+    "emisfera": "Nordica",
+    "suprafata": 2.02,
+    "latitudine": 43.7333,
+    "longitudine": 7.4167,
+    "vecini": {
+      "Nord": ["Franta"],
+      "Sud": [],
+      "Est": [],
+      "Vest": ["Franta"]
+    }
+  },
+  "Vatican": {
+    "continent": "Europa",
+    "capitala": "Vatican",
+    "emisfera": "Nordica",
+    "suprafata": 0.44,
+    "latitudine": 41.9029,
+    "longitudine": 12.4534,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": ["Italia"],
+      "Vest": ["Italia"]
+    }
+  },
+  "Armenia": {
+    "continent": "Europa",
+    "capitala": "Erevan",
+    "emisfera": "Nordica",
+    "suprafata": 29743,
+    "latitudine": 40.1792,
+    "longitudine": 44.4991,
+    "vecini": {
+      "Nord": ["Georgia"],
+      "Sud": ["Iran"],
+      "Est": ["Azerbaidjan"],
+      "Vest": ["Turcia"]
+    }
+  },
+  "Bulgaria": {
+    "continent": "Europa",
+    "capitala": "Sofia",
+    "emisfera": "Nordica",
+    "suprafata": 110879,
+    "latitudine": 42.7333,
+    "longitudine": 25.4858,
+    "vecini": {
+      "Nord": ["Romania"],
+      "Sud": ["Grecia", "Turcia"],
+      "Est": [],
+      "Vest": ["Serbia"]
+    }
+  },
+  "Turcia": {
+    "continent": "Europa",
+    "capitala": "Ankara",
+    "emisfera": "Nordica",
+    "suprafata": 783356,
+    "latitudine": 38.9637,
+    "longitudine": 35.2433,
+    "vecini": {
+      "Nord": ["Bulgaria", "Georgia"],
+      "Sud": ["Irak", "Siria"],
+      "Est": ["Armenia", "Azerbaidjan", "Iran"],
+      "Vest": ["Grecia"]
+    }
+  },
+  "Grecia": {
+    "continent": "Europa",
+    "capitala": "Atena",
+    "emisfera": "Nordica",
+    "suprafata": 131957,
+    "latitudine": 39.0742,
+    "longitudine": 21.8243,
+    "vecini": {
+      "Nord": ["Albania", "Macedonia de Nord", "Bulgaria"],
+      "Sud": [],
+      "Est": ["Turcia"],
+      "Vest": []
+    }
+  },
+  "Irlanda": {
+    "continent": "Europa",
+    "capitala": "Dublin",
+    "emisfera": "Nordica",
+    "suprafata": 70273,
+    "latitudine": 53.1424,
+    "longitudine": -7.6921,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Islanda": {
+    "continent": "Europa",
+    "capitala": "Reykjavik",
+    "emisfera": "Nordica",
+    "suprafata": 103000,
+    "latitudine": 64.9631,
+    "longitudine": -19.0208,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Lituania": {
+    "continent": "Europa",
+    "capitala": "Vilnius",
+    "emisfera": "Nordica",
+    "suprafata": 65300,
+    "latitudine": 55.1694,
+    "longitudine": 23.8813,
+    "vecini": {
+      "Nord": ["Letonia"],
+      "Sud": ["Polonia"],
+      "Est": ["Belarus"],
+      "Vest": []
+    }
+  },
+  "Estonia": {
+    "continent": "Europa",
+    "capitala": "Tallinn",
+    "emisfera": "Nordica",
+    "suprafata": 45227,
+    "latitudine": 58.5953,
+    "longitudine": 25.0136,
+    "vecini": {
+      "Nord": ["Finlanda"],
+      "Sud": ["Latvia"],
+      "Est": ["Rusia"],
+      "Vest": []
+    }
+  },
+  "Letonia": {
+    "continent": "Europa",
+    "capitala": "Riga",
+    "emisfera": "Nordica",
+    "suprafata": 64559,
+    "latitudine": 56.8796,
+    "longitudine": 24.6032,
+    "vecini": {
+      "Nord": ["Estonia"],
+      "Sud": ["Lituania"],
+      "Est": ["Rusia"],
+      "Vest": []
+    }
+  },
+  "Malta": {
+    "continent": "Europa",
+    "capitala": "Valletta",
+    "emisfera": "Nordica",
+    "suprafata": 316,
+    "latitudine": 35.8997,
+    "longitudine": 14.5147,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Luxemburg": {
+    "continent": "Europa",
+    "capitala": "Luxemburg",
+    "emisfera": "Nordica",
+    "suprafata": 2586,
+    "latitudine": 49.6117,
+    "longitudine": 6.13,
+    "vecini": {
+      "Nord": ["Belgia"],
+      "Sud": ["Franta"],
+      "Est": ["Germania"],
+      "Vest": ["Belgia"]
+    }
+  },
+  "Austria": {
+    "continent": "Europa",
+    "capitala": "Viena",
+    "emisfera": "Nordica",
+    "suprafata": 83879,
+    "latitudine": 47.5162,
+    "longitudine": 14.5501,
+    "vecini": {
+      "Nord": ["Germania"],
+      "Sud": ["Italia", "Slovenia"],
+      "Est": ["Ungaria"],
+      "Vest": ["Elvetia", "Liechtenstein"]
+    }
+  },
+  "Georgia": {
+    "continent": "Europa",
+    "capitala": "Tbilisi",
+    "emisfera": "Nordica",
+    "suprafata": 69700,
+    "latitudine": 42.3154,
+    "longitudine": 43.3569,
+    "vecini": {
+      "Nord": ["Rusia"],
+      "Sud": ["Turcia", "Armenia"],
+      "Est": ["Azerbaidjan"],
+      "Vest": ["Marea Neagra"]
+    }
+  },
+  "Azerbaidjan": {
+    "continent": "Europa",
+    "capitala": "Baku",
+    "emisfera": "Nordica",
+    "suprafata": 86600,
+    "latitudine": 40.1431,
+    "longitudine": 47.5769,
+    "vecini": {
+      "Nord": ["Rusia"],
+      "Sud": ["Iran"],
+      "Est": ["Marea Caspică"],
+      "Vest": ["Armenia", "Turcia"]
+    }
+  },
+  "Moldova": {
+    "continent": "Europa",
+    "capitala": "Chișinău",
+    "emisfera": "Nordica",
+    "suprafata": 33846,
+    "latitudine": 47.0105,
+    "longitudine": 28.8638,
+    "vecini": {
+      "Nord": ["Ucraina"],
+      "Sud": ["România"],
+      "Est": ["Ucraina"],
+      "Vest": ["România"]
+    }
+  },
+  "Belarus": {
+    "continent": "Europa",
+    "capitala": "Minsk",
+    "emisfera": "Nordica",
+    "suprafata": 207600,
+    "latitudine": 53.9,
+    "longitudine": 27.5667,
+    "vecini": {
+      "Nord": ["Latvia", "Lituania"],
+      "Sud": ["Ucraina"],
+      "Est": ["Rusia"],
+      "Vest": ["Polonia"]
+    }
+  },
+  "Ucraina": {
+    "continent": "Europa",
+    "capitala": "Kiev",
+    "emisfera": "Nordica",
+    "suprafata": 603628,
+    "latitudine": 48.3794,
+    "longitudine": 31.1656,
+    "vecini": {
+      "Nord": ["Belarus"],
+      "Sud": ["Marea Neagră"],
+      "Est": ["Rusia"],
+      "Vest": ["Polonia", "Slovacia", "Ungaria", "România"]
+    }
+  },
+  "Marea Britanie": {
+    "continent": "Europa",
+    "capitala": "Londra",
+    "emisfera": "Nordica",
+    "suprafata": 243610,
+    "latitudine": 51.5074,
+    "longitudine": -0.1278,
+    "vecini": {
+      "Nord": ["Marea Nordului"],
+      "Sud": ["Marea Canalului"],
+      "Est": ["Marea Irlandei"],
+      "Vest": ["Marea Irlandei"]
+    }
+  },
+  "Cipru": {
+    "continent": "Europa",
+    "capitala": "Nicosia",
+    "emisfera": "Nordica",
+    "suprafata": 9251,
+    "latitudine": 35.1264,
+    "longitudine": 33.4299,
+    "vecini": {
+      "Nord": ["Marea Egee"],
+      "Sud": ["Marea Mediterană"],
+      "Est": ["Marea Mediterană"],
+      "Vest": ["Marea Mediterană"]
+    }
+  }
+}
