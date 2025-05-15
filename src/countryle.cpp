@@ -28,7 +28,7 @@ void CountryleJoc::afisareDateRaspuns() {
 
 
 void CountryleJoc::porneste() {
-    TariGlobal& bazaDate = TariGlobal::getInstance();
+    const TariGlobal& bazaDate = TariGlobal::getInstance();
 
     std::cout << "Bine ai venit in Countryle!\n";
 

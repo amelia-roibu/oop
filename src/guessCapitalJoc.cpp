@@ -11,7 +11,7 @@ std::string GuessCapitalJoc::getNume() const {
 }
 
 std::pair<std::string, std::string> GuessCapitalJoc::genereazaIntrebareRaspuns() {
-    TariGlobal& bazaDate = TariGlobal::getInstance();
+    const TariGlobal& bazaDate = TariGlobal::getInstance();
     auto prompt = bazaDate.getTariRandom(1,continent)[0];
     return {prompt.getNume(), prompt.getCapitala()};
 }

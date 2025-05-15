@@ -22,7 +22,7 @@ TariGlobal::TariGlobal() {
         double longitudine = date["longitudine"];
 
         std::map<std::string, std::vector<std::string>> vecini;
-        for (const std::string& directie : {"Nord", "Sud", "Est", "Vest"}) {
+        for (const std::string directie : {"Nord", "Sud", "Est", "Vest"}) {
             vecini[directie] = date["vecini"][directie].get<std::vector<std::string>>();
         }
 
@@ -59,7 +59,7 @@ std::vector<Tari> TariGlobal::getTariDinContinent(const std::string& continent) 
     return rezultat;
 }
 
-std::vector<Tari> TariGlobal::getTariRandom(int nr, const std::string& continent) const {
+std::vector<Tari> TariGlobal::getTariRandom(std::size_t nr, const std::string& continent) const {
     std::vector<Tari> toateTarile;
 
     if (!continent.empty())

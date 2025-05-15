@@ -10,7 +10,7 @@ std::string GuessCountryJoc::getNume() const {
 }
 
 std::pair<std::string, std::string> GuessCountryJoc::genereazaIntrebareRaspuns() {
-    TariGlobal& bazaDate = TariGlobal::getInstance();
+    const TariGlobal& bazaDate = TariGlobal::getInstance();
     auto prompt = bazaDate.getTariRandom(1,continent)[0];
     return {prompt.getCapitala(), prompt.getNume()};
 }
@@ -21,11 +21,11 @@ void GuessCountryJoc::formateazaIntrebare(const std::string &prompt) const {
 }
 
 bool GuessCountryJoc::verificaRaspuns(const std::string &input, const std::string &corect) const {
-    auto& bazaDate = TariGlobal::getInstance();
+    const auto& bazaDate = TariGlobal::getInstance();
 
     if (bazaDate.existaTara(input)) return bazaDate.getTara(corect) == bazaDate.getTara(input);
     return false;
-    return input == corect;
+    //return input == corect;
 }
 
 GuessCountryJoc::~GuessCountryJoc() = default;

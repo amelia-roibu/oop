@@ -19,7 +19,7 @@ void ManagerJoc::afiseazaMeniu() const {
   std::cout << "Alege un joc (0 pentru iesire).\n";
   std::cout << "\n ============================= \n          Meniu Jocuri \n ============================= \n";
   std::cout << "0. Iesire\n";
-  for (auto i = 0; i < jocuriDisponibile.size(); i++)
+  for (std::size_t i = 0; i < jocuriDisponibile.size(); i++)
     std::cout << i+1 << ". " << jocuriDisponibile[i]->getNume() << "\n";
 }
 
