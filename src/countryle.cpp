@@ -1,30 +1,29 @@
 #include <iostream>
 #include <string>
-#include <limits>
 #include "../include/countryle.h"
 #include "../include/tariGlobal.h"
 
 CountryleJoc::CountryleJoc() : scorLocal(100), nrIncercari(0), continent("") {}
 
-void CountryleJoc::afisareDateRaspuns(const Tari& input) {
+void CountryleJoc::afisareDateRaspuns() {
     std::cout << "Informatii ajutatoare:\n";
-    std::cout << "Tara introdusa: " << input.getNume() << '\n';
-    std::cout << "Emisfera: " << input.getEmisfera() <<" ";
-    if (input.getEmisfera() == taraTinta.getEmisfera())
+    std::cout << "Tara introdusa: " << taraInput.getNume() << '\n';
+    std::cout << "Emisfera: " << taraInput.getEmisfera() <<" ";
+    if (taraInput.getEmisfera() == taraTinta.getEmisfera())
         std::cout << "CORECT \n";
-    else std::cout << "GREȘIT \n";
+    else std::cout << "GRESIT \n";
 
-    std::cout << "Continent: " << input.getContinent() <<" ";
-    if (input.getContinent() == taraTinta.getContinent())
+    std::cout << "Continent: " << taraInput.getContinent() <<" ";
+    if (taraInput.getContinent() == taraTinta.getContinent())
         std::cout << "CORECT \n";
-    else std::cout << "GREȘIT \n";
+    else std::cout << "GRESIT \n";
 
     std::cout << "Suprafata: ";
-    if (input.getSuprafata() < taraTinta.getSuprafata())
-        std::cout << "Mai mica decat suprafata tarii tinta.\n";
-    else std::cout << "Mai mare decat suprafata tarii tinta.\n";
+    if (taraInput.getSuprafata() < taraTinta.getSuprafata())
+        std::cout << "Tara misterioasa are o suprafata mai mare decat " << taraInput.getNume() << ".\n";
+    else std::cout << "Tara misterioasa are o suprafata mai mica decat " << taraInput.getNume() << ".\n";
 
-    std::cout << "Directia fata de tara tinta: " << input.directieFataDe(taraTinta) << "\n";
+    std::cout << "Directia fata de tara tinta: " << taraInput.directieFataDe(taraTinta) << "\n";
 }
 
 
@@ -32,40 +31,26 @@ void CountryleJoc::porneste() {
     TariGlobal& bazaDate = TariGlobal::getInstance();
 
     std::cout << "Bine ai venit in Countryle!\n";
-    std::cout << "Doresti sa alegi continentul de pe care sa joci? [y/n] \n";
-    char alegere;
-    std::cin >> alegere;
-    if (alegere == 'y') {
-        std::cout << "Alege continentul: [Europa / Africa / Asia / America de Nord / America de Sud / Australia] \n";
-        std::cin >> continent;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        if (bazaDate.getTariDinContinent(continent).empty()) {
-            std::cout << "Continent invalid. Se va selecta aleatoriu. Sorry!\n";
-            continent = "";
-        }
-    }
-    else {
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "In regula. Se va selecta aleatoriu o tara. \n";
-    }
+
+    continent = Joc::selectareContinent();
 
     taraTinta = bazaDate.getTariRandom(1, continent)[0];
     scorLocal = 100;
     nrIncercari = 0;
 
     while (true) {
-        std::string taraInput;
+        std::string numeInput;
         std::cout << "Incercarea " << ++nrIncercari << ". Introdu numele unei tari: ";
-        std::getline(std::cin, taraInput);
+        std::getline(std::cin, numeInput);
 
-        while (!bazaDate.existaTara(taraInput)) {
-            std::cout << "Nu exista tara " << taraInput <<". Incearca din nou.\n";
-            std::getline(std::cin, taraInput);
+        while (!bazaDate.existaTara(numeInput)) {
+            std::cout << "Nu exista tara " << numeInput <<". Incearca din nou.\n";
+            std::getline(std::cin, numeInput);
         }
 
-        Tari input = bazaDate.getTara(taraInput);
+        taraInput = bazaDate.getTara(numeInput);
 
-        if (input == taraTinta) {
+        if (taraInput == taraTinta) {
             std::cout << "Felicitari!! \n Ai ghicit tara: " << taraTinta.getNume() << '\n';
             afisareFinala();
             break;
@@ -73,7 +58,7 @@ void CountryleJoc::porneste() {
 
         scorLocal -= 5;
 
-        bonusVecin(taraInput);
+        bonusVecin(numeInput);
 
         if (scorLocal <= 0) {
             std::cout << "Ai ramas fara puncte!\n";
@@ -82,7 +67,7 @@ void CountryleJoc::porneste() {
             break;
         }
 
-        afisareDateRaspuns(input);
+        afisareDateRaspuns();
     }
 }
 

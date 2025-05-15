@@ -19,6 +19,7 @@ public:
 // getters
     static TariGlobal& getInstance();
     const Tari& getTara(const std::string& nume) const;
+    const Tari& getTaraByCapitala(const std::string& capitala) const;
     std::vector<Tari> getTariDinContinent(const std::string& continent) const;
     std::vector<Tari> getTariRandom(int nr, const std::string& continent = "") const;
     bool existaTara(const std::string& nume) const;

@@ -44,9 +44,16 @@ const Tari& TariGlobal::getTara(const std::string& nume) const {
     return it->second;
 }
 
+const Tari& TariGlobal::getTaraByCapitala(const std::string& capitala) const {
+    for (const auto& [_, tara] : tari)
+        if (tara.getCapitala() == capitala)
+            return tara;
+    throw std::invalid_argument("Nu exista nicio tara cu aceasta capitala: " + capitala);
+}
+
 std::vector<Tari> TariGlobal::getTariDinContinent(const std::string& continent) const{
     std::vector<Tari> rezultat;
-    for (const auto& [nume, tara] : tari)
+    for (const auto& [_, tara] : tari)
         if (tara.getContinent() == continent)
             rezultat.push_back(tara);
     return rezultat;

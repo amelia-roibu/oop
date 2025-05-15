@@ -485,7 +485,7 @@
     "vecini": {
       "Nord": [],
       "Sud": [],
-      "Est": [],
+      "Est": ["Marea Britanie"],
       "Vest": []
     }
   },
@@ -598,7 +598,7 @@
       "Nord": ["Rusia"],
       "Sud": ["Turcia", "Armenia"],
       "Est": ["Azerbaidjan"],
-      "Vest": ["Marea Neagra"]
+      "Vest": []
     }
   },
   "Azerbaidjan": {
@@ -611,20 +611,20 @@
     "vecini": {
       "Nord": ["Rusia"],
       "Sud": ["Iran"],
-      "Est": ["Marea Caspică"],
+      "Est": [],
       "Vest": ["Armenia", "Turcia"]
     }
   },
   "Moldova": {
     "continent": "Europa",
-    "capitala": "Chișinău",
+    "capitala": "Chisinau",
     "emisfera": "Nordica",
     "suprafata": 33846,
     "latitudine": 47.0105,
     "longitudine": 28.8638,
     "vecini": {
       "Nord": ["Ucraina"],
-      "Sud": ["România"],
+      "Sud": ["Romania"],
       "Est": ["Ucraina"],
       "Vest": ["România"]
     }
@@ -652,9 +652,9 @@
     "longitudine": 31.1656,
     "vecini": {
       "Nord": ["Belarus"],
-      "Sud": ["Marea Neagră"],
+      "Sud": [],
       "Est": ["Rusia"],
-      "Vest": ["Polonia", "Slovacia", "Ungaria", "România"]
+      "Vest": ["Polonia", "Slovacia", "Ungaria", "Romania"]
     }
   },
   "Marea Britanie": {
@@ -665,10 +665,10 @@
     "latitudine": 51.5074,
     "longitudine": -0.1278,
     "vecini": {
-      "Nord": ["Marea Nordului"],
-      "Sud": ["Marea Canalului"],
-      "Est": ["Marea Irlandei"],
-      "Vest": ["Marea Irlandei"]
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": ["Irlanda"]
     }
   },
   "Cipru": {
@@ -679,10 +679,1466 @@
     "latitudine": 35.1264,
     "longitudine": 33.4299,
     "vecini": {
-      "Nord": ["Marea Egee"],
-      "Sud": ["Marea Mediterană"],
-      "Est": ["Marea Mediterană"],
-      "Vest": ["Marea Mediterană"]
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Statele Unite ale Americii": {
+    "continent": "America de Nord",
+    "capitala": "Washington D.C.",
+    "emisfera": "Nordica",
+    "suprafata": 9833517,
+    "latitudine": 38.8833,
+    "longitudine": -77.0167,
+    "vecini": {
+      "Nord": ["Canada"],
+      "Sud": ["Mexic"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Canada": {
+    "continent": "America de Nord",
+    "capitala": "Ottawa",
+    "emisfera": "Nordica",
+    "suprafata": 9984670,
+    "latitudine": 45.4215,
+    "longitudine": -75.6972,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Statele Unite ale Americii"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Mexic": {
+    "continent": "America de Nord",
+    "capitala": "Mexico City",
+    "emisfera": "Nordica",
+    "suprafata": 1964375,
+    "latitudine": 19.4326,
+    "longitudine": -99.1332,
+    "vecini": {
+      "Nord": ["Statele Unite ale Americii"],
+      "Sud": ["Guatemala", "Belize"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Guatemala": {
+    "continent": "America de Nord",
+    "capitala": "Guatemala City",
+    "emisfera": "Nordica",
+    "suprafata": 108889,
+    "latitudine": 14.6349,
+    "longitudine": -90.5069,
+    "vecini": {
+      "Nord": ["Mexic"],
+      "Sud": ["Belize"],
+      "Est": ["Honduras"],
+      "Vest": ["El Salvador"]
+    }
+  },
+  "Belize": {
+    "continent": "America de Nord",
+    "capitala": "Belmopan",
+    "emisfera": "Nordica",
+    "suprafata": 22966,
+    "latitudine": 17.1899,
+    "longitudine": -88.4977,
+    "vecini": {
+      "Nord": ["Mexic"],
+      "Sud": ["Guatemala"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Honduras": {
+    "continent": "America de Nord",
+    "capitala": "Tegucigalpa",
+    "emisfera": "Nordica",
+    "suprafata": 112492,
+    "latitudine": 13.9432,
+    "longitudine": -83.1535,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Nicaragua"],
+      "Est": ["Salvador"],
+      "Vest": ["Guatemala"]
+    }
+  },
+  "Panama": {
+    "continent": "America de Nord",
+    "capitala": "Panama City",
+    "emisfera": "Nordica",
+    "suprafata": 75417,
+    "latitudine": 8.9833,
+    "longitudine": -79.5167,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Columbia"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Jamaica": {
+    "continent": "America de Nord",
+    "capitala": "Kingston",
+    "emisfera": "Nordica",
+    "suprafata": 10991,
+    "latitudine": 17.9714,
+    "longitudine": -76.7936,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Trinidad si Tobago": {
+    "continent": "America de Nord",
+    "capitala": "Port of Spain",
+    "emisfera": "Nordica",
+    "suprafata": 5128,
+    "latitudine": 10.6918,
+    "longitudine": -61.2225,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Venezuela"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Republica Dominicana": {
+    "continent": "America de Nord",
+    "capitala": "Santo Domingo",
+    "emisfera": "Nordica",
+    "suprafata": 48671,
+    "latitudine": 18.7357,
+    "longitudine": -70.1627,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": ["Haiti"]
+    }
+  },
+  "Haiti": {
+    "continent": "America de Nord",
+    "capitala": "Port-au-Prince",
+    "emisfera": "Nordica",
+    "suprafata": 27750,
+    "latitudine": 18.9712,
+    "longitudine": -72.2852,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": ["Republica Dominicană"],
+      "Vest": []
+    }
+  },
+  "Cuba": {
+    "continent": "America de Nord",
+    "capitala": "Havana",
+    "emisfera": "Nordica",
+    "suprafata": 109884,
+    "latitudine": 21.5210,
+    "longitudine": -77.7812,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": ["Bahamas"],
+      "Vest": []
+    }
+  },
+  "Antigua si Barbuda": {
+    "continent": "America de Nord",
+    "capitala": "Saint John's",
+    "emisfera": "Nordica",
+    "suprafata": 442,
+    "latitudine": 17.0608,
+    "longitudine": -61.7964,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Bahamas": {
+    "continent": "America de Nord",
+    "capitala": "Nassau",
+    "emisfera": "Nordica",
+    "suprafata": 13943,
+    "latitudine": 25.0343,
+    "longitudine": -77.3963,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Barbados": {
+    "continent": "America de Nord",
+    "capitala": "Bridgetown",
+    "emisfera": "Nordica",
+    "suprafata": 430,
+    "latitudine": 13.1939,
+    "longitudine": -59.5432,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Costa Rica": {
+    "continent": "America de Nord",
+    "capitala": "San Jose",
+    "emisfera": "Nordica",
+    "suprafata": 51100,
+    "latitudine": 9.7489,
+    "longitudine": -83.7534,
+    "vecini": {
+      "Nord": ["Nicaragua"],
+      "Sud": ["Panama"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Dominica": {
+    "continent": "America de Nord",
+    "capitala": "Roseau",
+    "emisfera": "Nordica",
+    "suprafata": 751,
+    "latitudine": 15.3015,
+    "longitudine": -61.3881,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "El Salvador": {
+    "continent": "America de Nord",
+    "capitala": "San Salvador",
+    "emisfera": "Nordica",
+    "suprafata": 21041,
+    "latitudine": 13.7942,
+    "longitudine": -88.8965,
+    "vecini": {
+      "Nord": ["Guatemala"],
+      "Sud": ["Honduras"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Grenada": {
+    "continent": "America de Nord",
+    "capitala": "St. George's",
+    "emisfera": "Nordica",
+    "suprafata": 344,
+    "latitudine": 12.0560,
+    "longitudine": -61.7488,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Nicaragua": {
+    "continent": "America de Nord",
+    "capitala": "Managua",
+    "emisfera": "Nordica",
+    "suprafata": 130375,
+    "latitudine": 12.8654,
+    "longitudine": -85.2072,
+    "vecini": {
+      "Nord": ["Honduras"],
+      "Sud": ["Costa Rica"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Sfanta Lucia": {
+    "continent": "America de Nord",
+    "capitala": "Castries",
+    "emisfera": "Nordica",
+    "suprafata": 616,
+    "latitudine": 13.9094,
+    "longitudine": -61.0985,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Sf. Cristofor si Nevis": {
+    "continent": "America de Nord",
+    "capitala": "Basseterre",
+    "emisfera": "Nordica",
+    "suprafata": 261,
+    "latitudine": 17.3576,
+    "longitudine": -62.7829,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Australia": {
+    "continent": "Oceania",
+    "capitala": "Canberra",
+    "emisfera": "Sudica",
+    "suprafata": 7692024,
+    "latitudine": -35.2809,
+    "longitudine": 149.1300,
+    "vecini": {
+      "Nord": ["Indonezia", "Papua Noua Guinee"],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Noua Zeelanda": {
+    "continent": "Oceania",
+    "capitala": "Wellington",
+    "emisfera": "Sudica",
+    "suprafata": 268021,
+    "latitudine": -41.2867,
+    "longitudine": 174.7762,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Fiji": {
+    "continent": "Oceania",
+    "capitala": "Suva",
+    "emisfera": "Sudica",
+    "suprafata": 18274,
+    "latitudine": -18.1248,
+    "longitudine": 178.0650,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Papua Noua Guinee": {
+    "continent": "Oceania",
+    "capitala": "Port Moresby",
+    "emisfera": "Sudica",
+    "suprafata": 462840,
+    "latitudine": -9.4438,
+    "longitudine": 147.1803,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": ["Indonezia"]
+    }
+  },
+  "Insulele Solomon": {
+    "continent": "Oceania",
+    "capitala": "Honiara",
+    "emisfera": "Sudica",
+    "suprafata": 28557,
+    "latitudine": -9.4333,
+    "longitudine": 159.9794,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": ["Papua Noua Guinee"]
+    }
+  },
+  "Vanuatu": {
+    "continent": "Oceania",
+    "capitala": "Port Vila",
+    "emisfera": "Sudica",
+    "suprafata": 12189,
+    "latitudine": -17.7333,
+    "longitudine": 168.3217,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": ["Noua Caledonie"]
+    }
+  },
+  "Kiribati": {
+    "continent": "Oceania",
+    "capitala": "Tarawa",
+    "emisfera": "Sudica",
+    "suprafata": 811,
+    "latitudine": -1.4510,
+    "longitudine": 173.0226,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Micronezia": {
+    "continent": "Oceania",
+    "capitala": "Palikir",
+    "emisfera": "Sudica",
+    "suprafata": 702,
+    "latitudine": 6.9127,
+    "longitudine": 158.1500,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": ["Guam"]
+    }
+  },
+  "Insulele Marshall": {
+    "continent": "Oceania",
+    "capitala": "Majuro",
+    "emisfera": "Sudica",
+    "suprafata": 181,
+    "latitudine": 7.1000,
+    "longitudine": 171.3833,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": ["Micronezia"]
+    }
+  },
+  "Nauru": {
+    "continent": "Oceania",
+    "capitala": "Yaren",
+    "emisfera": "Sudica",
+    "suprafata": 21,
+    "latitudine": -0.5220,
+    "longitudine": 166.9315,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Samoa": {
+    "continent": "Oceania",
+    "capitala": "Apia",
+    "emisfera": "Sudica",
+    "suprafata": 2842,
+    "latitudine": -13.8333,
+    "longitudine": -172.0000,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Tonga": {
+    "continent": "Oceania",
+    "capitala": "Nuku'alofa",
+    "emisfera": "Sudica",
+    "suprafata": 747,
+    "latitudine": -21.1369,
+    "longitudine": -175.2014,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Tuvalu": {
+    "continent": "Oceania",
+    "capitala": "Funafuti",
+    "emisfera": "Sudica",
+    "suprafata": 26,
+    "latitudine": -7.1095,
+    "longitudine": 179.1940,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Argentina": {
+    "continent": "America de Sud",
+    "capitala": "Buenos Aires",
+    "emisfera": "Sudica",
+    "suprafata": 2780400,
+    "latitudine": -34.6037,
+    "longitudine": -58.3816,
+    "vecini": {
+      "Nord": ["Bolivia", "Paraguay"],
+      "Sud": ["Chile"],
+      "Est": ["Brazilia", "Uruguay"],
+      "Vest": ["Chile"]
+    }
+  },
+  "Bolivia": {
+    "continent": "America de Sud",
+    "capitala": "Sucre",
+    "emisfera": "Sudica",
+    "suprafata": 1098581,
+    "latitudine": -19.0333,
+    "longitudine": -65.2628,
+    "vecini": {
+      "Nord": ["Brazilia"],
+      "Sud": ["Chile", "Argentina"],
+      "Est": ["Paraguay"],
+      "Vest": ["Peru"]
+    }
+  },
+  "Brazilia": {
+    "continent": "America de Sud",
+    "capitala": "Brasilia",
+    "emisfera": "Sudica",
+    "suprafata": 8515767,
+    "latitudine": -15.7801,
+    "longitudine": -47.9292,
+    "vecini": {
+      "Nord": ["Venezuela", "Guyana", "Surinam"],
+      "Sud": ["Paraguay", "Argentina"],
+      "Est": [],
+      "Vest": ["Bolivia", "Peru"]
+    }
+  },
+  "Chile": {
+    "continent": "America de Sud",
+    "capitala": "Santiago",
+    "emisfera": "Sudica",
+    "suprafata": 756102,
+    "latitudine": -33.4489,
+    "longitudine": -70.6693,
+    "vecini": {
+      "Nord": ["Peru"],
+      "Sud": ["Argentina"],
+      "Est": ["Bolivia"],
+      "Vest": []
+    }
+  },
+  "Columbia": {
+    "continent": "America de Sud",
+    "capitala": "Bogota",
+    "emisfera": "Nordica",
+    "suprafata": 1141748,
+    "latitudine": 4.7110,
+    "longitudine": -74.0721,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Peru", "Ecuador"],
+      "Est": ["Venezuela"],
+      "Vest": ["Panama"]
+    }
+  },
+  "Ecuador": {
+    "continent": "America de Sud",
+    "capitala": "Quito",
+    "emisfera": "Sudica",
+    "suprafata": 283561,
+    "latitudine": -0.1807,
+    "longitudine": -78.4678,
+    "vecini": {
+      "Nord": ["Columbia"],
+      "Sud": ["Peru"],
+      "Est": ["Columbia", "Peru"],
+      "Vest": []
+    }
+  },
+  "Guyana Franceza": {
+    "continent": "America de Sud",
+    "capitala": "Cayenne",
+    "emisfera": "Nordica",
+    "suprafata": 91000,
+    "latitudine": 4.9333,
+    "longitudine": -52.3333,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Brazilia"],
+      "Est": ["Surinam"],
+      "Vest": ["Brazilia"]
+    }
+  },
+  "Guyana": {
+    "continent": "America de Sud",
+    "capitala": "Georgetown",
+    "emisfera": "Nordica",
+    "suprafata": 214969,
+    "latitudine": 6.8013,
+    "longitudine": -58.1550,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Brazilia"],
+      "Est": ["Surinam"],
+      "Vest": ["Venezuela"]
+    }
+  },
+  "Paraguay": {
+    "continent": "America de Sud",
+    "capitala": "Asuncion",
+    "emisfera": "Sudica",
+    "suprafata": 406750,
+    "latitudine": -25.2637,
+    "longitudine": -57.5759,
+    "vecini": {
+      "Nord": ["Brazilia"],
+      "Sud": ["Argentina"],
+      "Est": ["Brazilia"],
+      "Vest": ["Bolivia"]
+    }
+  },
+  "Peru": {
+    "continent": "America de Sud",
+    "capitala": "Lima",
+    "emisfera": "Sudica",
+    "suprafata": 1285216,
+    "latitudine": -12.0464,
+    "longitudine": -77.0428,
+    "vecini": {
+      "Nord": ["Ecuador", "Columbia"],
+      "Sud": ["Chile"],
+      "Est": ["Brazilia"],
+      "Vest": []
+    }
+  },
+  "Surinam": {
+    "continent": "America de Sud",
+    "capitala": "Paramaribo",
+    "emisfera": "Nordica",
+    "suprafata": 163820,
+    "latitudine": 5.8667,
+    "longitudine": -55.1711,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Brazilia"],
+      "Est": ["Guyana Franceza"],
+      "Vest": ["Guyana"]
+    }
+  },
+  "Uruguay": {
+    "continent": "America de Sud",
+    "capitala": "Montevideo",
+    "emisfera": "Sudica",
+    "suprafata": 176215,
+    "latitudine": -34.9011,
+    "longitudine": -56.1645,
+    "vecini": {
+      "Nord": ["Brazilia"],
+      "Sud": [],
+      "Est": [],
+      "Vest": ["Argentina"]
+    }
+  },
+  "Venezuela": {
+    "continent": "America de Sud",
+    "capitala": "Caracas",
+    "emisfera": "Nordica",
+    "suprafata": 912050,
+    "latitudine": 10.4922,
+    "longitudine": -66.8772,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Brazilia"],
+      "Est": ["Guyana"],
+      "Vest": ["Columbia"]
+    }
+  },
+  "Insulele Falkland": {
+    "continent": "America de Sud",
+    "capitala": "Stanley",
+    "emisfera": "Sudica",
+    "suprafata": 12173,
+    "latitudine": -51.7963,
+    "longitudine": -59.5236,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Burundi": {
+    "continent": "Africa",
+    "capitala": "Bujumbura",
+    "emisfera": "Sudica",
+    "suprafata": 27834,
+    "latitudine": -3.3731,
+    "longitudine": 29.9189,
+    "vecini": {
+      "Nord": ["Rwanda"],
+      "Sud": ["Tanzania"],
+      "Est": ["Tanzania"],
+      "Vest": ["Republica Democrată Congo"]
+    }
+  },
+  "Djibouti": {
+    "continent": "Africa",
+    "capitala": "Djibouti",
+    "emisfera": "Nordica",
+    "suprafata": 23200,
+    "latitudine": 11.8251,
+    "longitudine": 42.5903,
+    "vecini": {
+      "Nord": ["Eritreea"],
+      "Sud": ["Somalia"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Eritreea": {
+    "continent": "Africa",
+    "capitala": "Asmara",
+    "emisfera": "Nordica",
+    "suprafata": 117600,
+    "latitudine": 15.1794,
+    "longitudine": 38.9250,
+    "vecini": {
+      "Nord": ["Sudanul de Sud"],
+      "Sud": ["Etiopia"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Etiopia": {
+    "continent": "Africa",
+    "capitala": "Addis Abeba",
+    "emisfera": "Nordica",
+    "suprafata": 1104300,
+    "latitudine": 9.145,
+    "longitudine": 40.4897,
+    "vecini": {
+      "Nord": ["Eritreea"],
+      "Sud": ["Kenya"],
+      "Est": ["Somalia"],
+      "Vest": ["Sudanul de Sud"]
+    }
+  },
+  "Kenya": {
+    "continent": "Africa",
+    "capitala": "Nairobi",
+    "emisfera": "Sudica",
+    "suprafata": 580367,
+    "latitudine": -1.2921,
+    "longitudine": 36.8219,
+    "vecini": {
+      "Nord": ["Etiopia"],
+      "Sud": ["Tanzania"],
+      "Est": ["Somalia"],
+      "Vest": ["Uganda"]
+    }
+  },
+  "Madagascar": {
+    "continent": "Africa",
+    "capitala": "Antananarivo",
+    "emisfera": "Sudica",
+    "suprafata": 587041,
+    "latitudine": -18.8792,
+    "longitudine": 47.5079,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Malawi": {
+    "continent": "Africa",
+    "capitala": "Lilongwe",
+    "emisfera": "Sudica",
+    "suprafata": 118484,
+    "latitudine": -13.2543,
+    "longitudine": 34.3015,
+    "vecini": {
+      "Nord": ["Tanzania"],
+      "Sud": ["Mozambic"],
+      "Est": ["Mozambic"],
+      "Vest": ["Zambia"]
+    }
+  },
+  "Mauritius": {
+    "continent": "Africa",
+    "capitala": "Port Louis",
+    "emisfera": "Sudica",
+    "suprafata": 2040,
+    "latitudine": -20.3484,
+    "longitudine": 57.5522,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Mozambic": {
+    "continent": "Africa",
+    "capitala": "Maputo",
+    "emisfera": "Sudica",
+    "suprafata": 801590,
+    "latitudine": -25.9653,
+    "longitudine": 32.5892,
+    "vecini": {
+      "Nord": ["Tanzania"],
+      "Sud": ["Africa de Sud"],
+      "Est": [],
+      "Vest": ["Zambia", "Malawi"]
+    }
+  },
+  "Rwanda": {
+    "continent": "Africa",
+    "capitala": "Kigali",
+    "emisfera": "Sudica",
+    "suprafata": 26338,
+    "latitudine": -1.9403,
+    "longitudine": 29.8739,
+    "vecini": {
+      "Nord": ["Uganda"],
+      "Sud": ["Burundi"],
+      "Est": ["Tanzania"],
+      "Vest": ["Congo"]
+    }
+  },
+  "Seychelles": {
+    "continent": "Africa",
+    "capitala": "Victoria",
+    "emisfera": "Sudica",
+    "suprafata": 455,
+    "latitudine": -4.6167,
+    "longitudine": 55.4532,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Somalia": {
+    "continent": "Africa",
+    "capitala": "Mogadishu",
+    "emisfera": "Sudica",
+    "suprafata": 637657,
+    "latitudine": 2.0371,
+    "longitudine": 45.3438,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Kenya"],
+      "Est": [],
+      "Vest": ["Etiopia"]
+    }
+  },
+  "Tanzania": {
+    "continent": "Africa",
+    "capitala": "Dodoma",
+    "emisfera": "Sudica",
+    "suprafata": 945087,
+    "latitudine": -6.1659,
+    "longitudine": 39.2026,
+    "vecini": {
+      "Nord": ["Kenya", "Uganda"],
+      "Sud": ["Mozambic"],
+      "Est": [],
+      "Vest": ["Rwanda", "Burundi"]
+    }
+  },
+  "Uganda": {
+    "continent": "Africa",
+    "capitala": "Kampala",
+    "emisfera": "Sudica",
+    "suprafata": 241038,
+    "latitudine": 0.3136,
+    "longitudine": 32.5818,
+    "vecini": {
+      "Nord": ["Sudan"],
+      "Sud": ["Tanzania"],
+      "Est": ["Kenya"],
+      "Vest": ["Rwanda", "Congo"]
+    }
+  },
+  "Zambia": {
+    "continent": "Africa",
+    "capitala": "Lusaka",
+    "emisfera": "Sudica",
+    "suprafata": 752612,
+    "latitudine": -15.3875,
+    "longitudine": 28.3228,
+    "vecini": {
+      "Nord": ["Tanzania"],
+      "Sud": ["Malawi"],
+      "Est": ["Mozambic"],
+      "Vest": ["Angola"]
+    }
+  },
+  "Angola": {
+    "continent": "Africa",
+    "capitala": "Luanda",
+    "emisfera": "Sudica",
+    "suprafata": 1246700,
+    "latitudine": -8.8135,
+    "longitudine": 13.2343,
+    "vecini": {
+      "Nord": ["Republica Democrata Congo"],
+      "Sud": ["Namibia"],
+      "Est": ["Zambia"],
+      "Vest": []
+    }
+  },
+  "Camerun": {
+    "continent": "Africa",
+    "capitala": "Yaounde",
+    "emisfera": "Nordica",
+    "suprafata": 475442,
+    "latitudine": 3.8480,
+    "longitudine": 11.5021,
+    "vecini": {
+      "Nord": ["Chad"],
+      "Sud": ["Guineea Ecuatoriala", "Gabon"],
+      "Est": ["Republica Africana Centrala"],
+      "Vest": ["Nigeria"]
+    }
+  },
+  "Republica Africana Centrala": {
+    "continent": "Africa",
+    "capitala": "Bangui",
+    "emisfera": "Nordica",
+    "suprafata": 622984,
+    "latitudine": 4.3947,
+    "longitudine": 18.5582,
+    "vecini": {
+      "Nord": ["Chad"],
+      "Sud": ["Congo", "Republica Democrata Congo"],
+      "Est": ["Sudanul de Sud"],
+      "Vest": ["Camerun"]
+    }
+  },
+  "Chad": {
+    "continent": "Africa",
+    "capitala": "N'Djamena",
+    "emisfera": "Nordica",
+    "suprafata": 1284000,
+    "latitudine": 12.6349,
+    "longitudine": 14.0534,
+    "vecini": {
+      "Nord": ["Libia"],
+      "Sud": ["Republica Africana Centrala"],
+      "Est": ["Sudan"],
+      "Vest": ["Camerun", "Niger"]
+    }
+  },
+  "Republica Congo": {
+    "continent": "Africa",
+    "capitala": "Brazzaville",
+    "emisfera": "Sudica",
+    "suprafata": 342000,
+    "latitudine": -4.2637,
+    "longitudine": 15.2429,
+    "vecini": {
+      "Nord": ["Republica Africana Centrala"],
+      "Sud": ["Angola"],
+      "Est": ["Republica Democrata Congo"],
+      "Vest": ["Gabon"]
+    }
+  },
+  "Republica Democrata Congo": {
+    "continent": "Africa",
+    "capitala": "Kinshasa",
+    "emisfera": "Sudica",
+    "suprafata": 2344858,
+    "latitudine": -4.4419,
+    "longitudine": 15.2663,
+    "vecini": {
+      "Nord": ["Republica Africana Centrala"],
+      "Sud": ["Angola"],
+      "Est": ["Uganda", "Rwanda", "Burundi"],
+      "Vest": ["Republica Congo"]
+    }
+  },
+  "Gabon": {
+    "continent": "Africa",
+    "capitala": "Libreville",
+    "emisfera": "Sudica",
+    "suprafata": 267668,
+    "latitudine": -0.4167,
+    "longitudine": 9.4670,
+    "vecini": {
+      "Nord": ["Guineea Ecuatoriala"],
+      "Sud": ["Republica Congo"],
+      "Est": ["Republica Africana Centrala"],
+      "Vest": []
+    }
+  },
+  "Guineea Ecuatoriala": {
+    "continent": "Africa",
+    "capitala": "Malabo",
+    "emisfera": "Sudica",
+    "suprafata": 28051,
+    "latitudine": 3.748,
+    "longitudine": 8.737,
+    "vecini": {
+      "Nord": ["Camerun"],
+      "Sud": ["Gabon"],
+      "Est": ["Guineea"],
+      "Vest": []
+    }
+  },
+  "Sao Tome si Principe": {
+    "continent": "Africa",
+    "capitala": "Sao Tome",
+    "emisfera": "Sudica",
+    "suprafata": 964,
+    "latitudine": 0.3366,
+    "longitudine": 6.7278,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Algeria": {
+    "continent": "Africa",
+    "capitala": "Algiers",
+    "emisfera": "Nordica",
+    "suprafata": 2381741,
+    "latitudine": 36.7377,
+    "longitudine": 3.0861,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Niger", "Libia"],
+      "Est": ["Tunisia"],
+      "Vest": ["Moroc"]
+    }
+  },
+  "Insulele Canare": {
+    "continent": "Africa",
+    "capitala": "Las Palmas",
+    "emisfera": "Nordica",
+    "suprafata": 7460,
+    "latitudine": 28.2916,
+    "longitudine": -15.4130,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Egipt": {
+    "continent": "Africa",
+    "capitala": "Cairo",
+    "emisfera": "Nordica",
+    "suprafata": 1002450,
+    "latitudine": 30.0444,
+    "longitudine": 31.2357,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Sudan"],
+      "Est": ["Israel"],
+      "Vest": ["Libia"]
+    }
+  },
+  "Libia": {
+    "continent": "Africa",
+    "capitala": "Tripoli",
+    "emisfera": "Nordica",
+    "suprafata": 1759540,
+    "latitudine": 32.8872,
+    "longitudine": 13.1913,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Chad", "Niger"],
+      "Est": ["Egipt"],
+      "Vest": ["Tunisia"]
+    }
+  },
+  "Maroc": {
+    "continent": "Africa",
+    "capitala": "Rabat",
+    "emisfera": "Nordica",
+    "suprafata": 710850,
+    "latitudine": 34.0209,
+    "longitudine": -6.8417,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Sahara Occidentală"],
+      "Est": ["Algeria"],
+      "Vest": []
+    }
+  },
+  "Sudan": {
+    "continent": "Africa",
+    "capitala": "Khartoum",
+    "emisfera": "Nordica",
+    "suprafata": 1861484,
+    "latitudine": 15.5000,
+    "longitudine": 32.5599,
+    "vecini": {
+      "Nord": ["Egipt"],
+      "Sud": ["Sudanul de Sud"],
+      "Est": ["Eritreea", "Etiopia"],
+      "Vest": ["Chad"]
+    }
+  },
+  "Sahara": {
+    "continent": "Africa",
+    "capitala": "El Aaiun",
+    "emisfera": "Nordica",
+    "suprafata": 266000,
+    "latitudine": 24.7150,
+    "longitudine": -13.0101,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": ["Algeria"],
+      "Vest": ["Maroc"]
+    }
+  },
+  "Sudanul de Sud": {
+    "continent": "Africa",
+    "capitala": "Juba",
+    "emisfera": "Sudica",
+    "suprafata": 619745,
+    "latitudine": 4.8594,
+    "longitudine": 31.5820,
+    "vecini": {
+      "Nord": ["Sudan"],
+      "Sud": ["Uganda"],
+      "Est": ["Kenya", "Etiopia"],
+      "Vest": ["Republica Africana Centrala"]
+    }
+  },
+  "Tunisia": {
+    "continent": "Africa",
+    "capitala": "Tunis",
+    "emisfera": "Nordica",
+    "suprafata": 163610,
+    "latitudine": 33.8869,
+    "longitudine": 9.5375,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Libia"],
+      "Est": [],
+      "Vest": ["Algeria"]
+    }
+  },
+  "Africa de Sud": {
+    "continent": "Africa",
+    "capitala": "Pretoria",
+    "emisfera": "Sudica",
+    "suprafata": 1219090,
+    "latitudine": -30.5595,
+    "longitudine": 22.9375,
+    "vecini": {
+      "Nord": ["Namibia", "Botswana", "Zimbabwe"],
+      "Sud": [],
+      "Est": ["Mozambic"],
+      "Vest": []
+    }
+  },
+  "Botswana": {
+    "continent": "Africa",
+    "capitala": "Gaborone",
+    "emisfera": "Sudica",
+    "suprafata": 581730,
+    "latitudine": -24.6581,
+    "longitudine": 25.9231,
+    "vecini": {
+      "Nord": ["Zambia"],
+      "Sud": ["Sud Africa"],
+      "Est": ["Zimbabwe"],
+      "Vest": ["Namibia"]
+    }
+  },
+  "Eswatini": {
+    "continent": "Africa",
+    "capitala": "Mbabane",
+    "emisfera": "Sudica",
+    "suprafata": 17364,
+    "latitudine": -26.5225,
+    "longitudine": 31.4659,
+    "vecini": {
+      "Nord": ["Mozambic"],
+      "Sud": ["Africa de Sud"],
+      "Est": ["Mozambic"],
+      "Vest": ["Africa de Sud"]
+    }
+  },
+  "Lesotho": {
+    "continent": "Africa",
+    "capitala": "Maseru",
+    "emisfera": "Sudica",
+    "suprafata": 30355,
+    "latitudine": -29.6090,
+    "longitudine": 28.2336,
+    "vecini": {
+      "Nord": ["Africa de Sud"],
+      "Sud": ["Africa de Sud"],
+      "Est": ["Africa de Sud"],
+      "Vest": ["Africa de Sud"]
+    }
+  },
+  "Namibia": {
+    "continent": "Africa",
+    "capitala": "Windhoek",
+    "emisfera": "Sudica",
+    "suprafata": 825615,
+    "latitudine": -22.5597,
+    "longitudine": 17.0832,
+    "vecini": {
+      "Nord": ["Angola"],
+      "Sud": ["Africa de Sud"],
+      "Est": ["Botswana"],
+      "Vest": []
+    }
+  },
+  "Zimbabwe": {
+    "continent": "Africa",
+    "capitala": "Harare",
+    "emisfera": "Sudica",
+    "suprafata": 390757,
+    "latitudine": -19.0154,
+    "longitudine": 29.1549,
+    "vecini": {
+      "Nord": ["Zambia"],
+      "Sud": ["Africa de Sud"],
+      "Est": ["Mozambic"],
+      "Vest": ["Botswana"]
+    }
+  },
+  "Benin": {
+    "continent": "Africa",
+    "capitala": "Porto-Novo",
+    "emisfera": "Nordica",
+    "suprafata": 112622,
+    "latitudine": 6.5026,
+    "longitudine": 2.6281,
+    "vecini": {
+      "Nord": ["Niger"],
+      "Sud": [],
+      "Est": ["Nigeria"],
+      "Vest": ["Togo"]
+    }
+  },
+  "Burkina Faso": {
+    "continent": "Africa",
+    "capitala": "Ouagadougou",
+    "emisfera": "Nordica",
+    "suprafata": 272967,
+    "latitudine": 12.3711,
+    "longitudine": -1.5197,
+    "vecini": {
+      "Nord": ["Mali"],
+      "Sud": ["Ghana", "Togo"],
+      "Est": ["Niger"],
+      "Vest": ["Cote d'Ivoire"]
+    }
+  },
+  "Capul Verde": {
+    "continent": "Africa",
+    "capitala": "Praia",
+    "emisfera": "Nordica",
+    "suprafata": 4033,
+    "latitudine": 14.9333,
+    "longitudine": -23.5120,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Cote d'Ivoire": {
+    "continent": "Africa",
+    "capitala": "Yamoussoukro",
+    "emisfera": "Nordica",
+    "suprafata": 322463,
+    "latitudine": 7.5399,
+    "longitudine": -5.5471,
+    "vecini": {
+      "Nord": ["Burkina Faso", "Mali"],
+      "Sud": [],
+      "Est": ["Ghana"],
+      "Vest": ["Liberia"]
+    }
+  },
+  "Gambia": {
+    "continent": "Africa",
+    "capitala": "Banjul",
+    "emisfera": "Nordica",
+    "suprafata": 11295,
+    "latitudine": 13.4432,
+    "longitudine": -16.6987,
+    "vecini": {
+      "Nord": ["Senegal"],
+      "Sud": ["Senegal"],
+      "Est": ["Senegal"],
+      "Vest": []
+    }
+  },
+  "Ghana": {
+    "continent": "Africa",
+    "capitala": "Accra",
+    "emisfera": "Nordica",
+    "suprafata": 238533,
+    "latitudine": 5.6037,
+    "longitudine": -0.1870,
+    "vecini": {
+      "Nord": ["Burkina Faso"],
+      "Sud": [],
+      "Est": ["Togo"],
+      "Vest": ["Cote d'Ivoire"]
+    }
+  },
+  "Guineea": {
+    "continent": "Africa",
+    "capitala": "Conakry",
+    "emisfera": "Nordica",
+    "suprafata": 245857,
+    "latitudine": 9.5091,
+    "longitudine": -13.7122,
+    "vecini": {
+      "Nord": ["Guineea Bissau"],
+      "Sud": ["Liberia", "Cote d'Ivoire"],
+      "Est": ["Mali"],
+      "Vest": []
+    }
+  },
+  "Guineea Bissau": {
+    "continent": "Africa",
+    "capitala": "Bissau",
+    "emisfera": "Nordica",
+    "suprafata": 36125,
+    "latitudine": 11.8817,
+    "longitudine": -15.6170,
+    "vecini": {
+      "Nord": ["Guineea"],
+      "Sud": ["Liberia"],
+      "Est": ["Senegal"],
+      "Vest": []
+    }
+  },
+  "Liberia": {
+    "continent": "Africa",
+    "capitala": "Monrovia",
+    "emisfera": "Nordica",
+    "suprafata": 111369,
+    "latitudine": 6.4281,
+    "longitudine": -9.4295,
+    "vecini": {
+      "Nord": ["Guineea"],
+      "Sud": ["Cote d'Ivoire"],
+      "Est": ["Guineea Bissau"],
+      "Vest": []
+    }
+  },
+  "Mali": {
+    "continent": "Africa",
+    "capitala": "Bamako",
+    "emisfera": "Nordica",
+    "suprafata": 1240192,
+    "latitudine": 12.6392,
+    "longitudine": -8.0029,
+    "vecini": {
+      "Nord": ["Algeria"],
+      "Sud": ["Guineea", "Burkina Faso"],
+      "Est": ["Niger"],
+      "Vest": ["Mauritania"]
+    }
+  },
+  "Mauritania": {
+    "continent": "Africa",
+    "capitala": "Nouakchott",
+    "emisfera": "Nordica",
+    "suprafata": 1030700,
+    "latitudine": 18.0735,
+    "longitudine": -15.9800,
+    "vecini": {
+      "Nord": ["Sahara"],
+      "Sud": ["Mali"],
+      "Est": ["Niger"],
+      "Vest": ["Senegal"]
+    }
+  },
+  "Niger": {
+    "continent": "Africa",
+    "capitala": "Niamey",
+    "emisfera": "Nordica",
+    "suprafata": 1267000,
+    "latitudine": 13.5120,
+    "longitudine": 2.1128,
+    "vecini": {
+      "Nord": ["Libia"],
+      "Sud": ["Nigeria"],
+      "Est": ["Chad"],
+      "Vest": ["Burkina Faso", "Mali"]
+    }
+  },
+  "Nigeria": {
+    "continent": "Africa",
+    "capitala": "Abuja",
+    "emisfera": "Nordica",
+    "suprafata": 923768,
+    "latitudine": 9.0820,
+    "longitudine": 8.6753,
+    "vecini": {
+      "Nord": ["Niger"],
+      "Sud": ["Benin", "Cameroon"],
+      "Est": ["Chad"],
+      "Vest": ["Benin"]
+    }
+  },
+  "Senegal": {
+    "continent": "Africa",
+    "capitala": "Dakar",
+    "emisfera": "Nordica",
+    "suprafata": 196722,
+    "latitudine": 14.6928,
+    "longitudine": -17.4467,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Guineea"],
+      "Est": ["Mali"],
+      "Vest": ["Gambia"]
+    }
+  },
+  "Sierra Leone": {
+    "continent": "Africa",
+    "capitala": "Freetown",
+    "emisfera": "Nordica",
+    "suprafata": 71740,
+    "latitudine": 8.4650,
+    "longitudine": -13.2328,
+    "vecini": {
+      "Nord": ["Guineea"],
+      "Sud": ["Liberia"],
+      "Est": ["Guineea"],
+      "Vest": []
+    }
+  },
+  "Togo": {
+    "continent": "Africa",
+    "capitala": "Lome",
+    "emisfera": "Nordica",
+    "suprafata": 56785,
+    "latitudine": 6.1725,
+    "longitudine": 1.2310,
+    "vecini": {
+      "Nord": ["Burkina Faso"],
+      "Sud": [],
+      "Est": ["Benin"],
+      "Vest": ["Ghana"]
     }
   }
 }

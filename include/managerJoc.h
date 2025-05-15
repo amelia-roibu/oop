@@ -12,7 +12,7 @@ class ManagerJoc {
 public:
   ManagerJoc();
   void porneste();
-  void afiseazaMeniu();
+  void afiseazaMeniu() const;
   void alegeJoc();
   int getScorTotal() const;
   ~ManagerJoc();
