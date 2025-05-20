@@ -3,6 +3,7 @@
 #include "../include/joc.h"
 #include "../include/tariGlobal.h"
 
+
 std::string Joc::selectareContinent() {
     std::string continent = "";
     std::cout << "Doresti sa alegi continentul de pe care sa joci? [y/n] \n";

@@ -1,4 +1,5 @@
 #include "../include/tari.h"
+#include "../include/tariGlobal.h"
 #include <iostream>
 
 // constructori
@@ -112,13 +113,15 @@ std::string Tari::directieFataDe(const Tari& other) const {
 
 std::istream& operator>>(std::istream& in, Tari& tara) {
     std::cout << "Introdu numele tarii: ";
-    in >> tara.nume;
+    std::string nume;
+    std::getline(in, nume);
 
-    // try catch daca nu gaseste tara (il voi implementa mai tarziu)
+    if (!TariGlobal::getInstance().existaTara(nume))
+        throw std::invalid_argument("Tara introdusa nu exista.");
 
+    tara = TariGlobal::getInstance().getTara(nume);
     return in;
 }
-
 
 std::ostream& operator<<(std::ostream& out, const Tari& tara) {
     out << "Tara: " << tara.nume << "\n";

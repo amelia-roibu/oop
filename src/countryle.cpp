@@ -32,7 +32,7 @@ void CountryleJoc::porneste() {
 
     std::cout << "Bine ai venit in Countryle!\n";
 
-    continent = Joc::selectareContinent();
+    continent = selectareContinent();
 
     taraTinta = bazaDate.getTariRandom(1, continent)[0];
     scorLocal = 100;

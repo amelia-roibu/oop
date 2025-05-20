@@ -14,7 +14,7 @@ public:
   void porneste();
   void afiseazaMeniu() const;
   void alegeJoc();
-  int getScorTotal() const;
+  // int getScorTotal() const;
   ~ManagerJoc();
 };
 

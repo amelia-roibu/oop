@@ -39,9 +39,9 @@ public:
   std::string getContinent() const;
   std::string getEmisfera() const;
   double getSuprafata() const;
-  double getLatitudine() const;
-  double getLongitudine() const;
-  std::vector<std::string> getVeciniPeDirectie(const std::string& directie = "") const;
+  // double getLatitudine() const;
+  // double getLongitudine() const;
+  // std::vector<std::string> getVeciniPeDirectie(const std::string& directie = "") const;
 
   // alte metode
   bool esteVecinCu(const std::string& numeTara) const;

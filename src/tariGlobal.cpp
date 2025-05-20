@@ -40,7 +40,8 @@ TariGlobal& TariGlobal::getInstance() {
 
 const Tari& TariGlobal::getTara(const std::string& nume) const {
     auto it = tari.find(nume);
-    // try and catch daca nu gasesc tara
+    if (it == tari.end())
+        throw std::invalid_argument("Tara nu a fost gasita: " + nume);
     return it->second;
 }
 

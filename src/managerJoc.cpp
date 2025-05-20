@@ -1,13 +1,18 @@
 #include <iostream>
 #include "../include/managerJoc.h"
+
+#include <shortestPathJoc.h>
+
 #include "../include/countryle.h"
 #include "../include/guessCapitalJoc.h"
 #include "../include/guessCountryJoc.h"
+#include "../include/shortestPathJoc.h"
 
 ManagerJoc::ManagerJoc() : bazaDate(TariGlobal::getInstance()), scorTotal(0) {
   jocuriDisponibile.push_back(new CountryleJoc());
   jocuriDisponibile.push_back(new GuessCapitalJoc());
   jocuriDisponibile.push_back(new GuessCountryJoc());
+  jocuriDisponibile.push_back(new ShortestPathJoc());
 }
 
 void ManagerJoc::porneste() {
@@ -21,6 +26,7 @@ void ManagerJoc::afiseazaMeniu() const {
   std::cout << "0. Iesire\n";
   for (std::size_t i = 0; i < jocuriDisponibile.size(); i++)
     std::cout << i+1 << ". " << jocuriDisponibile[i]->getNume() << "\n";
+  std::cout << " ============================= \n";
 }
 
 void ManagerJoc::alegeJoc() {
@@ -46,9 +52,9 @@ void ManagerJoc::alegeJoc() {
   std::cout << "\n Scorul total acumulat: " << scorTotal << "\n";
 }
 
-int ManagerJoc::getScorTotal() const {
-  return scorTotal;
-}
+// int ManagerJoc::getScorTotal() const {
+//   return scorTotal;
+// }
 
 ManagerJoc::~ManagerJoc() {
   for (auto joc : jocuriDisponibile)
