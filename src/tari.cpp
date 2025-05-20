@@ -52,14 +52,14 @@ double Tari::getSuprafata() const {
     return this->suprafata;
 }
 
-double Tari::getLatitudine() const {
-    return this->latitudine;
-}
-
-double Tari::getLongitudine() const {
-    return this->longitudine;
-}
-
+// double Tari::getLatitudine() const {
+//     return this->latitudine;
+// }
+//
+// double Tari::getLongitudine() const {
+//     return this->longitudine;
+// }
+//
 std::vector<std::string> Tari::getVeciniPeDirectie(const std::string& directie) const {
 
   // try and catch directie invalida

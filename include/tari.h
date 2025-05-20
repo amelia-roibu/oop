@@ -41,7 +41,7 @@ public:
   double getSuprafata() const;
   // double getLatitudine() const;
   // double getLongitudine() const;
-  // std::vector<std::string> getVeciniPeDirectie(const std::string& directie = "") const;
+  std::vector<std::string> getVeciniPeDirectie(const std::string& directie = "") const;
 
   // alte metode
   bool esteVecinCu(const std::string& numeTara) const;
