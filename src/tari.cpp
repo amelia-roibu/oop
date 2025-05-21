@@ -115,7 +115,8 @@ std::istream& operator>>(std::istream& in, Tari& tara) {
     std::string nume;
     std::getline(in, nume);
 
-    if (!TariGlobal::getInstance().existaTara(nume))
+    const TariGlobal& bazaDate = TariGlobal::getInstance();
+    if (!bazaDate.existaTara(nume))
         throw std::invalid_argument("Tara introdusa nu exista.");
 
     tara = TariGlobal::getInstance().getTara(nume);
