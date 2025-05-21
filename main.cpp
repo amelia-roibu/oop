@@ -2,12 +2,13 @@
 #include "include/managerJoc.h"
 
 int main() {
-    // try {
+    try {
         ManagerJoc manager;
         manager.porneste();
-    // } catch (const std::exception& e) {
-    //     std::cerr << "Eroare la rulare: " << e.what() << '\n';
-    // }
+    } catch (const std::exception& e) {
+        std::cerr << "Eroare la rulare: " << e.what() << '\n';
+        return 1;
+    }
 
     return 0;
 }

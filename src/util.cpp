@@ -45,10 +45,3 @@ std::vector<Tari> gasesteDrumBFS(const std::string& start, const std::string& fi
     std::ranges::reverse(drum.begin(), drum.end());
     return drum;
 }
-
-#ifdef DEBUG_TEMPLATES
-void testTemplate() {
-    std::vector<int> v = {1, 2, 3, 4};
-    auto x = alegeRandomMultiple(v, 2);
-}
-#endif

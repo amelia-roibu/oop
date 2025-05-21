@@ -6,9 +6,7 @@
 
 int ShortestPathJoc::nrShortestPathJucate = 0;
 
-ShortestPathJoc::ShortestPathJoc() : scorLocal(0) {
-    std::random_device rd;
-}
+ShortestPathJoc::ShortestPathJoc() : scorLocal(0) {}
 
 std::string ShortestPathJoc::getNume() const {
     return "Shortest Path";
