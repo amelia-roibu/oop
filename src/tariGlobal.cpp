@@ -5,7 +5,9 @@
 using json = nlohmann::json;
 
 TariGlobal::TariGlobal() {
-    std::ifstream file("../resurse/tari.json");
+    std::ifstream file("resurse/tari.json");
+    if (!file.is_open())
+        file.open("../resurse/tari.json");
     if (!file.is_open())
         throw std::runtime_error("Nu s-a putut deschide fisierul tari.json");
 
@@ -59,7 +61,7 @@ std::vector<Tari> TariGlobal::getTariDinContinent(const std::string& continent) 
     return rezultat;
 }
 
-std::vector<Tari> TariGlobal::getTariRandom(std::size_t nr, const std::string& continent) const {
+Tari TariGlobal::getTariRandom(const std::string& continent) const {
     std::vector<Tari> toateTarile;
     if (!continent.empty())
         toateTarile = getTariDinContinent(continent);
@@ -67,7 +69,7 @@ std::vector<Tari> TariGlobal::getTariRandom(std::size_t nr, const std::string& c
         for (const auto& [_, tara] : tari)
             toateTarile.push_back(tara);
 
-    return alegeRandomMultiple(toateTarile, nr);
+    return alegeRandom(toateTarile);
 }
 
 bool TariGlobal::existaTara(const std::string& nume) const {

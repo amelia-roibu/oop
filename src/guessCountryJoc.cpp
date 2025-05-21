@@ -15,7 +15,7 @@ std::pair<std::string, std::string> GuessCountryJoc::genereazaIntrebareRaspuns()
     const TariGlobal& bazaDate = TariGlobal::getInstance();
     Tari prompt;
     do {
-        prompt = bazaDate.getTariRandom(1,continent)[0];
+        prompt = bazaDate.getTariRandom(continent);
     } while (obiecteFolosite.contains(prompt.getNume()));
     obiecteFolosite.insert(prompt.getNume());
     return {prompt.getCapitala(), prompt.getNume()};

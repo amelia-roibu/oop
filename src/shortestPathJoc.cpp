@@ -51,11 +51,8 @@ void ShortestPathJoc::porneste() {
             continent = alegeRandom(continenteValide);
         }
         do {
-            std::vector<Tari> destinatii = bazaDate.getTariRandom(2, continent);
-            if (destinatii.size() < 2) continue;
-
-            taraStart = destinatii[0];
-            taraFinal = destinatii[1];
+            taraStart = bazaDate.getTariRandom(continent);
+            taraFinal = bazaDate.getTariRandom(continent);
             drumOptim = gasesteDrumBFS(taraStart.getNume(), taraFinal.getNume());
         } while (drumOptim.empty() || drumOptim.size() < 4);
 
@@ -64,7 +61,7 @@ void ShortestPathJoc::porneste() {
         std::cout << "Start: " << taraStart.getNume() << std::endl;
         std::cout << "Destinatie: " << taraFinal.getNume() << std::endl;
         std::cout << "Introdu tarile vecine pe care poti sa le strabati pentru a ajunge la destinatie.\n";
-
+        bool renuntat = false;
         while (taraFinal != drumJucator.back() && jocInDesfasurare) {
             std::cout << "Introdu numele unei tari (sau 'renunt'): \n";
                 Tari tara;
@@ -73,6 +70,7 @@ void ShortestPathJoc::porneste() {
             } catch (const std::runtime_error&) {
                 renunta();
                 scorLocal = 0;
+                renuntat = true;
                 break;
             } catch (const std::exception& e) {
                 std::cout << e.what() << '\n';
@@ -85,11 +83,9 @@ void ShortestPathJoc::porneste() {
                 std::cout << "Tara introdusa nu e buna :P (nu este vecina sau deja a fost parcursa). \n";
         }
 
-        scorLocal = 100 - static_cast<int>(drumJucator.size() - drumOptim.size())*5;
-        if (scorLocal < 0) scorLocal = 0;
+        if (!renuntat) scorLocal = std::max(0, 100 - static_cast<int>(drumJucator.size() - drumOptim.size())*5);
         stopTime();
-
-        afisareDateRaspuns();
+        if (!renuntat) afisareDateRaspuns();
 
     } catch (const std::exception& e) {
         std::cout << "Exceptie prinsa: " << e.what() << '\n';
