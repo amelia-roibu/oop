@@ -1,9 +1,8 @@
 #include "../include/tariGlobal.h"
+#include "../include/util.h"
 #include <fstream>
 #include "../include/nlohmann/json.hpp"  // dacă aici parsezi JSON-ul
 using json = nlohmann::json;
-#include <algorithm>
-#include <random>
 
 TariGlobal::TariGlobal() {
     std::ifstream file("../resurse/tari.json");
@@ -62,24 +61,15 @@ std::vector<Tari> TariGlobal::getTariDinContinent(const std::string& continent) 
 
 std::vector<Tari> TariGlobal::getTariRandom(std::size_t nr, const std::string& continent) const {
     std::vector<Tari> toateTarile;
-
     if (!continent.empty())
         toateTarile = getTariDinContinent(continent);
     else
         for (const auto& [_, tara] : tari)
             toateTarile.push_back(tara);
 
-    std::random_device rd; // genereaza un generator de entropie din surse externe, un fel de seed aleator, mai bun decat rand()
-    std::mt19937 gen(rd());
-    /* mt19937 e un motor de generare de numere pseudo-aleatoare; numele vine de la „Mersenne Twister”
-    primește seed de la rd() — deci va genera o secvență diferită de fiecare dată când rulezi programul. */
-
-    std::shuffle(toateTarile.begin(), toateTarile.end(), gen);
-
-    if (nr > toateTarile.size()) nr = toateTarile.size();
-    return std::vector<Tari>(toateTarile.begin(), toateTarile.begin() + nr);
+    return alegeRandomMultiple(toateTarile, nr);
 }
 
 bool TariGlobal::existaTara(const std::string& nume) const {
-    return tari.find(nume) != tari.end();
+    return tari.contains(nume);
 }

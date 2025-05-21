@@ -112,7 +112,6 @@ std::string Tari::directieFataDe(const Tari& other) const {
 // operatori
 
 std::istream& operator>>(std::istream& in, Tari& tara) {
-    std::cout << "Introdu numele tarii: ";
     std::string nume;
     std::getline(in, nume);
 
@@ -128,7 +127,6 @@ std::ostream& operator<<(std::ostream& out, const Tari& tara) {
     out << "Capitala: " << tara.capitala << "\n";
     out << "Continent: " << tara.continent << "\n";
     out << "Emisfera: " << tara.emisfera << "\n";
-    out << "Suprafata: " << tara.suprafata << "\n";
     return out;
 }
 

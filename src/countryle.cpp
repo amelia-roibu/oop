@@ -2,6 +2,9 @@
 #include <string>
 #include "../include/countryle.h"
 #include "../include/tariGlobal.h"
+#include "../include/util.h"
+
+int CountryleJoc::nrCountryleJucate = 0;
 
 CountryleJoc::CountryleJoc() : scorLocal(100), nrIncercari(0), continent("") {}
 
@@ -23,53 +26,65 @@ void CountryleJoc::afisareDateRaspuns() {
         std::cout << "Tara misterioasa are o suprafata mai mare decat " << taraInput.getNume() << ".\n";
     else std::cout << "Tara misterioasa are o suprafata mai mica decat " << taraInput.getNume() << ".\n";
 
-    std::cout << "Directia fata de tara tinta: " << taraInput.directieFataDe(taraTinta) << "\n";
+    std::cout << "Directia fata de tara tinta: " << taraInput.directieFataDe(taraTinta) << "\n \n";
 }
 
 
 void CountryleJoc::porneste() {
+    jocInDesfasurare = true;
+    cresteContorJocuri();
+    cresteContorCountryle();
+    startTime();
     const TariGlobal& bazaDate = TariGlobal::getInstance();
 
     std::cout << "Bine ai venit in Countryle!\n";
-
     continent = selectareContinent();
 
     taraTinta = bazaDate.getTariRandom(1, continent)[0];
     scorLocal = 100;
     nrIncercari = 0;
 
-    while (true) {
-        std::string numeInput;
-        std::cout << "Incercarea " << ++nrIncercari << ". Introdu numele unei tari: ";
-        std::getline(std::cin, numeInput);
+    while (jocInDesfasurare) {
+        std::cout << "Incercarea " << ++nrIncercari << ". Introdu numele unei tari (sau 'renunt' daca vrei sa renunti):\n";
 
-        while (!bazaDate.existaTara(numeInput)) {
-            std::cout << "Nu exista tara " << numeInput <<". Incearca din nou.\n";
-            std::getline(std::cin, numeInput);
+        try {
+            taraInput = citesteTaraDinConsola();
+        } catch (const std::runtime_error&) {
+            scorLocal = 0;
+            renunta();
+            break;
+        } catch (const std::invalid_argument& e) {
+            std::cout << e.what() << "\n";
+            --nrIncercari;
+            continue;
         }
 
-        taraInput = bazaDate.getTara(numeInput);
-
         if (taraInput == taraTinta) {
-            std::cout << "Felicitari!! \n Ai ghicit tara: " << taraTinta.getNume() << '\n';
+            std::cout << "Felicitari!! \nAi ghicit tara: " << taraTinta << '\n';
             afisareFinala();
             break;
         }
 
         scorLocal -= 5;
-
-        bonusVecin(numeInput);
+        bonusVecin(taraInput.getNume());
 
         if (scorLocal <= 0) {
             std::cout << "Ai ramas fara puncte!\n";
-            std::cout << "Tara corecta era: " << taraTinta.getNume() << '\n';
+            std::cout << "Tara corecta era: " << taraTinta << '\n';
             afisareFinala();
             break;
         }
-
         afisareDateRaspuns();
     }
+    stopTime();
 }
+
+void CountryleJoc::renunta() {
+    std::cout << "Ai renuntat. Raspunsul era: \n" << taraTinta << std::endl;
+    std::cout << "Scor: " << scorLocal << "\n";
+    jocInDesfasurare = false;
+}
+
 
 int CountryleJoc::getScor() {
     return scorLocal;
@@ -98,5 +113,13 @@ void CountryleJoc::bonusVecin(const std::string& tara) {
     }
 }
 
+void CountryleJoc::cresteContorCountryle() {
+    ++nrCountryleJucate;
+}
+
+
+void CountryleJoc::afiseazaNumarCountryle() {
+    std::cout << "Countryle a fost jucat de " << nrCountryleJucate << " ori.\n";
+}
 
 CountryleJoc::~CountryleJoc() = default;

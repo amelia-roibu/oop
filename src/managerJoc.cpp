@@ -1,8 +1,5 @@
 #include <iostream>
 #include "../include/managerJoc.h"
-
-#include <shortestPathJoc.h>
-
 #include "../include/countryle.h"
 #include "../include/guessCapitalJoc.h"
 #include "../include/guessCountryJoc.h"
@@ -49,7 +46,15 @@ void ManagerJoc::alegeJoc() {
     else
       std::cout << "Optiune invalida.\n";
   }
-  std::cout << "\n Scorul total acumulat: " << scorTotal << "\n";
+  std::cout << " ============================= \n";
+  std::cout << "Scorul total acumulat: " << scorTotal << "\n";
+  Joc::afiseazaDurataTotala();
+  Joc::afiseazaNumarTotalJocuri();
+  CountryleJoc::afiseazaNumarCountryle();
+  GuessCapitalJoc::afiseazaNumarGuessCapital();
+  GuessCountryJoc::afiseazaNumarGuessCountry();
+  ShortestPathJoc::afiseazaNumarShortestPath();
+
 }
 
 // int ManagerJoc::getScorTotal() const {

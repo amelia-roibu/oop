@@ -1,12 +1,14 @@
 #include <iostream>
-#include <queue>
-#include <unordered_set>
-#include <map>
-#include <algorithm>
+#include <random>
+#include "../include/util.h"
 #include "../include/shortestPathJoc.h"
 #include "../include/tariGlobal.h"
 
-ShortestPathJoc::ShortestPathJoc() : scorLocal(0) {}
+int ShortestPathJoc::nrShortestPathJucate = 0;
+
+ShortestPathJoc::ShortestPathJoc() : scorLocal(0) {
+    std::random_device rd;
+}
 
 std::string ShortestPathJoc::getNume() const {
     return "Shortest Path";
@@ -14,47 +16,6 @@ std::string ShortestPathJoc::getNume() const {
 
 int ShortestPathJoc::getScor() {
     return scorLocal;
-}
-
-std::vector<Tari> ShortestPathJoc::gasesteDrumBFS(const std::string& start, const std::string& final) const {
-    std::queue<std::string> coada;
-    coada.push(start);
-    std::string current;
-
-    std::unordered_set<std::string> vizitate;
-    vizitate.insert(start);
-
-    std::map<std::string, std::string> parinte;
-    parinte[start] = "";
-
-    while (!coada.empty()) {
-        current = coada.front();
-        coada.pop();
-
-        if (current == final)
-            break;
-
-        auto vecini = TariGlobal::getInstance().getTara(current).getVeciniPeDirectie();
-        for (const auto& vecin : vecini)
-            if (!vizitate.contains(vecin)) {
-                coada.push(vecin);
-                vizitate.insert(vecin);
-                parinte[vecin] = current;
-            }
-    }
-
-    if (!parinte.contains(final))
-        return {};
-
-    std::vector<Tari> drum;
-    current = final;
-    while (!current.empty()) {
-        drum.push_back(TariGlobal::getInstance().getTara(current));
-        current = parinte[current];
-    }
-
-    std::ranges::reverse(drum.begin(), drum.end());
-    return drum;
 }
 
 bool ShortestPathJoc::apartineDeDrum(const std::string& taraNoua) const {
@@ -77,64 +38,101 @@ bool ShortestPathJoc::esteVecinaCuDrum(const std::string& taraNoua) const {
 
 void ShortestPathJoc::porneste() {
     try {
-    const TariGlobal& bazaDate = TariGlobal::getInstance();
+        jocInDesfasurare = true;
+        cresteContorJocuri();
+        cresteContorShortestPath();
+        startTime();
+        const TariGlobal& bazaDate = TariGlobal::getInstance();
 
-    std::cout << "Bine ai venit la Shortest Path Game! \n";
+        std::cout << "Bine ai venit la Shortest Path Game! \n";
 
-    continent = selectareContinent();
+        continent = selectareContinent();
 
-    if (continent.empty()) {
-        std::vector<std::string> continenteValide = {"Europa", /*"Asia",*/ "America de Sud", "Africa"};
-        continent = continenteValide[rand() % continenteValide.size()];
-    }
-    do {
-        std::vector<Tari> destinatii = bazaDate.getTariRandom(2, continent);
-        if (destinatii.size() < 2) continue;
+        if (continent.empty()) {
+            std::vector<std::string> continenteValide = {"Europa", /*"Asia",*/ "America de Sud", "Africa"};
+            continent = alegeRandom(continenteValide);
+        }
+        do {
+            std::vector<Tari> destinatii = bazaDate.getTariRandom(2, continent);
+            if (destinatii.size() < 2) continue;
 
-        taraStart = destinatii[0];
-        taraFinal = destinatii[1];
-        drumOptim = gasesteDrumBFS(taraStart.getNume(), taraFinal.getNume());
-    } while (drumOptim.empty() || drumOptim.size() < 4);
+            taraStart = destinatii[0];
+            taraFinal = destinatii[1];
+            drumOptim = gasesteDrumBFS(taraStart.getNume(), taraFinal.getNume());
+        } while (drumOptim.empty() || drumOptim.size() < 4);
 
-    drumJucator.push_back(taraStart);
-    scorLocal = 0;
-    std::cout << "Start: " << taraStart.getNume() << std::endl;
-    std::cout << "Destinatie: " << taraFinal.getNume() << std::endl;
-    std::cout << "Introdu tarile vecine pe care poti sa le strabati pentru a ajunge la destinatie.\n";
+        drumJucator.push_back(taraStart);
+        scorLocal = 0;
+        std::cout << "Start: " << taraStart.getNume() << std::endl;
+        std::cout << "Destinatie: " << taraFinal.getNume() << std::endl;
+        std::cout << "Introdu tarile vecine pe care poti sa le strabati pentru a ajunge la destinatie.\n";
 
-    while (taraFinal != drumJucator.back()) {
-        std::cout << "Introdu numele unei tari: \n";
-        std::string guess;
-        std::getline(std::cin, guess);
-        if (bazaDate.existaTara(guess) && !apartineDeDrum(guess) && esteVecinaCuDrum(guess))
-            drumJucator.push_back(bazaDate.getTara(guess));
-        else
-            std::cout << "Tara introdusa nu e buna :P \n";
+        while (taraFinal != drumJucator.back() && jocInDesfasurare) {
+            std::cout << "Introdu numele unei tari (sau 'renunt'): \n";
+                Tari tara;
+            try {
+                tara = citesteTaraDinConsola();
+            } catch (const std::runtime_error&) {
+                renunta();
+                scorLocal = 0;
+                break;
+            } catch (const std::exception& e) {
+                std::cout << e.what() << '\n';
+                continue;
+            }
 
-    }
+            if (!apartineDeDrum(tara.getNume()) && esteVecinaCuDrum(tara.getNume()))
+                drumJucator.push_back(tara);
+            else
+                std::cout << "Tara introdusa nu e buna :P (nu este vecina sau deja a fost parcursa). \n";
+        }
 
-    scorLocal = 100 - (drumJucator.size() - drumOptim.size())*5;
-    if (scorLocal < 0) scorLocal = 0;
-    afisareDateRaspuns();
+        scorLocal = 100 - static_cast<int>(drumJucator.size() - drumOptim.size())*5;
+        if (scorLocal < 0) scorLocal = 0;
+        stopTime();
+
+        afisareDateRaspuns();
+
     } catch (const std::exception& e) {
         std::cout << "Exceptie prinsa: " << e.what() << '\n';
     }
 }
 
+void ShortestPathJoc::renunta() {
+    std::cout << "Ai renuntat. Drumul optim era: ";
+    for (const auto& tara : drumOptim)
+        std::cout << tara.getNume() << " -> ";
+    std::cout << '\n';
+    std::cout << "Scor: " << scorLocal << std::endl;
+    drumJucator.clear();
+    drumOptim.clear();
+}
+
+
 void ShortestPathJoc::afisareDateRaspuns() {
-    std::cout << "Felicitari! Ai ajuns in " << taraFinal.getNume() << std::endl;
+    std::cout << "Felicitari! Ai ajuns in " << taraFinal.getNume() << "!\n";
     std::cout << "Scor: " << scorLocal << std::endl;
     std::cout << "Drumul tau: ";
     for (const auto& tara : drumJucator)
         std::cout << tara.getNume() << " -> ";
-    std::cout << "\b\b\b\b \n";
+    std::cout << '\n';
     drumJucator.clear();
 
     std::cout << "Drumul optim: ";
     for (const auto& tara : drumOptim)
         std::cout << tara.getNume() << " -> ";
-    std::cout << "\b\b\b\b \n";
+    std::cout << '\n';
     drumOptim.clear();
 }
+
+void ShortestPathJoc::cresteContorShortestPath() {
+    ++nrShortestPathJucate;
+}
+
+
+void ShortestPathJoc::afiseazaNumarShortestPath() {
+    std::cout << "Shortest Path a fost jucat de " << nrShortestPathJucate << " ori.\n";
+}
+
 
 ShortestPathJoc::~ShortestPathJoc() = default;

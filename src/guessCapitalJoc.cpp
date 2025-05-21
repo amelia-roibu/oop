@@ -4,6 +4,8 @@
 #include "../include/tariGlobal.h"
 #include "../include/tari.h"
 
+int GuessCapitalJoc::nrGuessCapitalJucate = 0;
+
 GuessCapitalJoc::GuessCapitalJoc() = default;
 
 std::string GuessCapitalJoc::getNume() const {
@@ -12,12 +14,16 @@ std::string GuessCapitalJoc::getNume() const {
 
 std::pair<std::string, std::string> GuessCapitalJoc::genereazaIntrebareRaspuns() {
     const TariGlobal& bazaDate = TariGlobal::getInstance();
-    auto prompt = bazaDate.getTariRandom(1,continent)[0];
+    Tari prompt;
+    do {
+        prompt = bazaDate.getTariRandom(1,continent)[0];
+    } while (obiecteFolosite.contains(prompt.getNume()));
+    obiecteFolosite.insert(prompt.getNume());
     return {prompt.getNume(), prompt.getCapitala()};
 }
 
 void GuessCapitalJoc::formateazaIntrebare(const std::string &prompt) const {
-    std::cout << "Care este capitala statului " << prompt << "?\n";
+    std::cout << "Care este capitala statului " << prompt << "? (sau 'renunt')\n";
 
 }
 
@@ -28,5 +34,15 @@ bool GuessCapitalJoc::verificaRaspuns(const std::string &input, const std::strin
     // return false;
     return input == corect;
 }
+
+void GuessCapitalJoc::afiseazaNumarGuessCapital() {
+    std::cout << "Guess Capital a fost jucat de " << nrGuessCapitalJucate << " ori.\n";
+}
+
+void GuessCapitalJoc::porneste() {
+    JocViteza::porneste();
+    ++nrGuessCapitalJucate;
+}
+
 
 GuessCapitalJoc::~GuessCapitalJoc() = default;

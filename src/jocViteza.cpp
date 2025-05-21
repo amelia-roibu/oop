@@ -1,6 +1,8 @@
 #include <iostream>
 #include "../include/jocViteza.h"
 
+#include <util.h>
+
 JocViteza::JocViteza() : scorLocal(0), durataTimpSecunde(0), continent("") {};
 
 int JocViteza::getScor() {
@@ -45,7 +47,6 @@ bool JocViteza::timpExpirat() const {
     auto timpTrecut = std::chrono::duration_cast<std::chrono::seconds>(acum - startTimp).count();
 
     if (timpTrecut >= durataTimpSecunde) {
-        std::cout << "Timpul a expirat!\n";
         return true;
     }
     std::cout << "Timp ramas: " << durataTimpSecunde - timpTrecut << " secunde.\n";
@@ -69,42 +70,80 @@ void JocViteza::afisareDateRaspuns() {
     raspunsuriPierdute.clear();
 }
 
+void JocViteza::stopTime() {
+    end_time = std::chrono::steady_clock::now();
+    auto durata = std::chrono::duration_cast<std::chrono::seconds>(end_time - start_time);
+    durata_totala += durata;
+}
 
 void JocViteza::porneste() {
+    scorLocal = 0;
+    jocInDesfasurare = true;
+    cresteContorJocuri();
+    startTime();
     std::cout << "Bine ai venit in " << getNume() <<"!\n";
-    continent = Joc::selectareContinent();
-
+    continent = selectareContinent();
     seteazaTimp();
 
     std::cout << "Incepe jocul! Vei avea la dispozitie " << durataTimpSecunde << " de secunde. Mult succes!\n";
     startTimp = std::chrono::steady_clock::now();
 
-    while (!timpExpirat()) {
-        int nrIncercari = 1;
-        auto [prompt, raspunsCorect] = genereazaIntrebareRaspuns();
-        formateazaIntrebare(prompt);
-        std::string input;
-        std::getline(std::cin, input);
-        bool corect = verificaRaspuns(input, raspunsCorect);
-        while (!corect && !timpExpirat()) {
-            std::cout << "Gresit! Incearca din nou sau scrie 'pas' daca vrei sa renunti! (te va costa din puncte)\n";
-            std::getline(std::cin, input);
-            if (input == "pas") {
-                scorLocal -= 10;
-                raspunsuriPierdute.push_back(raspunsCorect);
-                break;
-            }
-            nrIncercari++;
-            corect = verificaRaspuns(input, raspunsCorect);
-        }
-        if (input != "pas") {
-            if (nrIncercari == 1) scorLocal += 100;
-            else scorLocal += 100 - 5 * nrIncercari;
-            raspunsuriGhicite.push_back(raspunsCorect);
-        }
-        if (scorLocal < 0) scorLocal = 0;
-    }
+    while (!timpExpirat() && jocInDesfasurare)
+        gestioneazaIntrebare();
+
+    if (timpExpirat()) std::cout << "Timpul a expirat!\n";
+    stopTime();
     afisareDateRaspuns();
 }
+
+void JocViteza::gestioneazaIntrebare() {
+    int nrIncercari = 1;
+    auto [prompt, raspunsCorect] = genereazaIntrebareRaspuns();
+    formateazaIntrebare(prompt);
+
+    std::string input;
+    std::getline(std::cin, input);
+    if (input == "renunt") {
+        raspunsuriPierdute.push_back(raspunsCorect);
+        renunta();
+        return;
+    }
+    if (input == "pas") {
+        scorLocal = std::max(0, scorLocal - 10);
+        raspunsuriPierdute.push_back(raspunsCorect);
+        return;
+    }
+    bool corect = verificaRaspuns(input, raspunsCorect);
+    while (!corect && !timpExpirat()) {
+        std::cout << "Gresit! Incearca din nou sau scrie 'pas' daca vrei sa sari! (te va costa din puncte)\n";
+        std::getline(std::cin, input);
+        if (input == "pas") {
+            scorLocal = std::max(0, scorLocal - 10);
+            raspunsuriPierdute.push_back(raspunsCorect);
+            return;
+        }
+        if (input == "renunt") {
+            raspunsuriPierdute.push_back(raspunsCorect);
+            renunta();
+            return;
+        }
+        nrIncercari++;
+        corect = verificaRaspuns(input, raspunsCorect);
+    }
+    if (corect) {
+        if (nrIncercari == 1) scorLocal += 100;
+        else scorLocal += std::max(0, 100 - 5 * nrIncercari);
+        raspunsuriGhicite.push_back(raspunsCorect);
+    }
+    else raspunsuriPierdute.push_back(raspunsCorect);
+    scorLocal = std::max(0, scorLocal);
+}
+
+
+void JocViteza::renunta() {
+    std::cout << "Ai renuntat. \n";
+    jocInDesfasurare = false;
+}
+
 
 JocViteza::~JocViteza() = default;

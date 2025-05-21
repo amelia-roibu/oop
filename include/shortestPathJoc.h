@@ -12,8 +12,8 @@ class ShortestPathJoc : public Joc {
   std::vector<Tari> drumJucator;
   std::string continent;
   int scorLocal;
+  static int nrShortestPathJucate;
 
-  std::vector<Tari> gasesteDrumBFS(const std::string& start, const std::string& final) const;
   bool apartineDeDrum(const std::string& taraNoua) const;
   bool esteVecinaCuDrum(const std::string& taraNoua) const;
 
@@ -21,9 +21,12 @@ class ShortestPathJoc : public Joc {
 public:
   ShortestPathJoc();
   void porneste() override;
+  void renunta() override;
   int getScor() override;
   std::string getNume() const override;
   void afisareDateRaspuns() override;
+  static void cresteContorShortestPath();
+  static void afiseazaNumarShortestPath();
   ~ShortestPathJoc() override;
 };
 

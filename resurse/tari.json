@@ -9,7 +9,7 @@
     "vecini": {
       "Nord": ["Ucraina"],
       "Sud": ["Bulgaria"],
-      "Est": ["Republica Moldova"],
+      "Est": ["Republica Moldova", "Ucraina"],
       "Vest": ["Ungaria", "Serbia"]
     }
   },
@@ -22,8 +22,8 @@
     "longitudine": 1.8883,
     "vecini": {
       "Nord": [],
-      "Sud": ["Spania"],
-      "Est": ["Germania", "Elvetia"],
+      "Sud": ["Spania", "Andorra"],
+      "Est": ["Monaco","Germania", "Elvetia", "Belgia", "Luxemburg", "Italia"],
       "Vest": []
     }
   },
@@ -51,8 +51,8 @@
     "vecini": {
       "Nord": ["Franta", "Elvetia", "Austria", "Slovenia"],
       "Sud": [],
-      "Est": [],
-      "Vest": []
+      "Est": ["San Marino"],
+      "Vest": ["Vatican"]
     }
   },
   "Spania": {
@@ -63,7 +63,7 @@
     "latitudine": 40.4637,
     "longitudine": -3.7492,
     "vecini": {
-      "Nord": ["Franta"],
+      "Nord": ["Franta", "Andorra"],
       "Sud": [],
       "Est": [],
       "Vest": ["Portugalia"]
@@ -77,7 +77,7 @@
     "latitudine": 51.9194,
     "longitudine": 19.1451,
     "vecini": {
-      "Nord": [],
+      "Nord": ["Lituania"],
       "Sud": ["Cehia", "Slovacia"],
       "Est": ["Ucraina", "Belarus"],
       "Vest": ["Germania"]
@@ -107,7 +107,7 @@
     "vecini": {
       "Nord": ["Olanda"],
       "Sud": ["Franta"],
-      "Est": ["Luxemburg"],
+      "Est": ["Luxemburg", "Germania"],
       "Vest": []
     }
   },
@@ -121,7 +121,7 @@
     "vecini": {
       "Nord": ["Germania"],
       "Sud": ["Italia"],
-      "Est": ["Austria"],
+      "Est": ["Austria", "Liechtenstein"],
       "Vest": ["Franta"]
     }
   },
@@ -149,7 +149,7 @@
     "vecini": {
       "Nord": [],
       "Sud": ["Suedia"],
-      "Est": ["Finlanda"],
+      "Est": ["Finlanda", "Rusia"],
       "Vest": []
     }
   },
@@ -175,7 +175,7 @@
     "latitudine": 56.2639,
     "longitudine": 9.5018,
     "vecini": {
-      "Nord": [],
+      "Nord": ["Suedia"],
       "Sud": ["Germania"],
       "Est": [],
       "Vest": []
@@ -190,7 +190,7 @@
     "longitudine": -8.2245,
     "vecini": {
       "Nord": [],
-      "Sud": ["Spania"],
+      "Sud": [],
       "Est": ["Spania"],
       "Vest": []
     }
@@ -204,9 +204,9 @@
     "longitudine": 19.5033,
     "vecini": {
       "Nord": ["Slovacia"],
-      "Sud": ["Serbia"],
-      "Est": ["Romania"],
-      "Vest": ["Austria"]
+      "Sud": ["Serbia", "Croatia"],
+      "Est": ["Romania", "Ucraina"],
+      "Vest": ["Austria", "Slovenia"]
     }
   },
   "Cehia": {
@@ -232,9 +232,9 @@
     "longitudine": 19.6990,
     "vecini": {
       "Nord": ["Polonia"],
-      "Sud": ["Austria"],
+      "Sud": ["Austria", "Ungaria"],
       "Est": ["Ucraina"],
-      "Vest": ["Cehia", "Ungaria"]
+      "Vest": ["Cehia"]
     }
   },
   "Slovenia": {
@@ -260,7 +260,7 @@
     "longitudine": 15.2,
     "vecini": {
       "Nord": ["Slovenia"],
-      "Sud": ["Serbia"],
+      "Sud": ["Serbia", "Bosnia si Hertegovina"],
       "Est": ["Ungaria"],
       "Vest": []
     }
@@ -274,8 +274,8 @@
     "longitudine": 20.4633,
     "vecini": {
       "Nord": ["Ungaria"],
-      "Sud": ["Macedonia de Nord"],
-      "Est": ["Romania"],
+      "Sud": ["Macedonia de Nord", "Kosovo", "Muntenegru"],
+      "Est": ["Romania", "Bulgaria"],
       "Vest": ["Croatia", "Bosnia si Hertegovina"]
     }
   },
@@ -318,7 +318,7 @@
       "Nord": ["Serbia"],
       "Sud": ["Macedonia de Nord"],
       "Est": ["Serbia"],
-      "Vest": ["Albania"]
+      "Vest": ["Albania", "Muntenegru"]
     }
   },
   "Macedonia de Nord": {
@@ -329,7 +329,7 @@
     "latitudine": 41.6086,
     "longitudine": 21.7453,
     "vecini": {
-      "Nord": ["Kosovo"],
+      "Nord": ["Kosovo", "Serbia"],
       "Sud": ["Grecia"],
       "Est": ["Bulgaria"],
       "Vest": ["Albania"]
@@ -345,7 +345,7 @@
     "vecini": {
       "Nord": ["Bosnia si Hertegovina"],
       "Sud": ["Albania"],
-      "Est": ["Serbia"],
+      "Est": ["Serbia", "Kosovo"],
       "Vest": ["Croatia"]
     }
   },
@@ -385,8 +385,8 @@
     "latitudine": 43.9333,
     "longitudine": 12.45,
     "vecini": {
-      "Nord": [],
-      "Sud": [],
+      "Nord": ["Italia"],
+      "Sud": ["Italia"],
       "Est": ["Italia"],
       "Vest": ["Italia"]
     }
@@ -413,8 +413,8 @@
     "latitudine": 41.9029,
     "longitudine": 12.4534,
     "vecini": {
-      "Nord": [],
-      "Sud": [],
+      "Nord": ["Italia"],
+      "Sud": ["Italia"],
       "Est": ["Italia"],
       "Vest": ["Italia"]
     }
@@ -444,7 +444,7 @@
       "Nord": ["Romania"],
       "Sud": ["Grecia", "Turcia"],
       "Est": [],
-      "Vest": ["Serbia"]
+      "Vest": ["Serbia", "Macedonia de Nord"]
     }
   },
   "Turcia": {
@@ -457,7 +457,7 @@
     "vecini": {
       "Nord": ["Bulgaria", "Georgia"],
       "Sud": ["Irak", "Siria"],
-      "Est": ["Armenia", "Azerbaidjan", "Iran"],
+      "Est": ["Armenia", "Iran"],
       "Vest": ["Grecia"]
     }
   },
@@ -525,7 +525,7 @@
     "latitudine": 58.5953,
     "longitudine": 25.0136,
     "vecini": {
-      "Nord": ["Finlanda"],
+      "Nord": [],
       "Sud": ["Letonia"],
       "Est": ["Rusia"],
       "Vest": []
@@ -540,7 +540,7 @@
     "longitudine": 24.6032,
     "vecini": {
       "Nord": ["Estonia"],
-      "Sud": ["Lituania"],
+      "Sud": ["Lituania", "Belarus"],
       "Est": ["Rusia"],
       "Vest": []
     }
@@ -581,9 +581,9 @@
     "latitudine": 47.5162,
     "longitudine": 14.5501,
     "vecini": {
-      "Nord": ["Germania"],
+      "Nord": ["Germania", "Cehia"],
       "Sud": ["Italia", "Slovenia"],
-      "Est": ["Ungaria"],
+      "Est": ["Ungaria", "Slovacia"],
       "Vest": ["Elvetia", "Liechtenstein"]
     }
   },
@@ -612,7 +612,7 @@
       "Nord": ["Rusia"],
       "Sud": ["Iran"],
       "Est": [],
-      "Vest": ["Armenia", "Turcia"]
+      "Vest": ["Armenia", "Georgia"]
     }
   },
   "Republica Moldova": {
@@ -735,10 +735,10 @@
     "latitudine": 14.6349,
     "longitudine": -90.5069,
     "vecini": {
-      "Nord": ["Mexic"],
-      "Sud": ["Belize"],
-      "Est": ["Honduras"],
-      "Vest": ["El Salvador"]
+      "Nord": ["Mexic","Belize"],
+      "Sud": [],
+      "Est": ["Honduras","El Salvador"],
+      "Vest": []
     }
   },
   "Belize": {
@@ -765,7 +765,7 @@
     "vecini": {
       "Nord": [],
       "Sud": ["Nicaragua"],
-      "Est": ["Salvador"],
+      "Est": ["El Salvador"],
       "Vest": ["Guatemala"]
     }
   },
@@ -780,7 +780,7 @@
       "Nord": [],
       "Sud": ["Columbia"],
       "Est": [],
-      "Vest": []
+      "Vest": ["Costa Rica"]
     }
   },
   "Jamaica": {
@@ -835,7 +835,7 @@
     "vecini": {
       "Nord": [],
       "Sud": [],
-      "Est": ["Republica Dominicană"],
+      "Est": ["Republica Dominicana"],
       "Vest": []
     }
   },
@@ -849,7 +849,7 @@
     "vecini": {
       "Nord": [],
       "Sud": [],
-      "Est": ["Bahamas"],
+      "Est": [],
       "Vest": []
     }
   },
@@ -1001,7 +1001,7 @@
     "latitudine": -35.2809,
     "longitudine": 149.1300,
     "vecini": {
-      "Nord": ["Indonezia", "Papua Noua Guinee"],
+      "Nord": ["Indonezia"],
       "Sud": [],
       "Est": [],
       "Vest": []
@@ -1014,6 +1014,20 @@
     "suprafata": 268021,
     "latitudine": -41.2867,
     "longitudine": 174.7762,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Palau" : {
+    "continent": "Oceania",
+    "capitala" : "Ngerulmud",
+    "emisfera": "Nordica",
+    "suprafata": 46555,
+    "latitudine": 7.5150,
+    "longitudine": 134.5825,
     "vecini": {
       "Nord": [],
       "Sud": [],
@@ -1045,7 +1059,7 @@
     "vecini": {
       "Nord": [],
       "Sud": [],
-      "Est": [],
+      "Est": ["Insulele Solomon"],
       "Vest": ["Indonezia"]
     }
   },
@@ -1074,7 +1088,7 @@
       "Nord": [],
       "Sud": [],
       "Est": [],
-      "Vest": ["Noua Caledonie"]
+      "Vest": []
     }
   },
   "Kiribati": {
@@ -1094,7 +1108,7 @@
   "Micronezia": {
     "continent": "Oceania",
     "capitala": "Palikir",
-    "emisfera": "Sudica",
+    "emisfera": "Nordica",
     "suprafata": 702,
     "latitudine": 6.9127,
     "longitudine": 158.1500,
@@ -1102,13 +1116,13 @@
       "Nord": [],
       "Sud": [],
       "Est": [],
-      "Vest": ["Guam"]
+      "Vest": []
     }
   },
   "Insulele Marshall": {
     "continent": "Oceania",
     "capitala": "Majuro",
-    "emisfera": "Sudica",
+    "emisfera": "Nordica",
     "suprafata": 181,
     "latitudine": 7.1000,
     "longitudine": 171.3833,
@@ -1116,7 +1130,7 @@
       "Nord": [],
       "Sud": [],
       "Est": [],
-      "Vest": ["Micronezia"]
+      "Vest": []
     }
   },
   "Nauru": {
@@ -1198,8 +1212,8 @@
     "longitudine": -65.2628,
     "vecini": {
       "Nord": ["Brazilia"],
-      "Sud": ["Chile", "Argentina"],
-      "Est": ["Paraguay"],
+      "Sud": ["Chile", "Argentina", "Paraguay"],
+      "Est": ["Brazilia"],
       "Vest": ["Peru"]
     }
   },
@@ -1211,8 +1225,8 @@
     "latitudine": -15.7801,
     "longitudine": -47.9292,
     "vecini": {
-      "Nord": ["Venezuela", "Guyana", "Surinam"],
-      "Sud": ["Paraguay", "Argentina"],
+      "Nord": ["Venezuela", "Guyana", "Surinam", "Guyana Franceza", "Columbia"],
+      "Sud": ["Paraguay", "Argentina", "Uruguay"],
       "Est": [],
       "Vest": ["Bolivia", "Peru"]
     }
@@ -1226,8 +1240,8 @@
     "longitudine": -70.6693,
     "vecini": {
       "Nord": ["Peru"],
-      "Sud": ["Argentina"],
-      "Est": ["Bolivia"],
+      "Sud": [],
+      "Est": ["Bolivia", "Argentina"],
       "Vest": []
     }
   },
@@ -1240,7 +1254,7 @@
     "longitudine": -74.0721,
     "vecini": {
       "Nord": [],
-      "Sud": ["Peru", "Ecuador"],
+      "Sud": ["Peru", "Ecuador", "Brazilia"],
       "Est": ["Venezuela"],
       "Vest": ["Panama"]
     }
@@ -1269,8 +1283,8 @@
     "vecini": {
       "Nord": [],
       "Sud": ["Brazilia"],
-      "Est": ["Surinam"],
-      "Vest": ["Brazilia"]
+      "Est": ["Brazilia"],
+      "Vest": ["Surinam"]
     }
   },
   "Guyana": {
@@ -1295,7 +1309,7 @@
     "latitudine": -25.2637,
     "longitudine": -57.5759,
     "vecini": {
-      "Nord": ["Brazilia"],
+      "Nord": ["Brazilia", "Bolivia"],
       "Sud": ["Argentina"],
       "Est": ["Brazilia"],
       "Vest": ["Bolivia"]
@@ -1311,7 +1325,7 @@
     "vecini": {
       "Nord": ["Ecuador", "Columbia"],
       "Sud": ["Chile"],
-      "Est": ["Brazilia"],
+      "Est": ["Brazilia", "Bolivia"],
       "Vest": []
     }
   },
@@ -1351,7 +1365,7 @@
     "latitudine": 10.4922,
     "longitudine": -66.8772,
     "vecini": {
-      "Nord": [],
+      "Nord": ["Trinidad si Tobago"],
       "Sud": ["Brazilia"],
       "Est": ["Guyana"],
       "Vest": ["Columbia"]
@@ -1396,7 +1410,7 @@
       "Nord": ["Eritreea"],
       "Sud": ["Somalia"],
       "Est": [],
-      "Vest": []
+      "Vest": ["Etiopia"]
     }
   },
   "Eritreea": {
@@ -1409,7 +1423,7 @@
     "vecini": {
       "Nord": ["Sudan"],
       "Sud": ["Etiopia"],
-      "Est": [],
+      "Est": ["Djibouti"],
       "Vest": []
     }
   },
@@ -1423,7 +1437,7 @@
     "vecini": {
       "Nord": ["Eritreea"],
       "Sud": ["Kenya"],
-      "Est": ["Somalia"],
+      "Est": ["Somalia", "Djibouti"],
       "Vest": ["Sudan","Sudanul de Sud"]
     }
   },
@@ -1435,7 +1449,7 @@
     "latitudine": -1.2921,
     "longitudine": 36.8219,
     "vecini": {
-      "Nord": ["Etiopia"],
+      "Nord": ["Etiopia", "Sudanul de Sud"],
       "Sud": ["Tanzania"],
       "Est": ["Somalia"],
       "Vest": ["Uganda"]
@@ -1492,9 +1506,9 @@
     "longitudine": 32.5892,
     "vecini": {
       "Nord": ["Tanzania"],
-      "Sud": ["Africa de Sud"],
+      "Sud": ["Africa de Sud", "Eswatini"],
       "Est": [],
-      "Vest": ["Zambia", "Malawi"]
+      "Vest": ["Zambia", "Malawi", "Zimbabwe"]
     }
   },
   "Rwanda": {
@@ -1533,7 +1547,7 @@
     "latitudine": 2.0371,
     "longitudine": 45.3438,
     "vecini": {
-      "Nord": [],
+      "Nord": ["Djibouti"],
       "Sud": ["Kenya"],
       "Est": [],
       "Vest": ["Etiopia"]
@@ -1548,7 +1562,7 @@
     "longitudine": 39.2026,
     "vecini": {
       "Nord": ["Kenya", "Uganda"],
-      "Sud": ["Mozambic"],
+      "Sud": ["Mozambic", "Malawi", "Zambia"],
       "Est": [],
       "Vest": ["Rwanda", "Burundi"]
     }
@@ -1575,9 +1589,9 @@
     "latitudine": -15.3875,
     "longitudine": 28.3228,
     "vecini": {
-      "Nord": ["Tanzania"],
-      "Sud": ["Malawi"],
-      "Est": ["Mozambic"],
+      "Nord": ["Tanzania", "Republica Democrata Congo"],
+      "Sud": ["Namibia", "Botswana", "Zimbabwe"],
+      "Est": ["Mozambic","Malawi"],
       "Vest": ["Angola"]
     }
   },
@@ -1604,7 +1618,7 @@
     "longitudine": 11.5021,
     "vecini": {
       "Nord": ["Chad"],
-      "Sud": ["Guineea Ecuatoriala", "Gabon", "Republica Democrata Congo"],
+      "Sud": ["Guineea Ecuatoriala", "Gabon", "Republica Congo"],
       "Est": ["Republica Africana Centrala"],
       "Vest": ["Nigeria"]
     }
@@ -1634,7 +1648,7 @@
       "Nord": ["Libia"],
       "Sud": ["Republica Africana Centrala"],
       "Est": ["Sudan"],
-      "Vest": ["Camerun", "Niger"]
+      "Vest": ["Camerun", "Niger", "Nigeria"]
     }
   },
   "Republica Congo": {
@@ -1645,8 +1659,8 @@
     "latitudine": -4.2637,
     "longitudine": 15.2429,
     "vecini": {
-      "Nord": ["Republica Africana Centrala"],
-      "Sud": ["Angola"],
+      "Nord": ["Republica Africana Centrala", "Camerun"],
+      "Sud": ["Republica Democrata Congo"],
       "Est": ["Republica Democrata Congo"],
       "Vest": ["Gabon"]
     }
@@ -1659,8 +1673,8 @@
     "latitudine": -4.4419,
     "longitudine": 15.2663,
     "vecini": {
-      "Nord": ["Republica Africana Centrala"],
-      "Sud": ["Angola"],
+      "Nord": ["Republica Africana Centrala", "Sudanul de Sud"],
+      "Sud": ["Angola", "Zambia"],
       "Est": ["Uganda", "Rwanda", "Burundi"],
       "Vest": ["Republica Congo"]
     }
@@ -1673,9 +1687,9 @@
     "latitudine": -0.4167,
     "longitudine": 9.4670,
     "vecini": {
-      "Nord": ["Guineea Ecuatoriala"],
+      "Nord": ["Guineea Ecuatoriala", "Camerun"],
       "Sud": ["Republica Congo"],
-      "Est": ["Republica Africana Centrala"],
+      "Est": [],
       "Vest": []
     }
   },
@@ -1689,7 +1703,7 @@
     "vecini": {
       "Nord": ["Camerun"],
       "Sud": ["Gabon"],
-      "Est": ["Guineea"],
+      "Est": [],
       "Vest": []
     }
   },
@@ -1718,7 +1732,7 @@
       "Nord": [],
       "Sud": ["Niger", "Mali"],
       "Est": ["Tunisia", "Libia"],
-      "Vest": ["Maroc","Sahara","Mauritania"]
+      "Vest": ["Maroc","Mauritania"]
     }
   },
   "Insulele Canare": {
@@ -1745,7 +1759,7 @@
     "vecini": {
       "Nord": [],
       "Sud": ["Sudan"],
-      "Est": ["Israel"],
+      "Est": ["Israel", "Arabia Saudita"],
       "Vest": ["Libia"]
     }
   },
@@ -1758,9 +1772,9 @@
     "longitudine": 13.1913,
     "vecini": {
       "Nord": [],
-      "Sud": ["Chad", "Niger"],
+      "Sud": ["Chad", "Niger", "Sudan"],
       "Est": ["Egipt"],
-      "Vest": ["Tunisia"]
+      "Vest": ["Tunisia", "Algeria"]
     }
   },
   "Maroc": {
@@ -1772,7 +1786,7 @@
     "longitudine": -6.8417,
     "vecini": {
       "Nord": [],
-      "Sud": ["Sahara"],
+      "Sud": ["Mauritania"],
       "Est": ["Algeria"],
       "Vest": []
     }
@@ -1785,24 +1799,10 @@
     "latitudine": 15.5000,
     "longitudine": 32.5599,
     "vecini": {
-      "Nord": ["Egipt"],
-      "Sud": ["Sudanul de Sud"],
+      "Nord": ["Egipt", "Libia"],
+      "Sud": ["Sudanul de Sud", "Republica Africana Centrala"],
       "Est": ["Eritreea", "Etiopia"],
       "Vest": ["Chad"]
-    }
-  },
-  "Sahara": {
-    "continent": "Africa",
-    "capitala": "El Aaiun",
-    "emisfera": "Nordica",
-    "suprafata": 266000,
-    "latitudine": 24.7150,
-    "longitudine": -13.0101,
-    "vecini": {
-      "Nord": [],
-      "Sud": [],
-      "Est": ["Algeria"],
-      "Vest": ["Maroc"]
     }
   },
   "Sudanul de Sud": {
@@ -1814,8 +1814,8 @@
     "longitudine": 31.5820,
     "vecini": {
       "Nord": ["Sudan"],
-      "Sud": ["Uganda"],
-      "Est": ["Kenya", "Etiopia"],
+      "Sud": ["Uganda", "Kenya", "Republica Democrata Congo"],
+      "Est": ["Etiopia"],
       "Vest": ["Republica Africana Centrala"]
     }
   },
@@ -1899,7 +1899,7 @@
     "vecini": {
       "Nord": ["Angola"],
       "Sud": ["Africa de Sud"],
-      "Est": ["Botswana"],
+      "Est": ["Botswana", "Zimbabwe", "Zambia"],
       "Vest": []
     }
   },
@@ -1914,7 +1914,7 @@
       "Nord": ["Zambia"],
       "Sud": ["Africa de Sud"],
       "Est": ["Mozambic"],
-      "Vest": ["Botswana"]
+      "Vest": ["Botswana", "Botswana"]
     }
   },
   "Benin": {
@@ -1925,7 +1925,7 @@
     "latitudine": 6.5026,
     "longitudine": 2.6281,
     "vecini": {
-      "Nord": ["Niger"],
+      "Nord": ["Niger", "Burkina Faso"],
       "Sud": [],
       "Est": ["Nigeria"],
       "Vest": ["Togo"]
@@ -1940,7 +1940,7 @@
     "longitudine": -1.5197,
     "vecini": {
       "Nord": ["Mali"],
-      "Sud": ["Ghana", "Togo"],
+      "Sud": ["Ghana", "Togo", "Benin"],
       "Est": ["Niger"],
       "Vest": ["Cote d'Ivoire"]
     }
@@ -1970,7 +1970,7 @@
       "Nord": ["Burkina Faso", "Mali"],
       "Sud": [],
       "Est": ["Ghana"],
-      "Vest": ["Liberia"]
+      "Vest": ["Liberia", "Guineea"]
     }
   },
   "Gambia": {
@@ -2009,8 +2009,8 @@
     "latitudine": 9.5091,
     "longitudine": -13.7122,
     "vecini": {
-      "Nord": ["Guineea Bissau"],
-      "Sud": ["Liberia", "Cote d'Ivoire"],
+      "Nord": ["Guineea Bissau", "Senegal"],
+      "Sud": ["Liberia", "Cote d'Ivoire", "Sierra Leone"],
       "Est": ["Mali"],
       "Vest": []
     }
@@ -2024,7 +2024,7 @@
     "longitudine": -15.6170,
     "vecini": {
       "Nord": ["Guineea"],
-      "Sud": ["Liberia"],
+      "Sud": [],
       "Est": ["Senegal"],
       "Vest": []
     }
@@ -2037,9 +2037,9 @@
     "latitudine": 6.4281,
     "longitudine": -9.4295,
     "vecini": {
-      "Nord": ["Guineea"],
+      "Nord": ["Guineea", "Sierra Leone"],
       "Sud": ["Cote d'Ivoire"],
-      "Est": ["Guineea Bissau"],
+      "Est": [],
       "Vest": []
     }
   },
@@ -2054,7 +2054,7 @@
       "Nord": ["Algeria"],
       "Sud": ["Guineea", "Burkina Faso", "Cote d'Ivoire"],
       "Est": ["Niger"],
-      "Vest": ["Mauritania", "Gambia", "Senegal"]
+      "Vest": ["Mauritania", "Senegal"]
     }
   },
   "Mauritania": {
@@ -2065,10 +2065,10 @@
     "latitudine": 18.0735,
     "longitudine": -15.9800,
     "vecini": {
-      "Nord": ["Sahara"],
-      "Sud": ["Mali"],
-      "Est": ["Niger"],
-      "Vest": ["Senegal"]
+      "Nord": ["Maroc"],
+      "Sud": ["Mali","Senegal"],
+      "Est": ["Algeria"],
+      "Vest": []
     }
   },
   "Niger": {
@@ -2079,8 +2079,8 @@
     "latitudine": 13.5120,
     "longitudine": 2.1128,
     "vecini": {
-      "Nord": ["Libia"],
-      "Sud": ["Nigeria"],
+      "Nord": ["Libia", "Algeria"],
+      "Sud": ["Nigeria", "Benin"],
       "Est": ["Chad"],
       "Vest": ["Burkina Faso", "Mali"]
     }
@@ -2094,8 +2094,8 @@
     "longitudine": 8.6753,
     "vecini": {
       "Nord": ["Niger"],
-      "Sud": ["Benin", "Camerun"],
-      "Est": ["Chad"],
+      "Sud": [],
+      "Est": ["Camerun","Chad"],
       "Vest": ["Benin"]
     }
   },
@@ -2107,8 +2107,8 @@
     "latitudine": 14.6928,
     "longitudine": -17.4467,
     "vecini": {
-      "Nord": [],
-      "Sud": ["Guineea"],
+      "Nord": ["Mauritania"],
+      "Sud": ["Guineea", "Guineea Bissau"],
       "Est": ["Mali"],
       "Vest": ["Gambia"]
     }
