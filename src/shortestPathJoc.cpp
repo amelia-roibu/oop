@@ -47,7 +47,7 @@ void ShortestPathJoc::porneste() {
         continent = selectareContinent();
 
         if (continent.empty()) {
-            std::vector<std::string> continenteValide = {"Europa", /*"Asia",*/ "America de Sud", "Africa"};
+            std::vector<std::string> continenteValide = {"Europa", "Asia", "America de Sud", "Africa"};
             continent = alegeRandom(continenteValide);
         }
         do {
@@ -94,8 +94,11 @@ void ShortestPathJoc::porneste() {
 
 void ShortestPathJoc::renunta() {
     std::cout << "Ai renuntat. Drumul optim era: ";
-    for (const auto& tara : drumOptim)
-        std::cout << tara.getNume() << " -> ";
+    for (std::size_t i = 0; i < drumOptim.size(); ++i) {
+        std::cout << drumOptim[i].getNume();
+        if (i != drumOptim.size() - 1)
+            std::cout << " -> ";
+    }
     std::cout << '\n';
     std::cout << "Scor: " << scorLocal << std::endl;
     drumJucator.clear();
@@ -113,8 +116,11 @@ void ShortestPathJoc::afisareDateRaspuns() {
     drumJucator.clear();
 
     std::cout << "Drumul optim: ";
-    for (const auto& tara : drumOptim)
-        std::cout << tara.getNume() << " -> ";
+    for (std::size_t i = 0; i < drumOptim.size(); ++i) {
+        std::cout << drumOptim[i].getNume();
+        if (i != drumOptim.size() - 1)
+            std::cout << " -> ";
+    }
     std::cout << '\n';
     drumOptim.clear();
 }

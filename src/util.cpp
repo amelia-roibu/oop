@@ -45,3 +45,9 @@ std::vector<Tari> gasesteDrumBFS(const std::string& start, const std::string& fi
     std::ranges::reverse(drum.begin(), drum.end());
     return drum;
 }
+
+std::string toLower(const std::string &text) {
+    std::string rezultat = text;
+    std::ranges::transform(rezultat.begin(), rezultat.end(), rezultat.begin(), [](unsigned char c) { return std::tolower(c); });
+    return rezultat;
+}

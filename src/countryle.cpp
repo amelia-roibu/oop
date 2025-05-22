@@ -60,27 +60,28 @@ void CountryleJoc::porneste() {
         }
 
         if (taraInput == taraTinta) {
-            std::cout << "Felicitari!! \nAi ghicit tara: " << taraTinta << '\n';
+            std::cout << "Felicitari!! \nAi ghicit tara: " << taraTinta.getNume() << '\n';
             afisareFinala();
             break;
         }
 
         scorLocal -= 5;
-        bonusVecin(taraInput.getNume());
+        bonusVecin(toLower(taraInput.getNume()));
 
         if (scorLocal <= 0) {
             std::cout << "Ai ramas fara puncte!\n";
-            std::cout << "Tara corecta era: " << taraTinta << '\n';
+            std::cout << "Tara corecta era: " << taraTinta.getNume() << '\n';
             afisareFinala();
             break;
         }
         afisareDateRaspuns();
     }
     stopTime();
+    std::cout << "Fun facts despre " << taraTinta.getNume() << '\n' << taraTinta;
 }
 
 void CountryleJoc::renunta() {
-    std::cout << "Ai renuntat. Raspunsul era: \n" << taraTinta << std::endl;
+    std::cout << "Ai renuntat. Raspunsul era: " << taraTinta.getNume() << std::endl;
     std::cout << "Scor: " << scorLocal << "\n";
     jocInDesfasurare = false;
 }

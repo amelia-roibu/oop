@@ -1,6 +1,6 @@
 #include "../include/tari.h"
 #include "../include/tariGlobal.h"
-#include <iostream>
+#include "../include/util.h"
 
 // constructori
 
@@ -52,24 +52,15 @@ double Tari::getSuprafata() const {
     return this->suprafata;
 }
 
-// double Tari::getLatitudine() const {
-//     return this->latitudine;
-// }
-//
-// double Tari::getLongitudine() const {
-//     return this->longitudine;
-// }
-//
 std::vector<std::string> Tari::getVeciniPeDirectie(const std::string& directie) const {
 
   // try and catch directie invalida
 
-  if (directie != ""){
+  if (!directie.empty()){
     auto it = veciniCardinal.find(directie);
     if (it != veciniCardinal.end())
         return it->second;
-    else
-        throw std::invalid_argument("Directie invalida");
+    throw std::invalid_argument("Directie invalida");
   }
 
   std::vector<std::string> totiVecinii;
@@ -83,7 +74,7 @@ std::vector<std::string> Tari::getVeciniPeDirectie(const std::string& directie) 
 bool Tari::esteVecinCu(const std::string& numeTara) const{
     for (const auto& [dir, vecini] : veciniCardinal)
       for (const auto& vecin : vecini)
-        if (vecin == numeTara)
+        if (toLower(vecin) == toLower(numeTara))
           return true;
     return false;
 }
@@ -124,15 +115,32 @@ std::istream& operator>>(std::istream& in, Tari& tara) {
 }
 
 std::ostream& operator<<(std::ostream& out, const Tari& tara) {
-    out << "Tara: " << tara.nume << "\n";
     out << "Capitala: " << tara.capitala << "\n";
     out << "Continent: " << tara.continent << "\n";
     out << "Emisfera: " << tara.emisfera << "\n";
+    out << "Suprafata: " << tara.suprafata << "\n";
+
+    std::vector<std::string> directii = {"Nord", "Sud", "Est", "Vest"};
+    bool areVecini = false;
+
+    out << "Vecini: \n";
+    for (const auto& directie : directii) {
+        auto vecini = tara.getVeciniPeDirectie(directie);
+        if (!vecini.empty()) {
+            areVecini = true;
+            out << "  " << directie << ": ";
+            for (std::size_t i = 0; i < vecini.size(); ++i)
+                out << vecini[i] << "; ";
+            out << "\n";
+        }
+    }
+    if (!areVecini)
+        out << "  Este o tara insulara (nu are vecini).\n";
     return out;
 }
 
 bool Tari::operator== (const Tari& other) const {
-  return this->nume == other.nume;
+  return toLower(this->nume) == toLower(other.nume);
 }
 
 bool Tari::operator!= (const Tari& other) const {

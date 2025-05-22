@@ -2140,5 +2140,635 @@
       "Est": ["Benin"],
       "Vest": ["Ghana"]
     }
+  },
+  "Rusia": {
+    "continent": "Asia",
+    "capitala": "Moscova",
+    "emisfera": "Nordica",
+    "suprafata": 17098242,
+    "latitudine": 61.5240,
+    "longitudine": 105.3188,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Georgia","Azerbaidjan","Kazahstan", "Mongolia", "China", "Coreea de Nord"],
+      "Est": ["Statele Unite ale Americii"],
+      "Vest": ["Norvegia", "Finlanda", "Estonia", "Letonia", "Lituania", "Polonia", "Belarus", "Ucraina", "Suedia"]
+    }
+  },
+  "Kazahstan": {
+    "continent": "Asia",
+    "capitala": "Astana",
+    "emisfera": "Nordica",
+    "suprafata": 2724900,
+    "latitudine": 48.0196,
+    "longitudine": 66.9237,
+    "vecini": {
+      "Nord": ["Rusia"],
+      "Sud": ["Turkmenistan","Uzbekistan", "Kirgizstan", "Tadjikistan"],
+      "Est": ["China"],
+      "Vest": ["Rusia"]
+    }
+  },
+  "Kirgizstan": {
+    "continent": "Asia",
+    "capitala": "Bishkek",
+    "emisfera": "Nordica",
+    "suprafata": 198500,
+    "latitudine": 41.2044,
+    "longitudine": 74.7661,
+    "vecini": {
+      "Nord": ["Kazahstan"],
+      "Sud": ["Uzbekistan", "Tadjikistan"],
+      "Est": ["China"],
+      "Vest": []
+    }
+  },
+  "Tadjikistan": {
+    "continent": "Asia",
+    "capitala": "Dushanbe",
+    "emisfera": "Nordica",
+    "suprafata": 143100,
+    "latitudine": 38.8610,
+    "longitudine": 71.2761,
+    "vecini": {
+      "Nord": ["Kirgizstan"],
+      "Sud": ["Afganistan"],
+      "Est": ["China"],
+      "Vest": ["Uzbekistan"]
+    }
+  },
+  "Uzbekistan": {
+    "continent": "Asia",
+    "capitala": "Tashkent",
+    "emisfera": "Nordica",
+    "suprafata": 447400,
+    "latitudine": 41.3775,
+    "longitudine": 64.5853,
+    "vecini": {
+      "Nord": ["Kazahstan"],
+      "Sud": ["Tadjikistan", "Kirgizstan", "Afganistan"],
+      "Est": ["Kirgizstan"],
+      "Vest": ["Turkmenistan"]
+    }
+  },
+  "Turkmenistan": {
+    "continent": "Asia",
+    "capitala": "Ashgabat",
+    "emisfera": "Nordica",
+    "suprafata": 491200,
+    "latitudine": 39.0432,
+    "longitudine": 59.5563,
+    "vecini": {
+      "Nord": ["Kazahstan"],
+      "Sud": ["Iran", "Afganistan"],
+      "Est": ["Uzbekistan"],
+      "Vest": []
+    }
+  },
+  "Afganistan": {
+    "continent": "Asia",
+    "capitala": "Kabul",
+    "emisfera": "Nordica",
+    "suprafata": 652230,
+    "latitudine": 33.9391,
+    "longitudine": 67.7099,
+    "vecini": {
+      "Nord": ["Tadjikistan", "Uzbekistan", "Turkmenistan"],
+      "Sud": ["Iran", "Pakistan"],
+      "Est": ["China"],
+      "Vest": []
+    }
+  },
+  "Iran": {
+    "continent": "Asia",
+    "capitala": "Teheran",
+    "emisfera": "Nordica",
+    "suprafata": 1648195,
+    "latitudine": 32.4279,
+    "longitudine": 53.6880,
+    "vecini": {
+      "Nord": ["Azerbaidjan", "Armenia", "Turkmenistan"],
+      "Sud": ["Irak", "Arabia Saudita"],
+      "Est": ["Afganistan", "Pakistan"],
+      "Vest": ["Turcia"]
+    }
+  },
+  "Irak": {
+    "continent": "Asia",
+    "capitala": "Bagdad",
+    "emisfera": "Nordica",
+    "suprafata": 438317,
+    "latitudine": 33.2232,
+    "longitudine": 43.6793,
+    "vecini": {
+      "Nord": ["Turcia", "Iran"],
+      "Sud": ["Kuweit", "Arabia Saudita"],
+      "Est": ["Iran"],
+      "Vest": ["Siria", "Iordania"]
+    }
+  },
+  "Kuweit": {
+    "continent": "Asia",
+    "capitala": "Kuweit City",
+    "emisfera": "Nordica",
+    "suprafata": 17818,
+    "latitudine": 29.3759,
+    "longitudine": 47.9774,
+    "vecini": {
+      "Nord": ["Irak"],
+      "Sud": ["Arabia Saudita"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Qatar": {
+    "continent": "Asia",
+    "capitala": "Doha",
+    "emisfera": "Nordica",
+    "suprafata": 11586,
+    "latitudine": 25.276987,
+    "longitudine": 51.520008,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Arabia Saudita"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Arabia Saudita": {
+    "continent": "Asia",
+    "capitala": "Riad",
+    "emisfera": "Nordica",
+    "suprafata": 2149690,
+    "latitudine": 23.8859,
+    "longitudine": 45.0792,
+    "vecini": {
+      "Nord": ["Iordania", "Irak"],
+      "Sud": ["Yemen", "Oman"],
+      "Est": ["Kuweit", "Qatar", "Emiratele Arabe Unite"],
+      "Vest": ["Egipt"]
+    }
+  },
+  "Emiratele Arabe Unite": {
+    "continent": "Asia",
+    "capitala": "Abu Dhabi",
+    "emisfera": "Nordica",
+    "suprafata": 83600,
+    "latitudine": 23.4241,
+    "longitudine": 53.8478,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Arabia Saudita"],
+      "Est": ["Oman"],
+      "Vest": []
+    }
+  },
+  "Oman": {
+    "continent": "Asia",
+    "capitala": "Muscat",
+    "emisfera": "Nordica",
+    "suprafata": 309500,
+    "latitudine": 21.5129,
+    "longitudine": 55.9233,
+    "vecini": {
+      "Nord": ["Emiratele Arabe Unite","Arabia Saudita"],
+      "Sud": [],
+      "Est": [],
+      "Vest": ["Yemen"]
+    }
+  },
+  "Yemen": {
+    "continent": "Asia",
+    "capitala": "Sana'a",
+    "emisfera": "Nordica",
+    "suprafata": 527968,
+    "latitudine": 15.5524,
+    "longitudine": 48.5164,
+    "vecini": {
+      "Nord": ["Arabia Saudita"],
+      "Sud": [],
+      "Est": ["Oman"],
+      "Vest": []
+    }
+  },
+  "Siria": {
+    "continent": "Asia",
+    "capitala": "Damasc",
+    "emisfera": "Nordica",
+    "suprafata": 185180,
+    "latitudine": 34.8021,
+    "longitudine": 38.9968,
+    "vecini": {
+      "Nord": ["Turcia"],
+      "Sud": ["Iordania", "Irak"],
+      "Est": ["Irak"],
+      "Vest": ["Liban", "Israel"]
+    }
+  },
+  "Iordania": {
+    "continent": "Asia",
+    "capitala": "Amman",
+    "emisfera": "Nordica",
+    "suprafata": 89342,
+    "latitudine": 30.5852,
+    "longitudine": 36.2384,
+    "vecini": {
+      "Nord": ["Siria"],
+      "Sud": ["Arabia Saudita"],
+      "Est": ["Irak"],
+      "Vest": ["Israel", "Palestina"]
+    }
+  },
+  "Liban": {
+    "continent": "Asia",
+    "capitala": "Beirut",
+    "emisfera": "Nordica",
+    "suprafata": 10452,
+    "latitudine": 33.8547,
+    "longitudine": 35.8623,
+    "vecini": {
+      "Nord": ["Siria"],
+      "Sud": ["Israel"],
+      "Est": ["Siria"],
+      "Vest": []
+    }
+  },
+  "Pakistan": {
+    "continent": "Asia",
+    "capitala": "Islamabad",
+    "emisfera": "Nordica",
+    "suprafata": 881913,
+    "latitudine": 30.3753,
+    "longitudine": 69.3451,
+    "vecini": {
+      "Nord": ["China", "Tadjikistan"],
+      "Sud": ["Afganistan", "Iran"],
+      "Est": ["India"],
+      "Vest": []
+    }
+  },
+  "India": {
+    "continent": "Asia",
+    "capitala": "New Delhi",
+    "emisfera": "Nordica",
+    "suprafata": 3287263,
+    "latitudine": 20.5937,
+    "longitudine": 78.9629,
+    "vecini": {
+      "Nord": ["China","Nepal", "Bhutan"],
+      "Sud": [],
+      "Est": ["Bangladesh", "Myanmar"],
+      "Vest": ["Pakistan"]
+    }
+  },
+  "Nepal": {
+    "continent": "Asia",
+    "capitala": "Kathmandu",
+    "emisfera": "Nordica",
+    "suprafata": 147516,
+    "latitudine": 28.3949,
+    "longitudine": 84.1240,
+    "vecini": {
+      "Nord": ["China"],
+      "Sud": ["India"],
+      "Est": ["India"],
+      "Vest": ["India"]
+    }
+  },
+  "Bhutan": {
+    "continent": "Asia",
+    "capitala": "Thimphu",
+    "emisfera": "Nordica",
+    "suprafata": 38394,
+    "latitudine": 27.5142,
+    "longitudine": 90.4336,
+    "vecini": {
+      "Nord": ["China"],
+      "Sud": ["India"],
+      "Est": ["India"],
+      "Vest": []
+    }
+  },
+  "Bangladesh": {
+    "continent": "Asia",
+    "capitala": "Dhaka",
+    "emisfera": "Nordica",
+    "suprafata": 147570,
+    "latitudine": 23.685,
+    "longitudine": 90.3563,
+    "vecini": {
+      "Nord": ["India"],
+      "Sud": ["Myanmar"],
+      "Est": ["India"],
+      "Vest": ["India"]
+    }
+  },
+  "Myanmar": {
+    "continent": "Asia",
+    "capitala": "Naypyidaw",
+    "emisfera": "Nordica",
+    "suprafata": 676578,
+    "latitudine": 21.9162,
+    "longitudine": 95.9560,
+    "vecini": {
+      "Nord": ["China", "India"],
+      "Sud": ["Thailanda", "Laos"],
+      "Est": ["Bangladesh"],
+      "Vest": []
+    }
+  },
+  "Thailanda": {
+    "continent": "Asia",
+    "capitala": "Bangkok",
+    "emisfera": "Nordica",
+    "suprafata": 513120,
+    "latitudine": 15.8700,
+    "longitudine": 100.9925,
+    "vecini": {
+      "Nord": ["Myanmar", "Laos"],
+      "Sud": ["Malaesia"],
+      "Est": ["Cambodgia"],
+      "Vest": ["Myanmar"]
+    }
+  },
+  "Laos": {
+    "continent": "Asia",
+    "capitala": "Vientiane",
+    "emisfera": "Nordica",
+    "suprafata": 236800,
+    "latitudine": 19.8563,
+    "longitudine": 102.4955,
+    "vecini": {
+      "Nord": ["China"],
+      "Sud": ["Cambodgia"],
+      "Est": ["Vietnam"],
+      "Vest": ["Myanmar", "Thailanda"]
+    }
+  },
+  "Cambodgia": {
+    "continent": "Asia",
+    "capitala": "Phnom Penh",
+    "emisfera": "Nordica",
+    "suprafata": 181035,
+    "latitudine": 12.5657,
+    "longitudine": 104.9910,
+    "vecini": {
+      "Nord": ["Thailanda", "Laos"],
+      "Sud": ["Vietnam"],
+      "Est": ["Vietnam"],
+      "Vest": []
+    }
+  },
+  "Vietnam": {
+    "continent": "Asia",
+    "capitala": "Hanoi",
+    "emisfera": "Nordica",
+    "suprafata": 331212,
+    "latitudine": 14.0583,
+    "longitudine": 108.2772,
+    "vecini": {
+      "Nord": ["China"],
+      "Sud": ["Cambodgia", "Laos"],
+      "Est": [],
+      "Vest": ["Laos"]
+    }
+  },
+  "Brunei": {
+    "continent": "Asia",
+    "capitala": "Bandar Seri Begawan",
+    "emisfera": "Nordica",
+    "suprafata": 5765,
+    "latitudine": 4.5353,
+    "longitudine": 114.7277,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Indonezia"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Indonezia": {
+    "continent": "Asia",
+    "capitala": "Jakarta",
+    "emisfera": "Sudica",
+    "suprafata": 1904569,
+    "latitudine": -0.7893,
+    "longitudine": 113.9213,
+    "vecini": {
+      "Nord": ["Singapore","Malaesia", "Filipine"],
+      "Sud": ["Timorul de Est", "Australia"],
+      "Est": ["Papua Noua Guinee"],
+      "Vest": ["Malaesia"]
+    }
+  },
+  "Timorul de Est": {
+    "continent": "Asia",
+    "capitala": "Dili",
+    "emisfera": "Sudica",
+    "suprafata": 14874,
+    "latitudine": -8.8742,
+    "longitudine": 125.7275,
+    "vecini": {
+      "Nord": ["Indonezia"],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Malaesia": {
+    "continent": "Asia",
+    "capitala": "Kuala Lumpur",
+    "emisfera": "Nordica",
+    "suprafata": 330803,
+    "latitudine": 4.2105,
+    "longitudine": 101.9758,
+    "vecini": {
+      "Nord": ["Thailanda"],
+      "Sud": ["Indonezia"],
+      "Est": ["Singapore"],
+      "Vest": []
+    }
+  },
+  "Singapore": {
+    "continent": "Asia",
+    "capitala": "Singapore",
+    "emisfera": "Nordica",
+    "suprafata": 728.6,
+    "latitudine": 1.3521,
+    "longitudine": 103.8198,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Indonezia"],
+      "Est": [],
+      "Vest": ["Malaesia"]
+    }
+  },
+  "Coreea de Nord": {
+    "continent": "Asia",
+    "capitala": "Phenian",
+    "emisfera": "Nordica",
+    "suprafata": 120540,
+    "latitudine": 40.3399,
+    "longitudine": 127.5101,
+    "vecini": {
+      "Nord": ["Rusia"],
+      "Sud": ["Coreea de Sud"],
+      "Est": [],
+      "Vest": ["China"]
+    }
+  },
+  "Coreea de Sud": {
+    "continent": "Asia",
+    "capitala": "Seul",
+    "emisfera": "Nordica",
+    "suprafata": 100210,
+    "latitudine": 35.9078,
+    "longitudine": 127.7669,
+    "vecini": {
+      "Nord": ["Coreea de Nord"],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Mongolia": {
+    "continent": "Asia",
+    "capitala": "Ulaanbaatar",
+    "emisfera": "Nordica",
+    "suprafata": 1564116,
+    "latitudine": 46.8625,
+    "longitudine": 103.8467,
+    "vecini": {
+      "Nord": ["Rusia"],
+      "Sud": ["China"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Japonia": {
+    "continent": "Asia",
+    "capitala": "Tokyo",
+    "emisfera": "Nordica",
+    "suprafata": 377975,
+    "latitudine": 36.2048,
+    "longitudine": 138.2529,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Taiwan": {
+    "continent": "Asia",
+    "capitala": "Taipei",
+    "emisfera": "Nordica",
+    "suprafata": 36193,
+    "latitudine": 23.6978,
+    "longitudine": 120.9605,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Filipine": {
+    "continent": "Asia",
+    "capitala": "Manila",
+    "emisfera": "Nordica",
+    "suprafata": 300000,
+    "latitudine": 12.8797,
+    "longitudine": 121.7740,
+    "vecini": {
+      "Nord": [],
+      "Sud": ["Indonezia"],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Sri Lanka": {
+    "continent": "Asia",
+    "capitala": "Sri Jayawardenepura Kotte",
+    "emisfera": "Sudica",
+    "suprafata": 65610,
+    "latitudine": 7.8731,
+    "longitudine": 80.7718,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "China": {
+    "continent": "Asia",
+    "capitala": "Beijing",
+    "emisfera": "Nordica",
+    "suprafata": 9596961,
+    "latitudine": 35.8617,
+    "longitudine": 104.1954,
+    "vecini": {
+      "Nord": ["Mongolia", "Rusia"],
+      "Sud": ["Nepal", "India", "Bhutan", "Myanmar", "Laos", "Vietnam"],
+      "Est": ["Coreea de Nord"],
+      "Vest": ["Tadjikistan", "Kirgizstan", "Kazahstan", "Pakistan"]
+    }
+  },
+  "Bahrain": {
+    "continent": "Asia",
+    "capitala": "Manama",
+    "emisfera": "Nordica",
+    "suprafata": 765,
+    "latitudine": 26.0667,
+    "longitudine": 50.5577,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Israel": {
+    "continent": "Asia",
+    "capitala": "Tel Aviv",
+    "emisfera": "Nordica",
+    "suprafata": 20770,
+    "latitudine": 31.0461,
+    "longitudine": 34.8516,
+    "vecini": {
+      "Nord": ["Liban", "Palestina"],
+      "Sud": ["Egipt"],
+      "Est": ["Siria", "Iordania"],
+      "Vest": []
+    }
+  },
+  "Maldive": {
+    "continent": "Asia",
+    "capitala": "Male",
+    "emisfera": "Sudica",
+    "suprafata": 298,
+    "latitudine": -3.2028,
+    "longitudine": 73.2207,
+    "vecini": {
+      "Nord": [],
+      "Sud": [],
+      "Est": [],
+      "Vest": []
+    }
+  },
+  "Palestina": {
+    "continent": "Asia",
+    "capitala": "Ramallah",
+    "emisfera": "Nordica",
+    "suprafata": 6220,
+    "latitudine": 31.9522,
+    "longitudine": 35.2332,
+    "vecini": {
+      "Nord": ["Israel"],
+      "Sud": [],
+      "Est": ["Iordania"],
+      "Vest": []
+    }
   }
 }

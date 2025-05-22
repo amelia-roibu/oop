@@ -1,7 +1,6 @@
 #include <iostream>
 #include "../include/jocViteza.h"
-
-#include <util.h>
+#include <../include/util.h>
 
 JocViteza::JocViteza() : scorLocal(0), durataTimpSecunde(0), continent("") {};
 
@@ -91,7 +90,7 @@ void JocViteza::porneste() {
     while (!timpExpirat() && jocInDesfasurare)
         gestioneazaIntrebare();
 
-    if (timpExpirat()) std::cout << "Timpul a expirat!\n";
+    if (jocInDesfasurare && timpExpirat()) std::cout << "Timpul a expirat!\n";
     stopTime();
     afisareDateRaspuns();
 }
@@ -106,10 +105,11 @@ void JocViteza::gestioneazaIntrebare() {
     if (input == "renunt") {
         raspunsuriPierdute.push_back(raspunsCorect);
         renunta();
+        jocInDesfasurare = false;
         return;
     }
     if (input == "pas") {
-        scorLocal = std::max(0, scorLocal - 10);
+        scorLocal = scorLocal - 50;
         raspunsuriPierdute.push_back(raspunsCorect);
         return;
     }
@@ -118,7 +118,7 @@ void JocViteza::gestioneazaIntrebare() {
         std::cout << "Gresit! Incearca din nou sau scrie 'pas' daca vrei sa sari! (te va costa din puncte)\n";
         std::getline(std::cin, input);
         if (input == "pas") {
-            scorLocal = std::max(0, scorLocal - 10);
+            scorLocal = scorLocal - 20;
             raspunsuriPierdute.push_back(raspunsCorect);
             return;
         }

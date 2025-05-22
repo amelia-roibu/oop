@@ -40,15 +40,17 @@ TariGlobal& TariGlobal::getInstance() {
 }
 
 const Tari& TariGlobal::getTara(const std::string& nume) const {
-    auto it = tari.find(nume);
-    if (it == tari.end())
-        throw std::invalid_argument("Tara nu a fost gasita: " + nume);
-    return it->second;
+    std::string numeLower = toLower(nume);
+    for (const auto& [numeTara, dateTara] : tari) {
+        if (toLower(numeTara) == numeLower)
+            return dateTara;
+    }
+    throw std::invalid_argument("Tara nu a fost gasita: " + nume);
 }
 
 const Tari& TariGlobal::getTaraByCapitala(const std::string& capitala) const {
     for (const auto& [_, tara] : tari)
-        if (tara.getCapitala() == capitala)
+        if (toLower(tara.getCapitala()) == toLower(capitala))
             return tara;
     throw std::invalid_argument("Nu exista nicio tara cu aceasta capitala: " + capitala);
 }
@@ -56,7 +58,7 @@ const Tari& TariGlobal::getTaraByCapitala(const std::string& capitala) const {
 std::vector<Tari> TariGlobal::getTariDinContinent(const std::string& continent) const{
     std::vector<Tari> rezultat;
     for (const auto& [_, tara] : tari)
-        if (tara.getContinent() == continent)
+        if (toLower(tara.getContinent()) == toLower(continent))
             rezultat.push_back(tara);
     return rezultat;
 }
@@ -73,5 +75,10 @@ Tari TariGlobal::getTariRandom(const std::string& continent) const {
 }
 
 bool TariGlobal::existaTara(const std::string& nume) const {
-    return tari.contains(nume);
+    std::string numeLower = toLower(nume);
+    for (const auto& [cheie, _] : tari) {
+        if (toLower(cheie) == numeLower)
+            return true;
+    }
+    return false;
 }

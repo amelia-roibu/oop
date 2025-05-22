@@ -1,6 +1,9 @@
 #include <algorithm>
 #include <iostream>
 #include "../include/guessCapitalJoc.h"
+
+#include <util.h>
+
 #include "../include/tariGlobal.h"
 #include "../include/tari.h"
 
@@ -28,11 +31,7 @@ void GuessCapitalJoc::formateazaIntrebare(const std::string &prompt) const {
 }
 
 bool GuessCapitalJoc::verificaRaspuns(const std::string &input, const std::string &corect) const {
-    // auto& bazaDate = TariGlobal::getInstance();
-    // auto tara = bazaDate.getTaraByCapitala(input);
-    // if (bazaDate.existaTara(tara.getNume())) return bazaDate.getTaraByCapitala(corect) == tara;
-    // return false;
-    return input == corect;
+    return toLower(input) == toLower(corect);
 }
 
 void GuessCapitalJoc::afiseazaNumarGuessCapital() {

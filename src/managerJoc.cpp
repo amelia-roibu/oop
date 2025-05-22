@@ -4,16 +4,17 @@
 #include "../include/guessCapitalJoc.h"
 #include "../include/guessCountryJoc.h"
 #include "../include/shortestPathJoc.h"
+#include "../include/jocFactory.h"
 
 ManagerJoc::ManagerJoc() : bazaDate(TariGlobal::getInstance()), scorTotal(0) {
-  jocuriDisponibile.push_back(new CountryleJoc());
-  jocuriDisponibile.push_back(new GuessCapitalJoc());
-  jocuriDisponibile.push_back(new GuessCountryJoc());
-  jocuriDisponibile.push_back(new ShortestPathJoc());
+  for (int i = 0; i < 5; i++) {
+    Joc* joc = JocFactory::creeazaJoc(i);
+    if (joc) jocuriDisponibile.push_back(joc);
+  }
 }
 
 void ManagerJoc::porneste() {
-  std::cout << "Bine ai venit la joculetele mele de geografie!\n";
+  std::cout << "\nBine ai venit la joculetele mele de geografie!\n";
   alegeJoc();
 }
 
@@ -41,6 +42,10 @@ void ManagerJoc::alegeJoc() {
         scorTotal += joc->getScor();
         std::cout << "Vrei sa mai joci o data " << joc->getNume() << "? [y/n] \n";
         std::cin >> raspuns;
+        while (raspuns != 'y' && raspuns != 'n') {
+          std::cout << "Optiune invalida. Incearca din nou.\n";
+          std::cin >> raspuns;
+        }
       }
     }
     else
