@@ -4,6 +4,7 @@
 #include "../include/guessCountryJoc.h"
 #include "../include/countryle.h"
 #include "../include/shortestPathJoc.h"
+#include "../include/infoPointJoc.h"
 
 std::shared_ptr<Joc> JocFactory::creeazaJoc(int optiune) {
     switch (optiune) {
@@ -11,6 +12,7 @@ std::shared_ptr<Joc> JocFactory::creeazaJoc(int optiune) {
         case 2: return std::make_shared<GuessCapitalJoc>();
         case 3: return std::make_shared<GuessCountryJoc>();
         case 4: return std::make_shared<ShortestPathJoc>();
-        default: throw ExceptieJocInvalid("Nu exista un joc cu acest index");
+        case 5: return std::make_shared<InfoPointJoc>();
+        default: throw ExceptieJocInvalid("Nu exista un joc cu acest index. ");
     }
 }

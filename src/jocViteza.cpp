@@ -104,7 +104,6 @@ void JocViteza::gestioneazaIntrebare() {
 
     std::string input;
 
-    if (timpExpirat()) throw ExceptieTimeoutUtilizator();
     afisareTimpRamas();
     std::getline(std::cin, input);
     if (timpExpirat()) throw ExceptieTimeoutUtilizator();

@@ -118,7 +118,7 @@ std::ostream& operator<<(std::ostream& out, const Tari& tara) {
     out << "Capitala: " << tara.capitala << "\n";
     out << "Continent: " << tara.continent << "\n";
     out << "Emisfera: " << tara.emisfera << "\n";
-    out << "Suprafata: " << std::fixed << std::setprecision(0) << tara.suprafata << "\n";
+    out << "Suprafata: " << std::fixed << std::setprecision(0) << tara.suprafata << " km patrati\n";
 
     std::vector<std::string> directii = {"Nord", "Sud", "Est", "Vest"};
     bool areVecini = false;

@@ -35,7 +35,7 @@ public:
 class ExceptieTaraInexistenta : public ExceptieJoc {
 public:
     explicit ExceptieTaraInexistenta(const std::string& tara)
-        : ExceptieJoc("Tara inexistenta: " + tara) {}
+        : ExceptieJoc("Tara inexistenta: " + tara + "\n") {}
 };
 
 class ExceptieJocInvalid : public ExceptieJoc {

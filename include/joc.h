@@ -7,7 +7,6 @@
 class Joc {
 protected:
   static std::string selectareContinent();
-  virtual void afisareDateRaspuns() = 0;
 
   std::chrono::steady_clock::time_point start_time;
   std::chrono::steady_clock::time_point end_time;
@@ -17,6 +16,7 @@ protected:
   bool jocInDesfasurare;
 public:
   Joc();
+  virtual void afisareDateRaspuns() = 0;
   virtual void porneste() = 0;
   virtual void renunta() = 0;
   virtual int getScor() = 0;

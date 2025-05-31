@@ -6,15 +6,16 @@
 #include "../include/guessCapitalJoc.h"
 #include "../include/guessCountryJoc.h"
 #include "../include/shortestPathJoc.h"
+#include "../include/infoPointJoc.h"
 #include "../include/jocFactory.h"
 
 ManagerJoc::ManagerJoc() : bazaDate(TariGlobal::getInstance()), scorTotal(0) {
-  for (int i = 1; i <= 4; i++) {
+  for (int i = 1; i <= 5; i++) {
     try {
       std::shared_ptr<Joc> joc = JocFactory::creeazaJoc(i);
       if (joc) jocuriDisponibile.push_back(joc);
-    } catch (const ExceptieJocInvalid& e) {
-      std::cout << "Eroare la incarcarea jocului " << e.what() << '\n';
+    } catch (const ExceptieJocInvalid&) {
+      std::cout << "Eroare la incarcarea jocului. " << '\n';
     }
 
   }
@@ -42,9 +43,14 @@ void ManagerJoc::alegeJoc() {
     std::string raspuns = "y";
     std::shared_ptr<Joc> joc = jocuriDisponibile[optiune - 1];
 
+    auto jocInfo = std::dynamic_pointer_cast<InfoPointJoc>(joc);
+
     while (raspuns == "y") {
       try{
-        joc->porneste();
+        if (jocInfo)
+          jocInfo->modExtins();
+        else
+          joc->porneste();
         scorTotal += joc->getScor();
       } catch (const std::exception& e) {
         std::cout << "Eroare: " << e.what() << "\nJocul s-a oprit din cauza unei erori.\n\n";
@@ -61,7 +67,7 @@ void ManagerJoc::alegeJoc() {
   GuessCapitalJoc::afiseazaNumarGuessCapital();
   GuessCountryJoc::afiseazaNumarGuessCountry();
   ShortestPathJoc::afiseazaNumarShortestPath();
-
+  InfoPointJoc::afiseazaNumarInfoPoint();
 }
 
 ManagerJoc::~ManagerJoc() = default;
