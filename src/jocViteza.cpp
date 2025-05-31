@@ -109,7 +109,7 @@ void JocViteza::gestioneazaIntrebare() {
         return;
     }
     if (input == "pas") {
-        scorLocal = scorLocal - 50;
+        scorLocal = std::max(0, scorLocal - 50);
         raspunsuriPierdute.push_back(raspunsCorect);
         return;
     }
@@ -118,7 +118,7 @@ void JocViteza::gestioneazaIntrebare() {
         std::cout << "Gresit! Incearca din nou sau scrie 'pas' daca vrei sa sari! (te va costa din puncte)\n";
         std::getline(std::cin, input);
         if (input == "pas") {
-            scorLocal = scorLocal - 20;
+            scorLocal = std::max(0, scorLocal - 20);
             raspunsuriPierdute.push_back(raspunsCorect);
             return;
         }
@@ -132,7 +132,7 @@ void JocViteza::gestioneazaIntrebare() {
     }
     if (corect) {
         if (nrIncercari == 1) scorLocal += 100;
-        else scorLocal += std::max(0, 100 - 5 * nrIncercari);
+        else scorLocal = std::max(0, scorLocal + (100 - 5 * nrIncercari));
         raspunsuriGhicite.push_back(raspunsCorect);
     }
     else raspunsuriPierdute.push_back(raspunsCorect);

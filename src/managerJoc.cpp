@@ -32,17 +32,16 @@ void ManagerJoc::alegeJoc() {
     afiseazaMeniu();
     int optiune;
     std::cin >> optiune;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     if (optiune == 0) break;
     if (optiune > 0 && static_cast<size_t>(optiune) <= jocuriDisponibile.size()) {
-      char raspuns = 'y';
+      std::string raspuns = "y";
       Joc* joc = jocuriDisponibile[optiune - 1];
-      while (raspuns == 'y') {
+      while (raspuns == "y") {
         joc->porneste();
         scorTotal += joc->getScor();
         std::cout << "Vrei sa mai joci o data " << joc->getNume() << "? [y/n] \n";
         std::cin >> raspuns;
-        while (raspuns != 'y' && raspuns != 'n') {
+        while (raspuns != "y" && raspuns != "n") {
           std::cout << "Optiune invalida. Incearca din nou.\n";
           std::cin >> raspuns;
         }

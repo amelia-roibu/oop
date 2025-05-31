@@ -33,10 +33,15 @@ TariGlobal::TariGlobal() {
 
 TariGlobal* TariGlobal::instanta = nullptr;
 
+// TariGlobal& TariGlobal::getInstance() {
+//     if (instanta == nullptr)
+//         instanta = new TariGlobal();
+//     return *instanta;
+// }
+
 TariGlobal& TariGlobal::getInstance() {
-    if (instanta == nullptr)
-        instanta = new TariGlobal();
-    return *instanta;
+    static TariGlobal instance;
+    return instance;
 }
 
 const Tari& TariGlobal::getTara(const std::string& nume) const {

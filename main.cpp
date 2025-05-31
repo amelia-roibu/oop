@@ -4,7 +4,6 @@
 
 int main() {
     try {
-        TariGlobal::getInstance();
         ManagerJoc manager;
         manager.porneste();
     } catch (const std::exception& e) {
