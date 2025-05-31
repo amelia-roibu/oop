@@ -16,6 +16,7 @@ class TariGlobal {
     TariGlobal();
 
 public:
+    void incarcaDinFisier();
 // getters
     static TariGlobal& getInstance();
     const Tari& getTara(const std::string& nume) const;

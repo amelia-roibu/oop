@@ -1,12 +1,13 @@
 #ifndef MANAGERJOC_H
 #define MANAGERJOC_H
 
+#include <memory>
 #include "../include/tariGlobal.h"
 #include "../include/joc.h"
 
 class ManagerJoc {
   // Utilizator utilizatorCurent;
-  std::vector<Joc*> jocuriDisponibile;
+  std::vector<std::shared_ptr<Joc>> jocuriDisponibile;
   TariGlobal& bazaDate;
   int scorTotal;
 public:

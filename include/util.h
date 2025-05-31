@@ -1,30 +1,15 @@
 #pragma once
-#include <iostream>
-#include <sstream>
 #include <string>
 #include <vector>
 #include <random>
 #include <stdexcept>
-#include <algorithm>
 #include "tari.h"
 
-inline Tari citesteTaraDinConsola() {
-    std::string linie;
-    std::getline(std::cin, linie);
-
-    if (linie == "renunt")
-        throw std::runtime_error("Utilizatorul a renuntat.");
-
-    if (linie == "pas")
-        throw std::logic_error("Utilizatorul a trecut peste intrebare.");
-
-    std::istringstream stream(linie);
-    Tari tara;
-    stream >> tara;
-    return tara;
-}
+Tari citesteTaraDinConsola();
 
 std::vector<Tari> gasesteDrumBFS(const std::string& start, const std::string& final);
+
+std::string toLower(const std::string& text);
 
 template <typename T>
 T alegeRandom(const std::vector<T>& v) {
@@ -37,5 +22,3 @@ T alegeRandom(const std::vector<T>& v) {
 
     return v[distrib(gen)];
 }
-
-std::string toLower(const std::string& text);

@@ -1,20 +1,47 @@
 #include "../include/tariGlobal.h"
 #include "../include/util.h"
 #include <fstream>
-#include "../include/nlohmann/json.hpp"  // dacă aici parsezi JSON-ul
+#include "../include/nlohmann/json.hpp"  // de aici parsez JSON-ul
+#include <../include/exception.h>
 using json = nlohmann::json;
 
 TariGlobal::TariGlobal() {
+    incarcaDinFisier();
+}
+
+TariGlobal* TariGlobal::instanta = nullptr;
+
+void TariGlobal::incarcaDinFisier() {
     std::ifstream file("resurse/tari.json");
     if (!file.is_open())
         file.open("../resurse/tari.json");
     if (!file.is_open())
-        throw std::runtime_error("Nu s-a putut deschide fisierul tari.json");
+        throw ExceptieFisier("Nu s-a putut deschide fisierul tari.json");
 
     json j;
     file >> j;
 
     for (auto& [numeTara, date] : j.items()) {
+        // tratarea unor exceptii de parsare
+
+        if (!date.contains("continent"))
+            throw ExceptieParsareJson("camp lipsa: continent la tara " + numeTara);
+        if (!date.contains("capitala"))
+            throw ExceptieParsareJson("camp lipsa: capitala la tara " + numeTara);
+        if (!date.contains("emisfera"))
+            throw ExceptieParsareJson("camp lipsa: emisfera la tara " + numeTara);
+        if (!date.contains("suprafata"))
+            throw ExceptieParsareJson("camp lipsa: suprafata la tara " + numeTara);
+        if (!date.contains("latitudine") || !date.contains("longitudine"))
+            throw ExceptieParsareJson("coordonate lipsa la tara " + numeTara);
+        if (!date.contains("vecini"))
+            throw ExceptieParsareJson("camp lipsa: vecini la tara " + numeTara);
+        for (const std::string directie : {"Nord", "Sud", "Est", "Vest"}) {
+            if (!date["vecini"].contains(directie))
+                throw ExceptieParsareJson("lipseste cheia '" + directie + "' din vecini pentru tara " + numeTara);
+        }
+
+        // parsarea efectiva
         std::string continent = date["continent"];
         std::string capitala = date["capitala"];
         std::string emisfera = date["emisfera"];
@@ -31,14 +58,6 @@ TariGlobal::TariGlobal() {
     }
 }
 
-TariGlobal* TariGlobal::instanta = nullptr;
-
-// TariGlobal& TariGlobal::getInstance() {
-//     if (instanta == nullptr)
-//         instanta = new TariGlobal();
-//     return *instanta;
-// }
-
 TariGlobal& TariGlobal::getInstance() {
     static TariGlobal instance;
     return instance;
@@ -50,14 +69,14 @@ const Tari& TariGlobal::getTara(const std::string& nume) const {
         if (toLower(numeTara) == numeLower)
             return dateTara;
     }
-    throw std::invalid_argument("Tara nu a fost gasita: " + nume);
+    throw ExceptieTaraInexistenta(nume);
 }
 
 const Tari& TariGlobal::getTaraByCapitala(const std::string& capitala) const {
     for (const auto& [_, tara] : tari)
         if (toLower(tara.getCapitala()) == toLower(capitala))
             return tara;
-    throw std::invalid_argument("Nu exista nicio tara cu aceasta capitala: " + capitala);
+    throw ExceptieTaraInexistenta("Nu exista nicio tara cu aceasta capitala: " + capitala);
 }
 
 std::vector<Tari> TariGlobal::getTariDinContinent(const std::string& continent) const{

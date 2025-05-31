@@ -1,6 +1,7 @@
 #include <iostream>
 #include "../include/jocViteza.h"
-#include <../include/util.h>
+#include "../include/exception.h"
+#include <../include/validareInput.h>
 
 JocViteza::JocViteza() : scorLocal(0), durataTimpSecunde(0), continent("") {};
 
@@ -10,36 +11,28 @@ int JocViteza::getScor() {
 
 void JocViteza::seteazaTimp() {
     std::cout << "Alege durata de timp:\n 0. 30 secunde\n 1. 1 minut\n 2. 1 minut si 30 de secunde\n 3. 2 minute\n 4. 2 minute si 30 de secunde\n 5. 3 minute\n";
-    int optiune;
-    do {
-        std::cin >> optiune;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        switch (optiune) {
-            case 0:
-                durataTimpSecunde = 30;
-                break;
-            case 1:
-                durataTimpSecunde = 60;
-                break;
-            case 2:
-                durataTimpSecunde = 90;
-                break;
-            case 3:
-                durataTimpSecunde = 120;
-                break;
-            case 4:
-                durataTimpSecunde = 150;
-                break;
-            case 5:
-                durataTimpSecunde = 180;
-                break;
-            default:
-                std::cout << "Optiune invalida! Indearca din nou.\n";
-                durataTimpSecunde = -1;
+    int optiune = ValidareInput<int>::citesteValoare(0, 5);
+    switch (optiune) {
+        case 0:
+            durataTimpSecunde = 30;
+            break;
+        case 1:
+            durataTimpSecunde = 60;
+            break;
+        case 2:
+            durataTimpSecunde = 90;
+            break;
+        case 3:
+            durataTimpSecunde = 120;
+            break;
+        case 4:
+            durataTimpSecunde = 150;
+            break;
+        case 5:
+            durataTimpSecunde = 180;
+            break;
         }
-    } while (durataTimpSecunde == -1);
-}
-
+    }
 
 bool JocViteza::timpExpirat() const {
     auto acum = std::chrono::steady_clock::now();
@@ -48,8 +41,13 @@ bool JocViteza::timpExpirat() const {
     if (timpTrecut >= durataTimpSecunde) {
         return true;
     }
-    std::cout << "Timp ramas: " << durataTimpSecunde - timpTrecut << " secunde.\n";
     return false;
+}
+
+void JocViteza::afisareTimpRamas() const {
+    auto acum = std::chrono::steady_clock::now();
+    auto timpTrecut = std::chrono::duration_cast<std::chrono::seconds>(acum - startTimp).count();
+    std::cout << "Timp ramas: " << durataTimpSecunde - timpTrecut << " secunde.\n";
 }
 
 void JocViteza::afisareDateRaspuns() {
@@ -87,11 +85,15 @@ void JocViteza::porneste() {
     std::cout << "Incepe jocul! Vei avea la dispozitie " << durataTimpSecunde << " de secunde. Mult succes!\n";
     startTimp = std::chrono::steady_clock::now();
 
-    while (!timpExpirat() && jocInDesfasurare)
-        gestioneazaIntrebare();
+    try {
+        while (!timpExpirat() && jocInDesfasurare)
+            gestioneazaIntrebare();
+    } catch (const ExceptieTimeoutUtilizator& e) {
+        std::cout << e.what() << '\n';
+    }
 
-    if (jocInDesfasurare && timpExpirat()) std::cout << "Timpul a expirat!\n";
     stopTime();
+    scorLocal = std::max(0, scorLocal);
     afisareDateRaspuns();
 }
 
@@ -101,7 +103,12 @@ void JocViteza::gestioneazaIntrebare() {
     formateazaIntrebare(prompt);
 
     std::string input;
+
+    if (timpExpirat()) throw ExceptieTimeoutUtilizator();
+    afisareTimpRamas();
     std::getline(std::cin, input);
+    if (timpExpirat()) throw ExceptieTimeoutUtilizator();
+
     if (input == "renunt") {
         raspunsuriPierdute.push_back(raspunsCorect);
         renunta();
@@ -109,16 +116,17 @@ void JocViteza::gestioneazaIntrebare() {
         return;
     }
     if (input == "pas") {
-        scorLocal = std::max(0, scorLocal - 50);
+        scorLocal -= 50;
         raspunsuriPierdute.push_back(raspunsCorect);
         return;
     }
     bool corect = verificaRaspuns(input, raspunsCorect);
-    while (!corect && !timpExpirat()) {
+    while (!corect) {
+        if (timpExpirat()) throw ExceptieTimeoutUtilizator();
         std::cout << "Gresit! Incearca din nou sau scrie 'pas' daca vrei sa sari! (te va costa din puncte)\n";
         std::getline(std::cin, input);
         if (input == "pas") {
-            scorLocal = std::max(0, scorLocal - 20);
+            scorLocal -= 20;
             raspunsuriPierdute.push_back(raspunsCorect);
             return;
         }
@@ -130,13 +138,9 @@ void JocViteza::gestioneazaIntrebare() {
         nrIncercari++;
         corect = verificaRaspuns(input, raspunsCorect);
     }
-    if (corect) {
-        if (nrIncercari == 1) scorLocal += 100;
-        else scorLocal = std::max(0, scorLocal + (100 - 5 * nrIncercari));
-        raspunsuriGhicite.push_back(raspunsCorect);
-    }
-    else raspunsuriPierdute.push_back(raspunsCorect);
-    scorLocal = std::max(0, scorLocal);
+    if (nrIncercari == 1) scorLocal += 100;
+    else scorLocal = scorLocal + (100 - 5 * nrIncercari);
+    raspunsuriGhicite.push_back(raspunsCorect);
 }
 
 

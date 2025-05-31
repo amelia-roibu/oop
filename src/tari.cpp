@@ -1,6 +1,9 @@
 #include "../include/tari.h"
+#include "../include/exception.h"
 #include "../include/tariGlobal.h"
 #include "../include/util.h"
+#include <iostream>
+#include <iomanip>
 
 // constructori
 
@@ -53,14 +56,11 @@ double Tari::getSuprafata() const {
 }
 
 std::vector<std::string> Tari::getVeciniPeDirectie(const std::string& directie) const {
-
-  // try and catch directie invalida
-
   if (!directie.empty()){
     auto it = veciniCardinal.find(directie);
     if (it != veciniCardinal.end())
         return it->second;
-    throw std::invalid_argument("Directie invalida");
+    throw ExceptieDirectieInvalida(directie);
   }
 
   std::vector<std::string> totiVecinii;
@@ -108,7 +108,7 @@ std::istream& operator>>(std::istream& in, Tari& tara) {
 
     const TariGlobal& bazaDate = TariGlobal::getInstance();
     if (!bazaDate.existaTara(nume))
-        throw std::invalid_argument("Tara introdusa nu exista.");
+        throw ExceptieTaraInexistenta(nume);
 
     tara = TariGlobal::getInstance().getTara(nume);
     return in;
@@ -118,7 +118,7 @@ std::ostream& operator<<(std::ostream& out, const Tari& tara) {
     out << "Capitala: " << tara.capitala << "\n";
     out << "Continent: " << tara.continent << "\n";
     out << "Emisfera: " << tara.emisfera << "\n";
-    out << "Suprafata: " << tara.suprafata << "\n";
+    out << "Suprafata: " << std::fixed << std::setprecision(0) << tara.suprafata << "\n";
 
     std::vector<std::string> directii = {"Nord", "Sud", "Est", "Vest"};
     bool areVecini = false;

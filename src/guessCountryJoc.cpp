@@ -31,7 +31,6 @@ bool GuessCountryJoc::verificaRaspuns(const std::string &input, const std::strin
 
     if (bazaDate.existaTara(input)) return bazaDate.getTara(corect) == bazaDate.getTara(input);
     return false;
-    //return input == corect;
 }
 
 void GuessCountryJoc::afiseazaNumarGuessCountry() {

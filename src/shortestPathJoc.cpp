@@ -2,6 +2,9 @@
 #include <random>
 #include "../include/util.h"
 #include "../include/shortestPathJoc.h"
+
+#include <exception.h>
+
 #include "../include/tariGlobal.h"
 
 int ShortestPathJoc::nrShortestPathJucate = 0;
@@ -67,12 +70,12 @@ void ShortestPathJoc::porneste() {
                 Tari tara;
             try {
                 tara = citesteTaraDinConsola();
-            } catch (const std::runtime_error&) {
+            } catch (const ExceptieRenuntare&) {
                 renunta();
                 scorLocal = 0;
                 renuntat = true;
                 break;
-            } catch (const std::exception& e) {
+            } catch (const ExceptieTaraInexistenta& e) {
                 std::cout << e.what() << '\n';
                 continue;
             }
@@ -87,7 +90,7 @@ void ShortestPathJoc::porneste() {
         stopTime();
         if (!renuntat) afisareDateRaspuns();
 
-    } catch (const std::exception& e) {
+    } catch (const std::exception& e) { // pentru debug - cand nu aveam toate tarile in json si esua sa mi gaseasca anumiti vecini
         std::cout << "Exceptie prinsa: " << e.what() << '\n';
     }
 }

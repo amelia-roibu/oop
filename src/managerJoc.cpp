@@ -1,4 +1,6 @@
 #include <iostream>
+#include "../include/validareInput.h"
+#include "../include/exception.h"
 #include "../include/managerJoc.h"
 #include "../include/countryle.h"
 #include "../include/guessCapitalJoc.h"
@@ -7,9 +9,14 @@
 #include "../include/jocFactory.h"
 
 ManagerJoc::ManagerJoc() : bazaDate(TariGlobal::getInstance()), scorTotal(0) {
-  for (int i = 0; i < 5; i++) {
-    Joc* joc = JocFactory::creeazaJoc(i);
-    if (joc) jocuriDisponibile.push_back(joc);
+  for (int i = 1; i <= 4; i++) {
+    try {
+      std::shared_ptr<Joc> joc = JocFactory::creeazaJoc(i);
+      if (joc) jocuriDisponibile.push_back(joc);
+    } catch (const ExceptieJocInvalid& e) {
+      std::cout << "Eroare la incarcarea jocului " << e.what() << '\n';
+    }
+
   }
 }
 
@@ -30,25 +37,21 @@ void ManagerJoc::afiseazaMeniu() const {
 void ManagerJoc::alegeJoc() {
   while (true) {
     afiseazaMeniu();
-    int optiune;
-    std::cin >> optiune;
+    int optiune = ValidareInput<int>::citesteValoare(0, static_cast<int>(jocuriDisponibile.size()));
     if (optiune == 0) break;
-    if (optiune > 0 && static_cast<size_t>(optiune) <= jocuriDisponibile.size()) {
-      std::string raspuns = "y";
-      Joc* joc = jocuriDisponibile[optiune - 1];
-      while (raspuns == "y") {
+    std::string raspuns = "y";
+    std::shared_ptr<Joc> joc = jocuriDisponibile[optiune - 1];
+
+    while (raspuns == "y") {
+      try{
         joc->porneste();
         scorTotal += joc->getScor();
-        std::cout << "Vrei sa mai joci o data " << joc->getNume() << "? [y/n] \n";
-        std::cin >> raspuns;
-        while (raspuns != "y" && raspuns != "n") {
-          std::cout << "Optiune invalida. Incearca din nou.\n";
-          std::cin >> raspuns;
-        }
+      } catch (const std::exception& e) {
+        std::cout << "Eroare: " << e.what() << "\nJocul s-a oprit din cauza unei erori.\n\n";
       }
+      std::cout << "Vrei sa mai joci o data " << joc->getNume() << "? [y/n] \n";
+      raspuns = ValidareInput<std::string>::citesteValoare({"y", "n"}, "Optiune invalida. Incearca din nou.\n");
     }
-    else
-      std::cout << "Optiune invalida.\n";
   }
   std::cout << " ============================= \n";
   std::cout << "Scorul total acumulat: " << scorTotal << "\n";
@@ -61,11 +64,4 @@ void ManagerJoc::alegeJoc() {
 
 }
 
-// int ManagerJoc::getScorTotal() const {
-//   return scorTotal;
-// }
-
-ManagerJoc::~ManagerJoc() {
-  for (auto joc : jocuriDisponibile)
-    delete joc;
-}
+ManagerJoc::~ManagerJoc() = default;

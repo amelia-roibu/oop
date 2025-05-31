@@ -19,6 +19,7 @@ protected:
 
   void seteazaTimp();
   bool timpExpirat() const;
+  void afisareTimpRamas() const;
   void gestioneazaIntrebare();
 
   virtual std::pair<std::string, std::string> genereazaIntrebareRaspuns() = 0;

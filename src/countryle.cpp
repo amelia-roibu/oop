@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 #include "../include/countryle.h"
+
+#include <exception.h>
+
 #include "../include/tariGlobal.h"
 #include "../include/util.h"
 
@@ -49,12 +52,17 @@ void CountryleJoc::porneste() {
 
         try {
             taraInput = citesteTaraDinConsola();
-        } catch (const std::runtime_error&) {
+        } catch (const ExceptieRenuntare&) {
             scorLocal = 0;
             renunta();
             break;
-        } catch (const std::invalid_argument& e) {
+        } catch (const ExceptieTaraInexistenta& e) {
             std::cout << e.what() << "\n";
+            --nrIncercari;
+            continue;
+        }
+        catch (const std::exception& e) {
+            std::cout << "Eroare neasteptata: " << e.what() << "\n";
             --nrIncercari;
             continue;
         }

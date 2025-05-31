@@ -1,9 +1,25 @@
-#include "../include/util.h"
 #include <queue>
 #include <unordered_set>
 #include <map>
 #include <algorithm>
-#include "tariGlobal.h"
+#include <iostream>
+#include <sstream>
+#include "../include/util.h"
+#include "../include/exception.h"
+#include "../include/tariGlobal.h"
+
+Tari citesteTaraDinConsola() {
+    std::string linie;
+    std::getline(std::cin, linie);
+
+    if (linie == "renunt")
+        throw ExceptieRenuntare();
+
+    std::istringstream stream(linie);
+    Tari tara;
+    stream >> tara;
+    return tara;
+}
 
 std::vector<Tari> gasesteDrumBFS(const std::string& start, const std::string& final) {
     std::queue<std::string> coada;

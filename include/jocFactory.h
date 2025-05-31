@@ -1,11 +1,12 @@
 #ifndef JOCFACTORY_H
 #define JOCFACTORY_H
 
+#include <memory>
 #include "joc.h"
 
 class JocFactory {
 public:
-    static Joc* creeazaJoc(int optiune);
+    static std::shared_ptr<Joc> creeazaJoc(int optiune);
 };
 
 
