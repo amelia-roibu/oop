@@ -17,12 +17,12 @@ class TariGlobal {
 
 public:
     void incarcaDinFisier();
-// getters
     static TariGlobal& getInstance();
     const Tari& getTara(const std::string& nume) const;
     const Tari& getTaraByCapitala(const std::string& capitala) const;
     std::vector<Tari> getTariDinContinent(const std::string& continent) const;
     Tari getTariRandom(const std::string& continent = "") const;
+
     bool existaTara(const std::string& nume) const;
 };
 

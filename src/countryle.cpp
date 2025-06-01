@@ -12,6 +12,7 @@ int CountryleJoc::nrCountryleJucate = 0;
 CountryleJoc::CountryleJoc() : scorLocal(100), nrIncercari(0), continent("") {}
 
 void CountryleJoc::afisareDateRaspuns() {
+    std::cout << "\n ============================= \n";
     std::cout << "Informatii ajutatoare:\n";
     std::cout << "Tara introdusa: " << taraInput.getNume() << '\n';
     std::cout << "Emisfera: " << taraInput.getEmisfera() <<" ";
@@ -29,7 +30,7 @@ void CountryleJoc::afisareDateRaspuns() {
         std::cout << "Tara misterioasa are o suprafata mai mare decat " << taraInput.getNume() << ".\n";
     else std::cout << "Tara misterioasa are o suprafata mai mica decat " << taraInput.getNume() << ".\n";
 
-    std::cout << "Directia fata de tara tinta: " << taraInput.directieFataDe(taraTinta) << "\n \n";
+    std::cout << "Directia fata de " << taraInput.getNume() << ": " << taraInput.directieFataDe(taraTinta) << "\n \n";
 }
 
 
@@ -40,7 +41,7 @@ void CountryleJoc::porneste() {
     startTime();
     const TariGlobal& bazaDate = TariGlobal::getInstance();
 
-    std::cout << "Bine ai venit in Countryle!\n";
+    std::cout << "Bine ai venit in Countryle!\nScopul jocului este sa ghicesti 'tara misterioasa', aleasa random, din cat mai putine incercari,\nfolosindu-te de informatiile ajutatoare. Daca tara introdusa este vecina cu tara pe care trebuie sa o ghicesti,\nvei fi anuntat si vei primi un bonus! Totusi, fiecare incercare gresita te va costa 5 puncte penalizare.\n\n";
     continent = selectareContinent();
 
     taraTinta = bazaDate.getTariRandom(continent);
@@ -48,7 +49,8 @@ void CountryleJoc::porneste() {
     nrIncercari = 0;
 
     while (jocInDesfasurare) {
-        std::cout << "Incercarea " << ++nrIncercari << ". Introdu numele unei tari (sau 'renunt' daca vrei sa renunti):\n";
+        std::cout << "\n ============================= \n";
+        std::cout << "Incercarea " << ++nrIncercari << ". Introdu numele unei tari (sau 'RENUNT' daca vrei sa renunti):\n";
 
         try {
             taraInput = citesteTaraDinConsola();

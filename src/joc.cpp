@@ -8,13 +8,11 @@ int Joc::numar_total_jocuri = 0;
 Joc::Joc() : jocInDesfasurare(false) {}
 
 std::string Joc::selectareContinent() {
-    std::cout << "Doresti sa alegi continentul de pe care sa joci? [y/n] \n";
+    std::cout << "Doresti sa alegi un continent anume pentru aceasta sesiune a jocului?\n[Europa / Africa / Asia / America de Nord / America de Sud / Oceania / ENTER CA SA DAI SKIP] \n";
+    std::string alegere = ValidareInput<std::string>::citesteValoare({"europa", "asia", "america de nord", "america de sud", "africa", "oceania", ""});
 
-    std::string alegere = ValidareInput<std::string>::citesteValoare({"y", "n"});
-
-    if (alegere == "y") {
-        std::cout << "Alege continentul: [Europa / Africa / Asia / America de Nord / America de Sud / Oceania] \n";
-        return ValidareInput<std::string>::citesteValoare({"europa", "asia", "america de nord", "america de sud", "africa", "oceania"});
+    if (alegere != "") {
+        return alegere;
     }
 
     return "";

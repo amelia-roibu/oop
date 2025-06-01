@@ -17,7 +17,7 @@ void InfoPointJoc::porneste() {
     cresteContorInfoPoint();
     startTime();
 
-    std::cout << "Bine ai venit in Info Point!\nAici este un loc chill in care sa iti imbogatesti sau improspatezi cunostintele despre tarile lumii. Ai optiunea sa consulti rapid o tara, daca vrei doar sa iti amintesti rapid o informatie, sau sa parcurgi un tur virtual prin diverse tari ale lumii, alese de tine sau alese aleatoriu.\n";
+    std::cout << "Bine ai venit in Info Point!\nAici este un loc chill in care sa iti imbogatesti sau improspatezi cunostintele despre tarile lumii.\nAi optiunea sa consulti rapid o tara, daca vrei doar sa iti amintesti rapid o informatie, sau sa parcurgi\nun tur virtual prin diverse tari ale lumii, alese de tine sau alese aleatoriu.\nPoti iesi oricand, scriind 'renunt'. Cu cat consulti mai multe tari, cu atat iti poate creste scorul.\nBucura-te de calatorie!\n";
     std::cout << "\nAlege modul de joc:\n0. Single\n1. Tur virtual\n2. Renunt\n\n";
     modJoc = ValidareInput<int>::citesteValoare(0,2);
     if (modJoc == 2)
@@ -29,13 +29,13 @@ void InfoPointJoc::porneste() {
 void InfoPointJoc::modSingle() {
     const TariGlobal& bazaDate = TariGlobal::getInstance();
 
-    std::cout << "Vrei sa (mai) afli informatii despre o tara anume? [y/n/renunt]\n";
-    std::string alegere = ValidareInput<std::string>::citesteValoare({"y","n","renunt"});
+    std::cout << "Vrei sa afli informatii despre o tara anume? [Y / ENTER CA DAI SKIP / RENUNT]\n";
+    std::string alegere = ValidareInput<std::string>::citesteValoare({"y","","renunt"});
 
     if (alegere == "renunt")
         renunta();
     else {
-        if (alegere == "n") {
+        if (alegere == "") {
             continent = selectareContinent();
             taraInfo = bazaDate.getTariRandom(continent);
             afisareDateRaspuns();
@@ -43,7 +43,8 @@ void InfoPointJoc::modSingle() {
         }
         else {
             while (jocInDesfasurare) {
-                std::cout << "Introdu numele unei tari:\n";
+                std::cout << "\n ============================= \n";
+                std::cout << "Introdu numele tarii:\n";
                 try {
                     taraInfo = citesteTaraDinConsola();
                     afisareDateRaspuns();
@@ -64,15 +65,15 @@ void InfoPointJoc::modExtins() {
     const TariGlobal& bazaDate = TariGlobal::getInstance();
 
     while (jocInDesfasurare && modJoc == 1) {
-        std::cout << "Vrei sa afli informatii despre o tara anume? [y/n/renunt]\n";
-        std::string alegere = ValidareInput<std::string>::citesteValoare({"y","n", "renunt"});
+        std::cout << "Vrei sa afli informatii despre o tara anume? [Y / ENTER CA SA DAI SKIP / RENUNT]\n";
+        std::string alegere = ValidareInput<std::string>::citesteValoare({"y","", "renunt"});
 
         if (alegere == "renunt") {
             renunta();
             break;
         }
 
-        if (alegere == "n") {
+        if (alegere == "") {
             continent = selectareContinent();
             taraInfo = bazaDate.getTariRandom(continent);
             afisareDateRaspuns();
@@ -80,11 +81,13 @@ void InfoPointJoc::modExtins() {
         }
         else {
             while (jocInDesfasurare) {
-                std::cout << "Introdu numele unei tari:\n";
+                std::cout << "\n ============================= \n";
+                std::cout << "Introdu numele tarii:\n";
                 try {
                     taraInfo = citesteTaraDinConsola();
                     afisareDateRaspuns();
                     scorLocal++;
+                    break;
                 } catch (const ExceptieRenuntare&) {
                     renunta();
                 } catch (const ExceptieTaraInexistenta& e) {

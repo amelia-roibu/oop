@@ -79,15 +79,18 @@ void JocViteza::porneste() {
     cresteContorJocuri();
     startTime();
     std::cout << "Bine ai venit in " << getNume() <<"!\n";
-    continent = selectareContinent();
+    afisareInstructiuni();
     seteazaTimp();
+    continent = selectareContinent();
 
     std::cout << "Incepe jocul! Vei avea la dispozitie " << durataTimpSecunde << " de secunde. Mult succes!\n";
     startTimp = std::chrono::steady_clock::now();
 
     try {
-        while (!timpExpirat() && jocInDesfasurare)
+        while (!timpExpirat() && jocInDesfasurare) {
+            std::cout << "\n ============================= \n";
             gestioneazaIntrebare();
+        }
     } catch (const ExceptieTimeoutUtilizator& e) {
         std::cout << e.what() << '\n';
     }

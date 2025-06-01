@@ -7,6 +7,10 @@ int GuessCountryJoc::nrGuessCountryJucate = 0;
 
 GuessCountryJoc::GuessCountryJoc() = default;
 
+void GuessCountryJoc::afisareInstructiuni() {
+    std::cout << "Vei avea la dispozitie un timp predefinit in care sa ghicesti cat mai multe tari pe baza capitalelor lor.\nPoti scrie 'pas' oricand, dar vei fi penalizat, iar daca treci peste o intrebare din prima, penalizarea va fi mai mare.\nDe asemenea, poti renunta la sesiunea curenta, daca scrii 'renunt'. Daca trimiti un raspuns dupa expirarea timpului,\nindiferent de corectitudinea lui, nu va fi luat in considerare.\n\n";
+}
+
 std::string GuessCountryJoc::getNume() const {
     return "Guess The Country: Speed Game";
 }
@@ -22,7 +26,7 @@ std::pair<std::string, std::string> GuessCountryJoc::genereazaIntrebareRaspuns()
 }
 
 void GuessCountryJoc::formateazaIntrebare(const std::string &prompt) const {
-    std::cout << "Care este statul al carei capitala este " << prompt << "? (sau 'renunt')\n";
+    std::cout << "Care este statul al carei capitala este " << prompt << "? (poti scrie 'PAS', sau 'RENUNT')\n";
 
 }
 

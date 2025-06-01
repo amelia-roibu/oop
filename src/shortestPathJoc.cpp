@@ -46,7 +46,7 @@ void ShortestPathJoc::porneste() {
         const TariGlobal& bazaDate = TariGlobal::getInstance();
 
         std::cout << "Bine ai venit la Shortest Path Game! \n";
-
+        std::cout << "Obiectivul tau este sa ajungi din tara 'Start', catre tara 'Destinatie', folosind doar tari vecine, creand un lant\nde lungime cat mai scurta. Tarile introduse pot fi vecine cu oricare dintre tarile considerate corecte\npana in momentul acela, iar ultima tara introdusa trebuie sa fie destinatia. Daca vrei sa renunti, poti scrie 'renunt'.\nOrice drum final valid va fi penalizat cu 5 puncte pentru fiecare tara 'in plus' fata de lungimea drumului optim.\n\n";
         continent = selectareContinent();
 
         if (continent.empty()) {
@@ -63,10 +63,10 @@ void ShortestPathJoc::porneste() {
         scorLocal = 0;
         std::cout << "Start: " << taraStart.getNume() << std::endl;
         std::cout << "Destinatie: " << taraFinal.getNume() << std::endl;
-        std::cout << "Introdu tarile vecine pe care poti sa le strabati pentru a ajunge la destinatie.\n";
         bool renuntat = false;
         while (taraFinal != drumJucator.back() && jocInDesfasurare) {
-            std::cout << "Introdu numele unei tari (sau 'renunt'): \n";
+            std::cout << "\n ============================= \n";
+            std::cout << "Introdu numele unei tari (sau 'RENUNT'): \n";
                 Tari tara;
             try {
                 tara = citesteTaraDinConsola();
@@ -80,10 +80,12 @@ void ShortestPathJoc::porneste() {
                 continue;
             }
 
-            if (!apartineDeDrum(tara.getNume()) && esteVecinaCuDrum(tara.getNume()))
+            if (!apartineDeDrum(tara.getNume()) && esteVecinaCuDrum(tara.getNume())) {
                 drumJucator.push_back(tara);
+                std::cout << "Raspuns valid! ";
+            }
             else
-                std::cout << "Tara introdusa nu e buna :P (nu este vecina sau deja a fost parcursa). \n";
+                std::cout << "Tara introdusa nu e buna :P (nu este vecina sau deja a fost luata in considerare). \n";
         }
 
         if (!renuntat) scorLocal = std::max(0, 100 - static_cast<int>(drumJucator.size() - drumOptim.size())*5);

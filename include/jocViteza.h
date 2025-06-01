@@ -22,6 +22,7 @@ protected:
   void afisareTimpRamas() const;
   void gestioneazaIntrebare();
 
+  virtual void afisareInstructiuni() = 0;
   virtual std::pair<std::string, std::string> genereazaIntrebareRaspuns() = 0;
   virtual void formateazaIntrebare(const std::string& prompt) const = 0;
   virtual bool verificaRaspuns(const std::string& input, const std::string& corect) const = 0;

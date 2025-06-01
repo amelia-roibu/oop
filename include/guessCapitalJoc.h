@@ -8,6 +8,7 @@ class GuessCapitalJoc : public JocViteza {
 public:
   GuessCapitalJoc();
   void porneste() override;
+  void afisareInstructiuni() override;
   std::pair<std::string, std::string> genereazaIntrebareRaspuns() override;
   void formateazaIntrebare(const std::string& prompt) const override;
   bool verificaRaspuns(const std::string& input, const std::string& corect) const override;

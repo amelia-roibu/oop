@@ -11,6 +11,10 @@ int GuessCapitalJoc::nrGuessCapitalJucate = 0;
 
 GuessCapitalJoc::GuessCapitalJoc() = default;
 
+void GuessCapitalJoc::afisareInstructiuni() {
+    std::cout << "Vei avea la dispozitie un timp predefinit in care sa ghicesti cat mai multe capitale, pe baza promptului dat.\nPoti scrie 'pas' oricand, dar vei fi penalizat, iar daca treci peste o intrebare din prima, penalizarea va fi mai mare.\nDe asemenea, poti renunta la sesiunea curenta, daca scrii 'renunt'. Daca trimiti un raspuns dupa expirarea timpului,\nindiferent de corectitudinea lui, nu va fi luat in considerare.\n\n";
+}
+
 std::string GuessCapitalJoc::getNume() const {
     return "Guess The Capital: Speed Game";
 }
@@ -26,7 +30,7 @@ std::pair<std::string, std::string> GuessCapitalJoc::genereazaIntrebareRaspuns()
 }
 
 void GuessCapitalJoc::formateazaIntrebare(const std::string &prompt) const {
-    std::cout << "Care este capitala statului " << prompt << "? (sau 'renunt')\n";
+    std::cout << "Care este capitala statului " << prompt << "? (poti scrie 'PAS', sau 'RENUNT')\n";
 
 }
 

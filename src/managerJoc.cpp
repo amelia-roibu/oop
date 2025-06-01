@@ -23,6 +23,7 @@ ManagerJoc::ManagerJoc() : bazaDate(TariGlobal::getInstance()), scorTotal(0) {
 
 void ManagerJoc::porneste() {
   std::cout << "\nBine ai venit la joculetele mele de geografie!\n";
+  std::cout << "Poti scrie inputurile atat cu litere mari, cat si cu litere mici, caci el va fi validat. Have fun! <3\n";
   alegeJoc();
 }
 
@@ -55,8 +56,8 @@ void ManagerJoc::alegeJoc() {
       } catch (const std::exception& e) {
         std::cout << "Eroare: " << e.what() << "\nJocul s-a oprit din cauza unei erori.\n\n";
       }
-      std::cout << "Vrei sa mai joci o data " << joc->getNume() << "? [y/n] \n";
-      raspuns = ValidareInput<std::string>::citesteValoare({"y", "n"}, "Optiune invalida. Incearca din nou.\n");
+      std::cout << "Vrei sa mai joci o data " << joc->getNume() << "? [Y / ENTER CA SA DAI SKIP] \n";
+      raspuns = ValidareInput<std::string>::citesteValoare({"y", ""});
     }
   }
   std::cout << " ============================= \n";
