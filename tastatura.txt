@@ -1,1 +1,65 @@
+#INPUT 1
+0
+
+
+
+#INPUT 2
+1
+europa
+renunt
+y
+oceania
+fiji
+renunt
+(enter)
+0
+
+
+
+#INPUT 3
+2
+0
+asia
+pas
+moscova
+pas
+renunt
+(enter)
+3
+1
+pas
+beijing
+pas
+renunt
+(enter)
+0
+
+
+
+#INPUT 4
+4
+america de sud
+brazilia
+columbia
+renunt
+(enter)
+0
+
+
+
+#INPUT 5
+5
+2
+y
+0
+y
+angola
+y
+1
+(enter)
+(enter)
+(enter)
+(enter)
+renunt
+(enter)
 0

@@ -19,7 +19,6 @@ class Tari{
   // cheia poate fi doar "nord", "sud", "est", "vest"
 
 public:
-  // constructori
   Tari();
   Tari(const std::string& nume,
        const std::string& capitala,
@@ -33,26 +32,21 @@ public:
   Tari& operator= (const Tari& other);
   ~Tari();
 
-  // getters
   std::string getNume() const;
   std::string getCapitala() const;
   std::string getContinent() const;
   std::string getEmisfera() const;
   double getSuprafata() const;
-  // double getLatitudine() const;
-  // double getLongitudine() const;
   std::vector<std::string> getVeciniPeDirectie(const std::string& directie = "") const;
 
-  // alte metode
   bool esteVecinCu(const std::string& numeTara) const;
   std::string directieFataDe(const Tari& alta) const;
 
-
-  // operatori
   friend std::istream& operator>>(std::istream& in, Tari& tara);
   friend std::ostream& operator<<(std::ostream& out, const Tari& tara);
   bool operator== (const Tari& other) const;
   bool operator!= (const Tari& other) const;
+  friend bool operator<(const Tari &lhs, const Tari &rhs); // aveam de gand sa l folosesc intr-un joc de tip Biggest vs Smallest, dar nu am mai apucat :(
 };
 
 #endif //TARI_H

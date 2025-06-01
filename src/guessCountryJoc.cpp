@@ -5,7 +5,16 @@
 
 int GuessCountryJoc::nrGuessCountryJucate = 0;
 
-GuessCountryJoc::GuessCountryJoc() = default;
+GuessCountryJoc::GuessCountryJoc() : JocViteza() {}
+
+GuessCountryJoc::GuessCountryJoc(const GuessCountryJoc &other) : JocViteza(other) {}
+
+GuessCountryJoc& GuessCountryJoc::operator=(const GuessCountryJoc& other) {
+    if (this == &other)
+        return *this;
+    JocViteza::operator =(other);
+    return *this;
+}
 
 void GuessCountryJoc::afisareInstructiuni() {
     std::cout << "Vei avea la dispozitie un timp predefinit in care sa ghicesti cat mai multe tari pe baza capitalelor lor.\nPoti scrie 'pas' oricand, dar vei fi penalizat, iar daca treci peste o intrebare din prima, penalizarea va fi mai mare.\nDe asemenea, poti renunta la sesiunea curenta, daca scrii 'renunt'. Daca trimiti un raspuns dupa expirarea timpului,\nindiferent de corectitudinea lui, nu va fi luat in considerare.\n\n";

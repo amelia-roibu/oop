@@ -9,7 +9,28 @@
 
 int CountryleJoc::nrCountryleJucate = 0;
 
-CountryleJoc::CountryleJoc() : scorLocal(100), nrIncercari(0), continent("") {}
+CountryleJoc::CountryleJoc() : Joc(), scorLocal(100), nrIncercari(0), continent(" ") {}
+
+CountryleJoc::CountryleJoc(const CountryleJoc &other) : Joc(other),
+      taraTinta(other.taraTinta),
+      taraInput(other.taraInput),
+      scorLocal(other.scorLocal),
+      nrIncercari(other.nrIncercari),
+      continent(other.continent) {
+}
+
+CountryleJoc &CountryleJoc::operator=(const CountryleJoc& other) {
+    if (this == &other)
+        return *this;
+    Joc::operator =(other);
+    taraTinta = other.taraTinta;
+    taraInput = other.taraInput;
+    scorLocal = other.scorLocal;
+    nrIncercari = other.nrIncercari;
+    continent = other.continent;
+    return *this;
+}
+
 
 void CountryleJoc::afisareDateRaspuns() {
     std::cout << "\n ============================= \n";
@@ -119,6 +140,7 @@ void CountryleJoc::afisareFinala() const {
 
 void CountryleJoc::bonusVecin(const std::string& tara) {
     if (taraTinta.esteVecinCu(tara)) {
+        std::cout << "\n ============================= \n";
         std::cout << "Tara este chiar vecina a tarii tinta! Primesti un bonus :) \n";
         scorLocal += 3;
     }

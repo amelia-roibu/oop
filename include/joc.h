@@ -6,16 +6,18 @@
 
 class Joc {
 protected:
-  static std::string selectareContinent();
-
   std::chrono::steady_clock::time_point start_time;
   std::chrono::steady_clock::time_point end_time;
   static std::chrono::seconds durata_totala;
-
-  static int numar_total_jocuri;
   bool jocInDesfasurare;
+  static int numar_total_jocuri;
+
+  static std::string selectareContinent();
 public:
   Joc();
+  Joc(const Joc &other);
+  Joc& operator=(const Joc &other);
+
   virtual void afisareDateRaspuns() = 0;
   virtual void porneste() = 0;
   virtual void renunta() = 0;

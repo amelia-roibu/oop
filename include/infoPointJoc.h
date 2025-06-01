@@ -14,6 +14,9 @@ class InfoPointJoc : public Joc {
     void modSingle();
 public:
     InfoPointJoc();
+    InfoPointJoc(const InfoPointJoc &other);
+    InfoPointJoc & operator=(const InfoPointJoc &other);
+
     void porneste() override;
     void renunta() override;
     std::string getNume() const override;
@@ -23,6 +26,7 @@ public:
 
     static void cresteContorInfoPoint();
     static void afiseazaNumarInfoPoint();
+
     ~InfoPointJoc() override;
 };
 

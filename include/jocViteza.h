@@ -16,7 +16,6 @@ protected:
   std::vector<std::string> raspunsuriPierdute;
   std::unordered_set<std::string> obiecteFolosite;
 
-
   void seteazaTimp();
   bool timpExpirat() const;
   void afisareTimpRamas() const;
@@ -26,10 +25,14 @@ protected:
   virtual std::pair<std::string, std::string> genereazaIntrebareRaspuns() = 0;
   virtual void formateazaIntrebare(const std::string& prompt) const = 0;
   virtual bool verificaRaspuns(const std::string& input, const std::string& corect) const = 0;
+
   void stopTime() override;
 
 public:
   JocViteza();
+  JocViteza(const JocViteza &other);
+  JocViteza & operator=(const JocViteza &other);
+
   void porneste() override;
   void renunta() override;
   int getScor() override;void afisareDateRaspuns() override;

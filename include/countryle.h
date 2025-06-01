@@ -12,6 +12,9 @@ class CountryleJoc : public Joc {
   static int nrCountryleJucate;
 public:
   CountryleJoc();
+  CountryleJoc(const CountryleJoc& other);
+  CountryleJoc& operator=(const CountryleJoc& other);
+
   void porneste() override;
   void renunta() override;
   int getScor() override;

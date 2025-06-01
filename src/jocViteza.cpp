@@ -3,7 +3,32 @@
 #include "../include/exception.h"
 #include <../include/validareInput.h>
 
-JocViteza::JocViteza() : scorLocal(0), durataTimpSecunde(0), continent("") {};
+JocViteza::JocViteza() : Joc(), scorLocal(0), durataTimpSecunde(0), continent(" ") {};
+
+JocViteza::JocViteza(const JocViteza &other)
+    : Joc(other),
+      scorLocal(other.scorLocal),
+      durataTimpSecunde(other.durataTimpSecunde),
+      continent(other.continent),
+      startTimp(other.startTimp),
+      raspunsuriGhicite(other.raspunsuriGhicite),
+      raspunsuriPierdute(other.raspunsuriPierdute),
+      obiecteFolosite(other.obiecteFolosite) {
+}
+
+JocViteza& JocViteza::operator=(const JocViteza& other) {
+    if (this == &other)
+        return *this;
+    Joc::operator =(other);
+    scorLocal = other.scorLocal;
+    durataTimpSecunde = other.durataTimpSecunde;
+    continent = other.continent;
+    startTimp = other.startTimp;
+    raspunsuriGhicite = other.raspunsuriGhicite;
+    raspunsuriPierdute = other.raspunsuriPierdute;
+    obiecteFolosite = other.obiecteFolosite;
+    return *this;
+}
 
 int JocViteza::getScor() {
     return scorLocal;

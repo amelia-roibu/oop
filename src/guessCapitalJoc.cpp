@@ -9,7 +9,16 @@
 
 int GuessCapitalJoc::nrGuessCapitalJucate = 0;
 
-GuessCapitalJoc::GuessCapitalJoc() = default;
+GuessCapitalJoc::GuessCapitalJoc() : JocViteza() {}
+
+GuessCapitalJoc::GuessCapitalJoc(const GuessCapitalJoc &other) : JocViteza(other) {}
+
+GuessCapitalJoc& GuessCapitalJoc::operator=(const GuessCapitalJoc& other) {
+    if (this == &other)
+        return *this;
+    JocViteza::operator =(other);
+    return *this;
+}
 
 void GuessCapitalJoc::afisareInstructiuni() {
     std::cout << "Vei avea la dispozitie un timp predefinit in care sa ghicesti cat mai multe capitale, pe baza promptului dat.\nPoti scrie 'pas' oricand, dar vei fi penalizat, iar daca treci peste o intrebare din prima, penalizarea va fi mai mare.\nDe asemenea, poti renunta la sesiunea curenta, daca scrii 'renunt'. Daca trimiti un raspuns dupa expirarea timpului,\nindiferent de corectitudinea lui, nu va fi luat in considerare.\n\n";

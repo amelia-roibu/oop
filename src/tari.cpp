@@ -2,12 +2,9 @@
 #include "../include/exception.h"
 #include "../include/tariGlobal.h"
 #include "../include/util.h"
-#include <iostream>
 #include <iomanip>
 
-// constructori
-
-Tari::Tari() : nume(""), capitala(""), continent(""), emisfera(""), suprafata(0.0), latitudine(0.0), longitudine(0.0), veciniCardinal{} {}
+Tari::Tari() : nume(" "), capitala(" "), continent(" "), emisfera(" "), suprafata(0.0), latitudine(0.0), longitudine(0.0), veciniCardinal{} {}
 
 Tari::Tari(const std::string& nume,
            const std::string& capitala,
@@ -35,8 +32,6 @@ Tari& Tari::operator=(const Tari& other) {
 }
 
 Tari::~Tari() = default;
-
-// getters
 
 std::string Tari::getNume() const {
   return this->nume;
@@ -69,8 +64,6 @@ std::vector<std::string> Tari::getVeciniPeDirectie(const std::string& directie) 
   return totiVecinii;
 }
 
-// alte metode
-
 bool Tari::esteVecinCu(const std::string& numeTara) const{
     for (const auto& [dir, vecini] : veciniCardinal)
       for (const auto& vecin : vecini)
@@ -85,7 +78,8 @@ std::string Tari::directieFataDe(const Tari& other) const {
     const double marja = 0.7;
 
     std::string directieVerticala = "";
-    std::string directieOrizontala = "";
+    std::string directieOrizontala = "4"
+                                     "";
 
     if (diffLatitudine > marja) directieVerticala = "Nord";
     if (diffLatitudine < -marja) directieVerticala = "Sud";
@@ -99,8 +93,6 @@ std::string Tari::directieFataDe(const Tari& other) const {
         return directieOrizontala;
     return directieVerticala;
 }
-
-// operatori
 
 std::istream& operator>>(std::istream& in, Tari& tara) {
     std::string nume;
@@ -129,8 +121,8 @@ std::ostream& operator<<(std::ostream& out, const Tari& tara) {
         if (!vecini.empty()) {
             areVecini = true;
             out << "  " << directie << ": ";
-            for (std::size_t i = 0; i < vecini.size(); ++i)
-                out << vecini[i] << "; ";
+            for (const auto& i : vecini)
+                out << i << "; ";
             out << "\n";
         }
     }
@@ -146,3 +138,7 @@ bool Tari::operator== (const Tari& other) const {
 bool Tari::operator!= (const Tari& other) const {
     return !(*this == other);
   }
+
+bool operator<(const Tari &lhs, const Tari &rhs) {
+    return lhs.suprafata < rhs.suprafata;
+}

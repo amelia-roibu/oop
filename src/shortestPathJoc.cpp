@@ -9,7 +9,30 @@
 
 int ShortestPathJoc::nrShortestPathJucate = 0;
 
-ShortestPathJoc::ShortestPathJoc() : scorLocal(0) {}
+ShortestPathJoc::ShortestPathJoc() : Joc(), continent(" "), scorLocal(0) {}
+
+ShortestPathJoc::ShortestPathJoc(const ShortestPathJoc &other)
+    : Joc(other),
+      taraStart(other.taraStart),
+      taraFinal(other.taraFinal),
+      drumOptim(other.drumOptim),
+      drumJucator(other.drumJucator),
+      continent(other.continent),
+      scorLocal(other.scorLocal) {
+}
+
+ShortestPathJoc& ShortestPathJoc::operator=(const ShortestPathJoc& other) {
+    if (this == &other)
+        return *this;
+    Joc::operator =(other);
+    taraStart = other.taraStart;
+    taraFinal = other.taraFinal;
+    drumOptim = other.drumOptim;
+    drumJucator = other.drumJucator;
+    continent = other.continent;
+    scorLocal = other.scorLocal;
+    return *this;
+}
 
 std::string ShortestPathJoc::getNume() const {
     return "Shortest Path";

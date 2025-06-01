@@ -8,7 +8,26 @@
 
 int InfoPointJoc::nrInfoPointJucate = 0;
 
-InfoPointJoc::InfoPointJoc() : modJoc(0), scorLocal(0), continent("") {}
+InfoPointJoc::InfoPointJoc() : Joc(), modJoc(0), scorLocal(0), continent(" ") {}
+
+InfoPointJoc::InfoPointJoc(const InfoPointJoc &other)
+        : Joc(other),
+          taraInfo(other.taraInfo),
+          modJoc(other.modJoc),
+          scorLocal(other.scorLocal),
+          continent(other.continent) {
+}
+
+InfoPointJoc& InfoPointJoc::operator=(const InfoPointJoc& other) {
+    if (this == &other)
+        return *this;
+    Joc::operator =(other);
+    taraInfo = other.taraInfo;
+    modJoc = other.modJoc;
+    scorLocal = other.scorLocal;
+    continent = other.continent;
+    return *this;
+}
 
 void InfoPointJoc::porneste() {
     jocInDesfasurare = true;
@@ -35,7 +54,7 @@ void InfoPointJoc::modSingle() {
     if (alegere == "renunt")
         renunta();
     else {
-        if (alegere == "") {
+        if (alegere.empty()) {
             continent = selectareContinent();
             taraInfo = bazaDate.getTariRandom(continent);
             afisareDateRaspuns();
@@ -73,7 +92,7 @@ void InfoPointJoc::modExtins() {
             break;
         }
 
-        if (alegere == "") {
+        if (alegere.empty()) {
             continent = selectareContinent();
             taraInfo = bazaDate.getTariRandom(continent);
             afisareDateRaspuns();
