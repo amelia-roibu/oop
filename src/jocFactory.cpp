@@ -13,6 +13,6 @@ std::shared_ptr<Joc> JocFactory::creeazaJoc(int optiune) {
         case 3: return std::make_shared<GuessCountryJoc>();
         case 4: return std::make_shared<ShortestPathJoc>();
         case 5: return std::make_shared<InfoPointJoc>();
-        default: throw ExceptieJocInvalid("Nu exista un joc cu acest index. ");
+        default: throw ExceptieJocInvalid("Nu exista un joc cu acest index.");
     }
 }

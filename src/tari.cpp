@@ -3,6 +3,7 @@
 #include "../include/tariGlobal.h"
 #include "../include/util.h"
 #include <iomanip>
+#include <iostream>
 
 Tari::Tari() : nume(" "), capitala(" "), continent(" "), emisfera(" "), suprafata(0.0), latitudine(0.0), longitudine(0.0), veciniCardinal{} {}
 
@@ -46,26 +47,26 @@ std::string Tari::getContinent() const {
 std::string Tari::getEmisfera() const {
     return this->emisfera;
 }
-double Tari::getSuprafata() const {
-    return this->suprafata;
-}
+// double Tari::getSuprafata() const {
+//     return this->suprafata;
+// }
 
 std::vector<std::string> Tari::getVeciniPeDirectie(const std::string& directie) const {
   if (!directie.empty()){
     auto it = veciniCardinal.find(directie);
     if (it != veciniCardinal.end())
-        return it->second;
+        return it->second; // lista vecinilor
     throw ExceptieDirectieInvalida(directie);
   }
 
   std::vector<std::string> totiVecinii;
-  for (const auto& [dir, vecini] : veciniCardinal)
+  for (const auto& [_, vecini] : veciniCardinal) // variabila anonima pt ca nu ma intereseaza directia
     totiVecinii.insert(totiVecinii.end(), vecini.begin(), vecini.end());
   return totiVecinii;
 }
 
 bool Tari::esteVecinCu(const std::string& numeTara) const{
-    for (const auto& [dir, vecini] : veciniCardinal)
+    for (const auto& [_, vecini] : veciniCardinal)
       for (const auto& vecin : vecini)
         if (toLower(vecin) == toLower(numeTara))
           return true;
@@ -78,8 +79,7 @@ std::string Tari::directieFataDe(const Tari& other) const {
     const double marja = 0.7;
 
     std::string directieVerticala = "";
-    std::string directieOrizontala = "4"
-                                     "";
+    std::string directieOrizontala = "";
 
     if (diffLatitudine > marja) directieVerticala = "Nord";
     if (diffLatitudine < -marja) directieVerticala = "Sud";
@@ -110,22 +110,25 @@ std::ostream& operator<<(std::ostream& out, const Tari& tara) {
     out << "Capitala: " << tara.capitala << "\n";
     out << "Continent: " << tara.continent << "\n";
     out << "Emisfera: " << tara.emisfera << "\n";
-    out << "Suprafata: " << std::fixed << std::setprecision(0) << tara.suprafata << " km patrati\n";
+    out << "Suprafata: " << std::fixed << std::setprecision(0) << tara.suprafata << " km patrati\n"; // ca sa nu apara forma stiintifica, aia cu 'e' in nr
 
     std::vector<std::string> directii = {"Nord", "Sud", "Est", "Vest"};
     bool areVecini = false;
 
-    out << "Vecini: \n";
-    for (const auto& directie : directii) {
-        auto vecini = tara.getVeciniPeDirectie(directie);
-        if (!vecini.empty()) {
-            areVecini = true;
-            out << "  " << directie << ": ";
-            for (const auto& i : vecini)
-                out << i << "; ";
-            out << "\n";
+    out << "Vecini:\n";
+    for (const auto& directie : directii)
+        try {
+            auto vecini = tara.getVeciniPeDirectie(directie);
+            if (!vecini.empty()) {
+                areVecini = true;
+                out << "  " << directie << ": ";
+                for (const auto& i : vecini)
+                    out << i << "; ";
+                out << "\n";
+            }
+        } catch (const ExceptieDirectieInvalida& e) {
+            std::cout << e.what();
         }
-    }
     if (!areVecini)
         out << "  Este o tara insulara (nu are vecini).\n";
     return out;

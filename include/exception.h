@@ -1,7 +1,6 @@
 #ifndef EXCEPTION_H
 #define EXCEPTION_H
 
-#pragma once
 #include <exception>
 #include <string>
 
@@ -16,13 +15,13 @@ public:
 class ExceptieFisier : public ExceptieJoc {
 public:
     explicit ExceptieFisier (const std::string& fisier)
-        : ExceptieJoc("Eroare la deschiderea fisierului: " + fisier) {}
+        : ExceptieJoc("a aparut o eroare in deschiderea fisierului " + fisier) {}
 };
 
 class ExceptieParsareJson : public ExceptieJoc {
 public:
     explicit ExceptieParsareJson(const std::string& detalii)
-        : ExceptieJoc("Eroare la parsarea JSON: " + detalii) {}
+        : ExceptieJoc("a aparut o eroare in timpul parsarii din JSON: " + detalii) {}
 };
 
 class ExceptieDirectieInvalida : public ExceptieJoc {

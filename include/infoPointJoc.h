@@ -8,8 +8,7 @@
 class InfoPointJoc : public Joc {
     Tari taraInfo;
     int modJoc; // 0 = mod single, 1 = mod tur
-    int scorLocal; // cate tari s au consultat
-    std::string continent;
+
     static int nrInfoPointJucate;
     void modSingle();
 public:
@@ -22,7 +21,10 @@ public:
     std::string getNume() const override;
     void afisareDateRaspuns() override;
     int getScor() override;
+
     void modExtins();
+    void citireTara();
+    void generareTara();
 
     static void cresteContorInfoPoint();
     static void afiseazaNumarInfoPoint();

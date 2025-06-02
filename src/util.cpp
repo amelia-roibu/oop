@@ -17,7 +17,7 @@ Tari citesteTaraDinConsola() {
 
     std::istringstream stream(linie);
     Tari tara;
-    stream >> tara;
+        stream >> tara;
     return tara;
 }
 
@@ -48,7 +48,7 @@ std::vector<Tari> gasesteDrumBFS(const std::string& start, const std::string& fi
             }
     }
 
-    if (!parinte.contains(final))
+    if (!parinte.contains(final)) // final reprezinta de fapt tara destinatie
         return {};
 
     std::vector<Tari> drum;

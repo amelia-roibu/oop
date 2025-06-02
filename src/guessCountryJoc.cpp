@@ -36,7 +36,6 @@ std::pair<std::string, std::string> GuessCountryJoc::genereazaIntrebareRaspuns()
 
 void GuessCountryJoc::formateazaIntrebare(const std::string &prompt) const {
     std::cout << "Care este statul al carei capitala este " << prompt << "? (poti scrie 'PAS', sau 'RENUNT')\n";
-
 }
 
 bool GuessCountryJoc::verificaRaspuns(const std::string &input, const std::string &corect) const {

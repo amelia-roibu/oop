@@ -9,8 +9,7 @@
 
 class JocViteza : public Joc{
 protected:
-  int scorLocal, durataTimpSecunde;
-  std::string continent;
+  int durataTimpSecunde;
   std::chrono::time_point<std::chrono::steady_clock> startTimp;
   std::vector<std::string> raspunsuriGhicite;
   std::vector<std::string> raspunsuriPierdute;

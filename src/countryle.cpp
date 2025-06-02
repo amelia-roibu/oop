@@ -9,15 +9,12 @@
 
 int CountryleJoc::nrCountryleJucate = 0;
 
-CountryleJoc::CountryleJoc() : Joc(), scorLocal(100), nrIncercari(0), continent(" ") {}
+CountryleJoc::CountryleJoc() : Joc(), nrIncercari(0) {}
 
-CountryleJoc::CountryleJoc(const CountryleJoc &other) : Joc(other),
+CountryleJoc::CountryleJoc(const CountryleJoc& other) : Joc(other),
       taraTinta(other.taraTinta),
       taraInput(other.taraInput),
-      scorLocal(other.scorLocal),
-      nrIncercari(other.nrIncercari),
-      continent(other.continent) {
-}
+      nrIncercari(other.nrIncercari) {}
 
 CountryleJoc &CountryleJoc::operator=(const CountryleJoc& other) {
     if (this == &other)
@@ -25,12 +22,9 @@ CountryleJoc &CountryleJoc::operator=(const CountryleJoc& other) {
     Joc::operator =(other);
     taraTinta = other.taraTinta;
     taraInput = other.taraInput;
-    scorLocal = other.scorLocal;
     nrIncercari = other.nrIncercari;
-    continent = other.continent;
     return *this;
 }
-
 
 void CountryleJoc::afisareDateRaspuns() {
     std::cout << "\n ============================= \n";
@@ -47,11 +41,11 @@ void CountryleJoc::afisareDateRaspuns() {
     else std::cout << "GRESIT \n";
 
     std::cout << "Suprafata: ";
-    if (taraInput.getSuprafata() < taraTinta.getSuprafata())
+    if (taraInput < taraTinta) // am supraincarcat operatorul <
         std::cout << "Tara misterioasa are o suprafata mai mare decat " << taraInput.getNume() << ".\n";
     else std::cout << "Tara misterioasa are o suprafata mai mica decat " << taraInput.getNume() << ".\n";
 
-    std::cout << "Directia fata de " << taraInput.getNume() << ": " << taraInput.directieFataDe(taraTinta) << "\n \n";
+    std::cout << "Directia: " << taraInput.directieFataDe(taraTinta) << " fata de " << taraInput.getNume() << ".\n \n";
 }
 
 
@@ -108,7 +102,7 @@ void CountryleJoc::porneste() {
         afisareDateRaspuns();
     }
     stopTime();
-    std::cout << "Fun facts despre " << taraTinta.getNume() << '\n' << taraTinta;
+    std::cout << "Fun facts despre " << taraTinta.getNume() << ":\n" << taraTinta;
 }
 
 void CountryleJoc::renunta() {

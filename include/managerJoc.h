@@ -6,7 +6,6 @@
 #include "../include/joc.h"
 
 class ManagerJoc {
-  // Utilizator utilizatorCurent;
   std::vector<std::shared_ptr<Joc>> jocuriDisponibile;
   TariGlobal& bazaDate;
   int scorTotal;
@@ -15,7 +14,6 @@ public:
   void porneste();
   void afiseazaMeniu() const;
   void alegeJoc();
-  // int getScorTotal() const;
   ~ManagerJoc();
 };
 

@@ -5,17 +5,14 @@
 #include "../include/exception.h"
 #include "../include/tariGlobal.h"
 
-
 int InfoPointJoc::nrInfoPointJucate = 0;
 
-InfoPointJoc::InfoPointJoc() : Joc(), modJoc(0), scorLocal(0), continent(" ") {}
+InfoPointJoc::InfoPointJoc() : Joc(), modJoc(1) {}
 
 InfoPointJoc::InfoPointJoc(const InfoPointJoc &other)
         : Joc(other),
           taraInfo(other.taraInfo),
-          modJoc(other.modJoc),
-          scorLocal(other.scorLocal),
-          continent(other.continent) {
+          modJoc(other.modJoc) {
 }
 
 InfoPointJoc& InfoPointJoc::operator=(const InfoPointJoc& other) {
@@ -24,8 +21,6 @@ InfoPointJoc& InfoPointJoc::operator=(const InfoPointJoc& other) {
     Joc::operator =(other);
     taraInfo = other.taraInfo;
     modJoc = other.modJoc;
-    scorLocal = other.scorLocal;
-    continent = other.continent;
     return *this;
 }
 
@@ -46,74 +41,20 @@ void InfoPointJoc::porneste() {
 }
 
 void InfoPointJoc::modSingle() {
-    const TariGlobal& bazaDate = TariGlobal::getInstance();
-
     std::cout << "Vrei sa afli informatii despre o tara anume? [Y / ENTER CA DAI SKIP / RENUNT]\n";
     std::string alegere = ValidareInput<std::string>::citesteValoare({"y","","renunt"});
 
     if (alegere == "renunt")
         renunta();
-    else {
-        if (alegere.empty()) {
-            continent = selectareContinent();
-            taraInfo = bazaDate.getTariRandom(continent);
-            afisareDateRaspuns();
-            scorLocal++;
-        }
-        else {
-            while (jocInDesfasurare) {
-                std::cout << "\n ============================= \n";
-                std::cout << "Introdu numele tarii:\n";
-                try {
-                    taraInfo = citesteTaraDinConsola();
-                    afisareDateRaspuns();
-                    scorLocal++;
-                    jocInDesfasurare = false;
-                } catch (const ExceptieRenuntare&) {
-                    renunta();
-                } catch (const ExceptieTaraInexistenta& e) {
-                    std::cout << e.what();
-                }
-            }
-        }
-    }
+    else if (alegere.empty()) generareTara();
+    else citireTara();
 }
 
 void InfoPointJoc::modExtins() {
     porneste();
-    const TariGlobal& bazaDate = TariGlobal::getInstance();
 
     while (jocInDesfasurare && modJoc == 1) {
-        std::cout << "Vrei sa afli informatii despre o tara anume? [Y / ENTER CA SA DAI SKIP / RENUNT]\n";
-        std::string alegere = ValidareInput<std::string>::citesteValoare({"y","", "renunt"});
-
-        if (alegere == "renunt") {
-            renunta();
-            break;
-        }
-
-        if (alegere.empty()) {
-            continent = selectareContinent();
-            taraInfo = bazaDate.getTariRandom(continent);
-            afisareDateRaspuns();
-            scorLocal++;
-        }
-        else {
-            while (jocInDesfasurare) {
-                std::cout << "\n ============================= \n";
-                std::cout << "Introdu numele tarii:\n";
-                try {
-                    taraInfo = citesteTaraDinConsola();
-                    afisareDateRaspuns();
-                    scorLocal++;
-                    break;
-                } catch (const ExceptieRenuntare&) {
-                    renunta();
-                } catch (const ExceptieTaraInexistenta& e) {
-                    std::cout << e.what();
-                }
-            }
-        }
+        modSingle();
     }
     stopTime();
 }
@@ -125,6 +66,7 @@ void InfoPointJoc::afisareDateRaspuns() {
 
 void InfoPointJoc::renunta() {
     std::cout << "Ai renuntat la turul virtual.\n";
+    std::cout << "Tari consultate: " << scorLocal << "\n";
     jocInDesfasurare = false;
 }
 
@@ -136,12 +78,39 @@ int InfoPointJoc::getScor() {
     return scorLocal;
 }
 
+void InfoPointJoc::citireTara() {
+    while (jocInDesfasurare) {
+        std::cout << "\n ============================= \n";
+        std::cout << "Introdu numele tarii:\n";
+        try {
+            taraInfo = citesteTaraDinConsola();
+            afisareDateRaspuns();
+            scorLocal++;
+            break;
+        } catch (const ExceptieRenuntare&) {
+            renunta();
+        } catch (const ExceptieTaraInexistenta& e) {
+            std::cout << e.what();
+        }
+    }
+}
+
+void InfoPointJoc::generareTara() {
+    const TariGlobal& bazaDate = TariGlobal::getInstance();
+
+    continent = selectareContinent();
+    taraInfo = bazaDate.getTariRandom(continent);
+    afisareDateRaspuns();
+    scorLocal++;
+}
+
+
 void InfoPointJoc::cresteContorInfoPoint() {
     ++nrInfoPointJucate;
 }
 
 void InfoPointJoc::afiseazaNumarInfoPoint() {
-    std::cout << "Info Point a fost jucat de " << nrInfoPointJucate << " ori.\n";
+    std::cout << "Info Point a fost consultat de " << nrInfoPointJucate << " ori.\n";
 }
 
 InfoPointJoc::~InfoPointJoc() = default;

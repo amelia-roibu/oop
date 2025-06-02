@@ -1,4 +1,6 @@
-#pragma once
+#ifndef UTIL_H
+#define UTIL_H
+
 #include <string>
 #include <vector>
 #include <random>
@@ -18,7 +20,9 @@ T alegeRandom(const std::vector<T>& v) {
 
     static std::random_device rd;
     static std::mt19937 gen(rd());
-    std::uniform_int_distribution<> distrib(0, static_cast<int>(v.size() - 1));
+    std::uniform_int_distribution<> distrib(0, static_cast<int>(v.size() - 1)); // generarea unui index random
 
     return v[distrib(gen)];
 }
+
+#endif

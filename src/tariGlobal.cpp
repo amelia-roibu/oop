@@ -1,8 +1,9 @@
 #include "../include/tariGlobal.h"
 #include "../include/util.h"
-#include <fstream>
 #include "../include/nlohmann/json.hpp"  // de aici parsez JSON-ul
 #include <../include/exception.h>
+#include <fstream>
+#include <iostream>
 using json = nlohmann::json;
 
 TariGlobal::TariGlobal() {
@@ -94,8 +95,13 @@ Tari TariGlobal::getTariRandom(const std::string& continent) const {
     else
         for (const auto& [_, tara] : tari)
             toateTarile.push_back(tara);
-
-    return alegeRandom(toateTarile);
+    Tari raspuns;
+    try {
+        raspuns = alegeRandom(toateTarile);
+    } catch (const std::out_of_range& e) {
+        std::cout << e.what(); // vectorul este gol
+    }
+    return raspuns;
 }
 
 bool TariGlobal::existaTara(const std::string& nume) const {

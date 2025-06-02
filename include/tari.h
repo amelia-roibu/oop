@@ -1,8 +1,6 @@
 #ifndef TARI_H
 #define TARI_H
 
-#pragma once
-
 #include <string>
 #include <vector>
 #include <map>
@@ -38,9 +36,11 @@ public:
   std::string getEmisfera() const;
   double getSuprafata() const;
   std::vector<std::string> getVeciniPeDirectie(const std::string& directie = "") const;
+    // daca directia nu e data ca parametru, returneaza toti vecinii
 
   bool esteVecinCu(const std::string& numeTara) const;
   std::string directieFataDe(const Tari& alta) const;
+  // util pt Countryle, unde se folosesc coordonatele pt a afla directia de la o tara la alta tara
 
   friend std::istream& operator>>(std::istream& in, Tari& tara);
   friend std::ostream& operator<<(std::ostream& out, const Tari& tara);

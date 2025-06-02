@@ -7,23 +7,26 @@
 
 class CountryleJoc : public Joc {
   Tari taraTinta, taraInput;
-  int scorLocal, nrIncercari;
-  std::string continent;
+  int nrIncercari;
+
   static int nrCountryleJucate;
 public:
   CountryleJoc();
   CountryleJoc(const CountryleJoc& other);
   CountryleJoc& operator=(const CountryleJoc& other);
 
+  void afisareDateRaspuns() override;
   void porneste() override;
   void renunta() override;
   int getScor() override;
   std::string getNume() const override;
-  void afisareDateRaspuns() override;
+
   void afisareFinala() const;
   void bonusVecin(const std::string& tara);
+
   static void cresteContorCountryle();
   static void afiseazaNumarCountryle();
+
   ~CountryleJoc() override;
 };
 

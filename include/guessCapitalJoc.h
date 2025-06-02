@@ -5,6 +5,7 @@
 
 class GuessCapitalJoc : public JocViteza {
   static int nrGuessCapitalJucate;
+  
 public:
   GuessCapitalJoc();
   GuessCapitalJoc(const GuessCapitalJoc &other);

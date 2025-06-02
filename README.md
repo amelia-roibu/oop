@@ -97,7 +97,7 @@ La acest pas putem cere să generăm fișiere de proiect pentru diverse medii de
     - [x] crearea unei clase template [(1p)](https://github.com/Ionnier/poo/tree/main/labs/L08)
     - [x] 2 instanțieri ale acestei clase (0.5p)
   - STL [(0.25p)](https://github.com/Ionnier/poo/tree/main/labs/L07#stl)
-    - [x] utilizarea a două structuri (containere) diferite (vector, list, map, pair)
+    - [x] utilizarea a două structuri (containere) diferite (vector, list, map, pair, unordered set)
     - [x] utilizarea a unui algoritm cu funcție lambda (transform)
   - Design Patterns [(0.75p)](https://github.com/Ionnier/poo/tree/main/labs/L08)
     - [x] utilizarea a două șabloane de proiectare

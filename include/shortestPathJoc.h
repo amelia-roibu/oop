@@ -10,8 +10,7 @@ class ShortestPathJoc : public Joc {
   Tari taraStart, taraFinal;
   std::vector<Tari> drumOptim;
   std::vector<Tari> drumJucator;
-  std::string continent;
-  int scorLocal;
+
   static int nrShortestPathJucate;
 
   bool apartineDeDrum(const std::string& taraNoua) const;

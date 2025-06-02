@@ -9,5 +9,4 @@ public:
     static std::shared_ptr<Joc> creeazaJoc(int optiune);
 };
 
-
 #endif //JOCFACTORY_H

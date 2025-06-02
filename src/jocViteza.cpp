@@ -3,13 +3,11 @@
 #include "../include/exception.h"
 #include <../include/validareInput.h>
 
-JocViteza::JocViteza() : Joc(), scorLocal(0), durataTimpSecunde(0), continent(" ") {};
+JocViteza::JocViteza() : Joc(), durataTimpSecunde(0) {};
 
 JocViteza::JocViteza(const JocViteza &other)
     : Joc(other),
-      scorLocal(other.scorLocal),
       durataTimpSecunde(other.durataTimpSecunde),
-      continent(other.continent),
       startTimp(other.startTimp),
       raspunsuriGhicite(other.raspunsuriGhicite),
       raspunsuriPierdute(other.raspunsuriPierdute),
@@ -20,9 +18,7 @@ JocViteza& JocViteza::operator=(const JocViteza& other) {
     if (this == &other)
         return *this;
     Joc::operator =(other);
-    scorLocal = other.scorLocal;
     durataTimpSecunde = other.durataTimpSecunde;
-    continent = other.continent;
     startTimp = other.startTimp;
     raspunsuriGhicite = other.raspunsuriGhicite;
     raspunsuriPierdute = other.raspunsuriPierdute;
@@ -80,14 +76,14 @@ void JocViteza::afisareDateRaspuns() {
     std::cout << "\nScor acumulat: " << scorLocal << '\n';
 
     std::cout << "\nRaspunsuri corecte:\n";
-    for (const auto& r : raspunsuriGhicite)
-        std::cout << r << "; ";
+    for (const auto& raspuns : raspunsuriGhicite)
+        std::cout << raspuns << "; ";
     std::cout << '\n';
 
     std::cout << "\nRaspunsurile pentru intrebarile la care ai dat pas:\n";
-    for (const auto& r : raspunsuriPierdute)
-        std::cout << r << "; ";
-    std::cout << '\n';
+    for (const auto& raspuns : raspunsuriPierdute)
+        std::cout << raspuns << "; ";
+    std::cout << "\n\n";
     raspunsuriGhicite.clear();
     raspunsuriPierdute.clear();
 }

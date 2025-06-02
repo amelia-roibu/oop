@@ -1,8 +1,6 @@
 #ifndef TARIGLOBAL_H
 #define TARIGLOBAL_H
 
-#pragma once
-
 #include <map>
 #include <string>
 #include <vector>

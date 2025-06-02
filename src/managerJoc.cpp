@@ -15,7 +15,7 @@ ManagerJoc::ManagerJoc() : bazaDate(TariGlobal::getInstance()), scorTotal(0) {
       std::shared_ptr<Joc> joc = JocFactory::creeazaJoc(i);
       if (joc) jocuriDisponibile.push_back(joc);
     } catch (const ExceptieJocInvalid&) {
-      std::cout << "Eroare la incarcarea jocului. " << '\n';
+      std::cout << "Eroare la incarcarea jocului.\n";
     }
 
   }
@@ -44,17 +44,18 @@ void ManagerJoc::alegeJoc() {
     std::string raspuns = "y";
     std::shared_ptr<Joc> joc = jocuriDisponibile[optiune - 1];
 
-    auto jocInfo = std::dynamic_pointer_cast<InfoPointJoc>(joc);
+    auto jocInfo = std::dynamic_pointer_cast<InfoPointJoc>(joc); // downcast; daca jocul ales este de tip Info Point, pointerul va fi diferit de nullptr
 
     while (raspuns == "y") {
       try{
         if (jocInfo)
-          jocInfo->modExtins();
+          jocInfo->modExtins(); // pt ca Info Point nu e chiar un joc de fapt...
         else
           joc->porneste();
         scorTotal += joc->getScor();
       } catch (const std::exception& e) {
-        std::cout << "Eroare: " << e.what() << "\nJocul s-a oprit din cauza unei erori.\n\n";
+        std::cout << "Jocul s-a oprit din cauza unei erori: " << e.what() << "\n";
+        // a fost useful cat timp nu aveam toate tarile implementate in json si desi gasea o tara in lista vecinilor altei tari, tara respectiva nu era descrisa in fisier (asta pt shortest path)
       }
       std::cout << "Vrei sa mai joci o data " << joc->getNume() << "? [Y / ENTER CA SA DAI SKIP] \n";
       raspuns = ValidareInput<std::string>::citesteValoare({"y", ""});

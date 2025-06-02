@@ -5,12 +5,14 @@
 std::chrono::seconds Joc::durata_totala = std::chrono::seconds(0);
 int Joc::numar_total_jocuri = 0;
 
-Joc::Joc() : jocInDesfasurare(false) {}
+Joc::Joc() : jocInDesfasurare(false), scorLocal(0), continent(" ") {}
 
 Joc::Joc(const Joc &other)
     : start_time(other.start_time),
       end_time(other.end_time),
-      jocInDesfasurare(other.jocInDesfasurare) {
+      jocInDesfasurare(other.jocInDesfasurare),
+      scorLocal(other.scorLocal),
+      continent(other.continent) {
 }
 Joc& Joc::operator=(const Joc &other) {
     if (this == &other)
@@ -18,6 +20,8 @@ Joc& Joc::operator=(const Joc &other) {
     start_time = other.start_time;
     end_time = other.end_time;
     jocInDesfasurare = other.jocInDesfasurare;
+    scorLocal = other.scorLocal;
+    continent = other.continent;
     return *this;
 }
 
@@ -25,7 +29,7 @@ std::string Joc::selectareContinent() {
     std::cout << "Doresti sa alegi un continent anume pentru aceasta sesiune a jocului?\n[Europa / Africa / Asia / America de Nord / America de Sud / Oceania / ENTER CA SA DAI SKIP] \n";
     std::string alegere = ValidareInput<std::string>::citesteValoare({"europa", "asia", "america de nord", "america de sud", "africa", "oceania", ""});
 
-    if (alegere.empty()) {
+    if (!alegere.empty()) {
         return alegere;
     }
 

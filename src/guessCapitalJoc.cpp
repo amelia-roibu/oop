@@ -34,7 +34,7 @@ std::pair<std::string, std::string> GuessCapitalJoc::genereazaIntrebareRaspuns()
     do {
         prompt = bazaDate.getTariRandom(continent);
     } while (obiecteFolosite.contains(prompt.getNume()));
-    obiecteFolosite.insert(prompt.getNume());
+    obiecteFolosite.insert(prompt.getNume()); // ca sa nu apara acelasi prompt de doua ori in aceeasi sesiune de joc(uri)
     return {prompt.getNume(), prompt.getCapitala()};
 }
 

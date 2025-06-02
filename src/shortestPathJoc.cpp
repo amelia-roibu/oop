@@ -9,16 +9,14 @@
 
 int ShortestPathJoc::nrShortestPathJucate = 0;
 
-ShortestPathJoc::ShortestPathJoc() : Joc(), continent(" "), scorLocal(0) {}
+ShortestPathJoc::ShortestPathJoc() : Joc() {}
 
 ShortestPathJoc::ShortestPathJoc(const ShortestPathJoc &other)
     : Joc(other),
       taraStart(other.taraStart),
       taraFinal(other.taraFinal),
       drumOptim(other.drumOptim),
-      drumJucator(other.drumJucator),
-      continent(other.continent),
-      scorLocal(other.scorLocal) {
+      drumJucator(other.drumJucator) {
 }
 
 ShortestPathJoc& ShortestPathJoc::operator=(const ShortestPathJoc& other) {
@@ -29,8 +27,6 @@ ShortestPathJoc& ShortestPathJoc::operator=(const ShortestPathJoc& other) {
     taraFinal = other.taraFinal;
     drumOptim = other.drumOptim;
     drumJucator = other.drumJucator;
-    continent = other.continent;
-    scorLocal = other.scorLocal;
     return *this;
 }
 
@@ -50,6 +46,8 @@ bool ShortestPathJoc::apartineDeDrum(const std::string& taraNoua) const {
             return true;
     return false;
 }
+
+
 bool ShortestPathJoc::esteVecinaCuDrum(const std::string& taraNoua) const {
     if (!TariGlobal::getInstance().existaTara(taraNoua)) return false;
 
@@ -69,18 +67,22 @@ void ShortestPathJoc::porneste() {
         const TariGlobal& bazaDate = TariGlobal::getInstance();
 
         std::cout << "Bine ai venit la Shortest Path Game! \n";
-        std::cout << "Obiectivul tau este sa ajungi din tara 'Start', catre tara 'Destinatie', folosind doar tari vecine, creand un lant\nde lungime cat mai scurta. Tarile introduse pot fi vecine cu oricare dintre tarile considerate corecte\npana in momentul acela, iar ultima tara introdusa trebuie sa fie destinatia. Daca vrei sa renunti, poti scrie 'renunt'.\nOrice drum final valid va fi penalizat cu 5 puncte pentru fiecare tara 'in plus' fata de lungimea drumului optim.\n\n";
+        std::cout << "Obiectivul tau este sa ajungi din tara 'Start', catre tara 'Destinatie', folosind doar tari vecine, creand un lant\nde lungime cat mai scurta. Tarile introduse pot fi vecine cu oricare dintre tarile considerate corecte\npana in momentul acela, iar ultima tara introdusa trebuie sa fie destinatia. Daca vrei sa renunti, poti scrie 'renunt'.\nOrice drum final valid va fi penalizat cu 5 puncte pentru fiecare tara 'in plus' fata de lungimea drumului optim.\nNu recomand sa incerci cu Oceania, pentru ca nu exista tari vecine direct si doar se vor genera aleatoriu alte tari.\n\n";
         continent = selectareContinent();
 
         if (continent.empty()) {
-            std::vector<std::string> continenteValide = {"Europa", "Asia", "America de Sud", "Africa"};
-            continent = alegeRandom(continenteValide);
+            std::vector<std::string> continenteValide = {"Europa", "Asia", "America de Sud", "Africa"}; // pt Oceania nu prea merge, pt ca nu sunt tari vecine direct
+            try {
+                continent = alegeRandom(continenteValide);
+            } catch (const std::out_of_range& e) {
+                std::cout << e.what(); // vectorul este gol
+            }
         }
         do {
             taraStart = bazaDate.getTariRandom(continent);
             taraFinal = bazaDate.getTariRandom(continent);
             drumOptim = gasesteDrumBFS(taraStart.getNume(), taraFinal.getNume());
-        } while (drumOptim.empty() || drumOptim.size() < 4);
+        } while (drumOptim.empty() || drumOptim.size() < 4); // e prea usor daca nu e un drum de lungime macar 4
 
         drumJucator.push_back(taraStart);
         scorLocal = 0;
@@ -111,10 +113,11 @@ void ShortestPathJoc::porneste() {
                 std::cout << "Tara introdusa nu e buna :P (nu este vecina sau deja a fost luata in considerare). \n";
         }
 
-        if (!renuntat) scorLocal = std::max(0, 100 - static_cast<int>(drumJucator.size() - drumOptim.size())*5);
         stopTime();
-        if (!renuntat) afisareDateRaspuns();
-
+        if (!renuntat) {
+            scorLocal = std::max(0, 100 - static_cast<int>(drumJucator.size() - drumOptim.size())*5);
+            afisareDateRaspuns();
+        }
     } catch (const std::exception& e) { // pentru debug - cand nu aveam toate tarile in json si esua sa mi gaseasca anumiti vecini
         std::cout << "Exceptie prinsa: " << e.what() << '\n';
     }
